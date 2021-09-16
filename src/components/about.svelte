@@ -1,6 +1,7 @@
 <script lang="ts">
 </script>
 
+
 <style>
     .about {
         color: rgb(50, 50, 50);
@@ -17,6 +18,7 @@
         font-size: 18px;
     }
 </style>
+
 
 <div class="about">
     <h2>About Me</h2>
