@@ -15,7 +15,7 @@
                 /* Goto <Contact/> */
                 break
             default:
-                console.log("Section does not exist.");
+                console.log("Section '${section}' does not exist.");
                 return
         }
     }
@@ -23,11 +23,6 @@
 
 
 <style>
-    :root {
-        --foreground-color: rgb(228, 144, 55);
-        --hover-color: rgb(242, 102, 128);
-    }
-
     .navigation-bar {
         width: 90%;
         margin: auto;
@@ -37,7 +32,7 @@
     }
 
     button {
-        background-color: var(--foreground-color);
+        background-color: var(--button-foreground-color);
         font-weight: 650;
         margin: auto;
         border: none;

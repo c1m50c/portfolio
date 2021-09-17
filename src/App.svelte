@@ -8,11 +8,27 @@
 
 
 <style>
+    :global(:root) {
+        --button-foreground-color: rgb(228, 144, 55);
+        --base-text-color: rgb(50, 50, 50);
+        --hover-color: rgb(242, 102, 128);
+    }
+
     .header-main {
         text-align: center;
         display: grid;
         align-content: center;
     }
+
+    /*section {
+        color: rgb(50, 50, 50);
+        background-color: rgb(228, 144, 55);
+        border-radius: 0.5rem;
+        margin: auto;
+        margin-top: 3%;
+        padding: 1px 10px 1px;
+        width: 90%;
+    }*/
 </style>
 
 

@@ -4,13 +4,17 @@
 
 <style>
     .about {
-        color: rgb(50, 50, 50);
+        color: var(--base-text-color);
         background-color: rgb(228, 144, 55);
         border-radius: 0.5rem;
         margin: auto;
         margin-top: 3%;
         padding: 1px 10px 1px;
         width: 90%;
+    }
+
+    header {
+        text-align: center;
     }
 
     p {
@@ -21,6 +25,12 @@
 
 
 <div class="about">
-    <h2>About Me</h2>
-    <p>Picture some words here.</p>
+    <header>
+        <h2>About</h2>
+    </header>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Esse dicta vero, exercitationem, totam, perspiciatis minus et consectetur odio amet praesentium porro?
+        Sunt eveniet quisquam vel sit delectus aliquam minus quo!
+    </p>
 </div>
