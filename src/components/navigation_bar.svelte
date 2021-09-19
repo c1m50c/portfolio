@@ -1,57 +1,58 @@
 <script lang="ts">
-    function goto_section(section: string) {
-        /* Changes scroll position to the coresponding positon of a section */
-        switch (section) {
-            case "about":
-                /* Goto <About/> */
-                break
-            case "skills":
-                /* Goto <Skills/> */
-                break
-            case "resume":
-                /* Goto <Resume/> */
-                break
-            case "contact":
-                /* Goto <Contact/> */
-                break
-            default:
-                console.log("Section '${section}' does not exist.");
-                return
-        }
-    }
 </script>
 
 
 <style>
-    .navigation-bar {
-        width: 90%;
-        margin: auto;
-        background-color: rgb(33, 33, 33);
-        border-radius: 0.5rem;
-        padding: 5px 1px 5px;
+    :root {
+        --nav-bar-edge-radius: 13px;
     }
 
-    button {
+    .navigation-bar-container {
+        margin: auto;
+        width: 80%;
+    }
+
+    nav {
+        display: grid;
+        grid-template-areas:
+            "home about skills resume contact";
+    }
+
+    a {
+        height: 30px;
+        line-height: 30px;
+        color: var(--base-text-color);
+        font-weight: 600;
+        font-size: 18px;
+        text-decoration: none;
         background-color: var(--button-foreground-color);
-        font-weight: 650;
-        margin: auto;
-        border: none;
-        border-radius: 0rem;
-        width: 10%;
-        position: relative;
-        transition: background-color 555ms;
+        transition: background-color 500ms;
     }
 
-    button:hover {
-        cursor: pointer;
+    a:hover {
         background-color: var(--hover-color);
+    }
+
+    /* Todo: Should probally find a way to not hardcode these to be the edges of the bar */
+    .nav-bar #home {
+        border-top-left-radius: var(--nav-bar-edge-radius);
+        border-bottom-left-radius: var(--nav-bar-edge-radius);
+    }
+
+    .nav-bar #contact {
+        border-top-right-radius: var(--nav-bar-edge-radius);
+        border-bottom-right-radius: var(--nav-bar-edge-radius);
     }
 </style>
 
 
-<div class="navigation-bar">
-    <button id="navigation-button" on:click={() => {goto_section("about")}}>About</button>
-    <button id="navigation-button" on:click={() => {goto_section("skills")}}>Skills</button>
-    <button id="navigation-button" on:click={() => {goto_section("resume")}}>Resume</button>
-    <button id="navigation-button" on:click={() => {goto_section("contact")}}>Contact</button>
+<div class="navigation-bar-container">
+    <nav class="nav-bar">
+        <!-- Todo: Make these go to the coresponding positions -->
+        <a href="/" id="home">Home</a>
+        <a href="/" id="about">About</a>
+        <a href="/" id="skills">Skills</a>
+        <a href="/" id="resume">Resume</a>
+        <a href="/" id="contact">Contact</a>
+    </nav>
 </div>
