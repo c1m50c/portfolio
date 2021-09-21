@@ -14,8 +14,8 @@
 
     nav {
         display: grid;
-        grid-template-areas:
-            "home about skills resume contact";
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
 
     a {
@@ -28,12 +28,16 @@
         text-decoration: none;
         background-color: var(--button-foreground-color);
         border-radius: 0px;
-        transition: background-color 500ms, padding 500ms ease-in-out;
+        box-shadow: 0px 5px var(--button-background-color);
+        padding: 0px;
+        transition: background-color 500ms ease-in-out, box-shadow 500ms ease-in-out, color 500ms ease-in-out, padding 500ms ease-in-out;
     }
 
     a:hover {
-        background-color: var(--hover-color);
-        padding: 3px;
+        background-color: var(--hover-foreground-color);
+        box-shadow: 0px 5px var(--hover-background-color);
+        color: var(--section-text-color);
+        padding: 5px;
     }
 
     /* Todo: Should probally find a way to not hardcode these to be the edges of the bar */
