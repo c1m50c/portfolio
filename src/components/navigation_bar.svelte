@@ -1,7 +1,9 @@
 <script lang="ts">
+    /** Scrolls to an element within the page. */
     function scroll_to_element(element_id: string) {
         /* Todo: Offset position by a bit as to not scroll to the top edge of the element. */
-        location.hash = element_id;
+        document.getElementById(element_id).scrollIntoView();
+        window.scrollBy(0.0, -50.0); // This works but not well on smaller resolution devices, maybe find way to convert measurement based on viewport?
     }
 </script>
 
