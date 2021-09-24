@@ -3,6 +3,7 @@
     import Welcome from "./components/welcome.svelte";
     import About from "./components/about.svelte";
     import Skills from "./components/skills.svelte";
+    import Projects from "./components/projects.svelte";
     import Resume from "./components/resume.svelte";
     import Contact from "./components/contact.svelte";
 </script>
@@ -42,6 +43,7 @@
     <Welcome/>
     <About/>
     <Skills/>
+    <Projects/>
     <Resume/>
     <Contact/>
 </main>

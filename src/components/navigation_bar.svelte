@@ -21,7 +21,7 @@
 
     .navigation-bar {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
         margin: auto;
         width: 95%;
         transition: opacity var(--transition-settings);

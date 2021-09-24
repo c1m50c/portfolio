@@ -5,7 +5,8 @@
 
 <style>
     :root {
-        --grow-animation-time: 2s;
+        --intro-animation-time: 1s;
+        --underline-animation-time: 1s;
     }
 
     #welcome {
@@ -14,8 +15,9 @@
         align-content: center;
 
         background-image: url("/background_waves.svg");
-        background-position: 0% 55%;
+        background-position: 0% 50%;
         background-size: cover;
+        background-color: rgba(0, 0, 0, 0.25);
     }
 
     #welcome .logo-svg {
@@ -25,19 +27,20 @@
     #h2-container {
         margin-left: 25%;
         text-align: center;
-        transform: scale(0);
-        animation: grow-animation var(--grow-animation-time) forwards;
+        overflow: hidden;
+        animation: intro-animation var(--intro-animation-time) forwards;
     }
 
     h2 {
         font-size: 48px;
+        overflow: hidden;
     }
 
     #hey::after {
         content: "👋";
         margin-left: 1rem;
         display: inline-block;
-        animation: 750ms wave-animation var(--grow-animation-time) infinite;
+        animation: 1s wave-animation calc(var(--intro-animation-time) + var(--underline-animation-time) + 500ms) infinite;
     }
 
     #hook {
@@ -48,23 +51,23 @@
     #hook::after {
         content: "";
         position: absolute;
-        width: 110%;
+        width: 100%;
         height: 3px;
         transform: scaleX(0);
         bottom: -20%;
-        left: -5%;
+        left: 0;
         background-color: var(--button-foreground-color);
         transform-origin: center;
-        animation: 1s underline-animation calc(var(--grow-animation-time) + 500ms) forwards;
+        animation: var(--underline-animation-time) underline-animation calc(var(--intro-animation-time) + 500ms) forwards;
     }
 
-    @keyframes grow-animation {
+    @keyframes intro-animation {
         from {
-            transform: scale(0);
+            
         }
 
         to {
-            transform: scale(1);
+            
         }
     }
     
@@ -99,6 +102,6 @@
     </svg>
     <div id="h2-container">
         <h2 id="hey">Hey, I'm Pere</h2>
-        <p id="hook">And I'm competent at programming! 😲</p>
+        <p id="hook">But I'm also known as Big Hunk 😳👉👈</p>
     </div>
 </div>
