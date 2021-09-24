@@ -1,5 +1,6 @@
 <script lang="ts">
     function scroll_to_element(element_id: string) {
+        /* Todo: Offset position by a bit as to not scroll to the top edge of the element. */
         location.hash = element_id;
     }
 </script>
@@ -29,7 +30,7 @@
         transition: opacity var(--transition-settings);
     }
 
-    .navbar-link {
+    .navbar-button {
         display: inline-block;
         font-size: 18px;
         text-decoration: none;
@@ -45,7 +46,7 @@
         transition: all var(--transition-settings);
     }
 
-    .navbar-link::after {
+    .navbar-button::after {
         content: "";
         position: absolute;
         width: 50%;
@@ -58,25 +59,28 @@
         transition: transform var(--transition-settings);
     }
 
-    .navbar-link:hover::after {
+    .navbar-button:hover::after, .navbar-button:focus::after {
         transform: scaleX(1);
     }
 
-    .navbar-link:hover, .navbar-link:focus {
-        cursor: pointer;
+    .navbar-button:hover, .navbar-button:focus {
         background-color: var(--hover-foreground-color);
         box-shadow: var(--link-box-shadow-size) var(--hover-background-color);
+    }
+
+    .navbar-button:hover {
+        cursor: pointer;
     }
 </style>
 
 
 <div class="navigation-bar-container">
     <nav class="navigation-bar">
-        <button class="navbar-link" on:click={() => {scroll_to_element("welcome")}}>Welcome</button>
-        <button class="navbar-link" on:click={() => {scroll_to_element("about")}}>About</button>
-        <button class="navbar-link" on:click={() => {scroll_to_element("skills")}}>Skills</button>
-        <button class="navbar-link" on:click={() => {scroll_to_element("projects")}}>Projects</button>
-        <button class="navbar-link" on:click={() => {scroll_to_element("resume")}}>Resume</button>
-        <button class="navbar-link" on:click={() => {scroll_to_element("contact")}}>Contact</button>
+        <button class="navbar-button" on:click={() => {scroll_to_element("welcome")}}>Welcome</button>
+        <button class="navbar-button" on:click={() => {scroll_to_element("about")}}>About</button>
+        <button class="navbar-button" on:click={() => {scroll_to_element("skills")}}>Skills</button>
+        <button class="navbar-button" on:click={() => {scroll_to_element("projects")}}>Projects</button>
+        <button class="navbar-button" on:click={() => {scroll_to_element("resume")}}>Resume</button>
+        <button class="navbar-button" on:click={() => {scroll_to_element("contact")}}>Contact</button>
     </nav>
 </div>

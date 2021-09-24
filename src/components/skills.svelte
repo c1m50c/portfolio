@@ -42,13 +42,16 @@
         transition: transform 500ms ease;
     }
 
-    .info-card:hover::after {
+    .info-card:hover::after, .info-card:focus::after {
         transform: scaleX(1);
+    }
+
+    .info-card:hover, .info-card:focus {
+        background-color: var(--hover-foreground-color);
     }
 
     .info-card:hover {
         cursor: pointer;
-        background-color: var(--hover-foreground-color);
     }
 </style>
 
