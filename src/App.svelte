@@ -17,9 +17,9 @@
         --info-container-bg-color: rgb(30, 30, 30);
         --border-radius: 13px;
         --button-foreground-color: rgb(53, 206, 135);
-        --button-background-color: rgb(53, 206, 135);
+        --button-background-color: rgb(33, 126, 83);
         --hover-foreground-color: rgb(94, 237, 170);
-        --hover-background-color: rgb(94, 237, 170);
+        --hover-background-color: rgb(54, 134, 97);
     }
 
     :global(.info-container) {

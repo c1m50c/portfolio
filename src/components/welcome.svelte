@@ -11,6 +11,11 @@
     #welcome {
         display: flex;
         flex-wrap: wrap;
+        align-content: center;
+
+        background-image: url("/background_waves.svg");
+        background-position: 0% 55%;
+        background-size: cover;
     }
 
     #welcome .logo-svg {
@@ -30,12 +35,27 @@
 
     #hey::after {
         content: "👋";
+        margin-left: 1rem;
         display: inline-block;
         animation: 750ms wave-animation var(--grow-animation-time) infinite;
     }
 
     #hook {
         font-size: 24px;
+        position: relative;
+    }
+
+    #hook::after {
+        content: "";
+        position: absolute;
+        width: 110%;
+        height: 3px;
+        transform: scaleX(0);
+        bottom: -20%;
+        left: -5%;
+        background-color: var(--button-foreground-color);
+        transform-origin: center;
+        animation: 1s underline-animation calc(var(--grow-animation-time) + 500ms) forwards;
     }
 
     @keyframes grow-animation {
@@ -45,6 +65,12 @@
 
         to {
             transform: scale(1);
+        }
+    }
+    
+    @keyframes underline-animation {
+        to {
+            transform: scaleX(1);
         }
     }
 
@@ -73,6 +99,6 @@
     </svg>
     <div id="h2-container">
         <h2 id="hey">Hey, I'm Pere</h2>
-        <p id="hook">And I'm competent at programming!</p>
+        <p id="hook">And I'm competent at programming! 😲</p>
     </div>
 </div>

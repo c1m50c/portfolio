@@ -28,15 +28,34 @@
     }
 
     .navbar-link {
+        display: inline-block;
         font-size: 18px;
         text-decoration: none;
         text-align: center;
         padding: 3px;
         color: var(--button-text-color);
         font-weight: 600;
+        position: relative;
         background-color: var(--button-foreground-color);
         box-shadow: var(--link-box-shadow-size) var(--button-background-color);
         transition: all var(--transition-settings);
+    }
+
+    .navbar-link::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        transform: scaleX(0);
+        bottom: 10%;
+        left: 25%;
+        background-color: var(--button-text-color);
+        transform-origin: center;
+        transition: transform var(--transition-settings);
+    }
+
+    .navbar-link:hover::after {
+        transform: scaleX(1);
     }
 
     .navbar-link:hover, .navbar-link:focus {
@@ -51,6 +70,7 @@
         <a href="/" class="navbar-link">Welcome</a>
         <a href="/" class="navbar-link">About</a>
         <a href="/" class="navbar-link">Skills</a>
+        <a href="/" class="navbar-link">Projects</a>
         <a href="/" class="navbar-link">Resume</a>
         <a href="/" class="navbar-link">Contact</a>
     </nav>
