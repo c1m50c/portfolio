@@ -1,5 +1,7 @@
 <script lang="ts">
-
+    function scroll_to_element(element_id: string) {
+        location.hash = element_id;
+    }
 </script>
 
 
@@ -36,6 +38,8 @@
         color: var(--button-text-color);
         font-weight: 600;
         position: relative;
+        border: none;
+        border-radius: 0px;
         background-color: var(--button-foreground-color);
         box-shadow: var(--link-box-shadow-size) var(--button-background-color);
         transition: all var(--transition-settings);
@@ -59,6 +63,7 @@
     }
 
     .navbar-link:hover, .navbar-link:focus {
+        cursor: pointer;
         background-color: var(--hover-foreground-color);
         box-shadow: var(--link-box-shadow-size) var(--hover-background-color);
     }
@@ -67,11 +72,11 @@
 
 <div class="navigation-bar-container">
     <nav class="navigation-bar">
-        <a href="/" class="navbar-link">Welcome</a>
-        <a href="/" class="navbar-link">About</a>
-        <a href="/" class="navbar-link">Skills</a>
-        <a href="/" class="navbar-link">Projects</a>
-        <a href="/" class="navbar-link">Resume</a>
-        <a href="/" class="navbar-link">Contact</a>
+        <button class="navbar-link" on:click={() => {scroll_to_element("welcome")}}>Welcome</button>
+        <button class="navbar-link" on:click={() => {scroll_to_element("about")}}>About</button>
+        <button class="navbar-link" on:click={() => {scroll_to_element("skills")}}>Skills</button>
+        <button class="navbar-link" on:click={() => {scroll_to_element("projects")}}>Projects</button>
+        <button class="navbar-link" on:click={() => {scroll_to_element("resume")}}>Resume</button>
+        <button class="navbar-link" on:click={() => {scroll_to_element("contact")}}>Contact</button>
     </nav>
 </div>

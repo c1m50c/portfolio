@@ -5,7 +5,7 @@
 
 <style>
     :root {
-        --intro-animation-time: 1s;
+        --intro-animation-time: 0.5s;
         --underline-animation-time: 1s;
     }
 
