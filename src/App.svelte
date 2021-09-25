@@ -11,12 +11,11 @@
 
 <style>
     :global(:root) {
-        --font-size: 16px;
         --base-text-color: rgb(35, 41, 49);
         --bright-text-color: rgb(238, 238, 238);
         --button-text-color: var(--base-text-color);
         --info-container-bg-color: rgb(30, 30, 30);
-        --border-radius: 13px;
+        --border-radius: 1rem;
         --button-foreground-color: rgb(53, 206, 135);
         --button-background-color: rgb(33, 126, 83);
         --hover-foreground-color: rgb(94, 237, 170);
@@ -72,7 +71,6 @@
     main {
         display: grid;
         gap: 2rem;
-        font-size: var(--font-size);
         padding: 3rem 1rem;
     }
 

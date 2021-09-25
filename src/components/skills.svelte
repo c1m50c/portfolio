@@ -12,7 +12,7 @@
         display: grid;
         gap: 1rem;
         justify-content: center;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }
 
     .info-card {

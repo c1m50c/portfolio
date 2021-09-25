@@ -3,7 +3,7 @@
     function scroll_to_element(element_id: string) {
         /* Todo: Offset position by a bit as to not scroll to the top edge of the element. */
         document.getElementById(element_id).scrollIntoView();
-        window.scrollBy(0.0, -50.0); // This works but not well on smaller resolution devices, maybe find way to convert measurement based on viewport?
+        window.scrollBy(0.0, -100.0); // This works but not well on smaller resolution devices, maybe find way to convert measurement based on viewport?
     }
 </script>
 
@@ -34,7 +34,7 @@
 
     .navbar-button {
         display: inline-block;
-        font-size: 18px;
+        font-size: 1.2rem;
         text-decoration: none;
         text-align: center;
         padding: 3px;
