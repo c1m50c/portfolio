@@ -10,7 +10,7 @@
 
     .info-card-container {
         display: grid;
-        gap: 1rem;
+        gap: 1.5rem;
         justify-content: center;
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }
@@ -19,6 +19,13 @@
         /* Todo: Shouldn't have to do this? */
         color: var(--base-text-color);
         text-decoration: none;
+    }
+
+    .info-card:hover {
+        transform: scale(1.1);
+        position: relative;
+        box-shadow: 0rem 0.2rem var(--hover-background-color);
+        z-index: 2;
     }
 </style>
 
