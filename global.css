@@ -6,6 +6,10 @@
     --page-background-color: rgb(24, 22, 22);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     position: relative;
     width: 100%;
