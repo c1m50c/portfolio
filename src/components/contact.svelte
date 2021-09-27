@@ -1,9 +1,17 @@
 <script lang="ts">
-    
+    let email: string = "pereiswell@gmail.com"
+    function copy_to_clipboard(str: string) {
+        navigator.clipboard.writeText(str);
+    }
 </script>
 
 
 <style>
+    #contact {
+        display: grid;
+        justify-content: center;
+    }
+
     .logo-link-container {
         display: flex;
         justify-content: center;
@@ -18,6 +26,33 @@
 
     .logo:hover, .logo:focus { fill: var(--hover-foreground-color); }
     .logo:hover { cursor: pointer; }
+
+    #email {
+        background: transparent;
+        border: none;
+        color: var(--button-foreground-color);
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        transition: all var(--base-transition-settings);
+    }
+
+    #email::after {
+        /* Todo: Implement animation */
+        content: "Copied to Clipboard! 📋";
+        position: absolute;
+        font-size: 1rem;
+        width: 100%;
+        top: 75%;
+        left: 0%;
+        color: var(--bright-text-color);
+        opacity: 0%;
+    }
+
+    #email:hover, #email:focus { color: var(--hover-foreground-color); }
+    #email:hover { cursor: pointer; }
 </style>
 
 
@@ -34,4 +69,5 @@
             </svg>
         </a>
     </div>
+    <button id="email" on:click={() => {copy_to_clipboard(email)}}>{email} 📋</button>
 </div>
