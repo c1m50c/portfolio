@@ -38,11 +38,14 @@
         <a class="info-card link-button" id="type_script" href="https://www.typescriptlang.org/">
             <h3>TypeScript 📰</h3>
         </a>
-        <a class="info-card link-button" id="sass" href="https://sass-lang.com/">
-            <h3>Sass 💄</h3>
+        <a class="info-card link-button" id="dart" href="https://dart.dev/">
+            <h3>Dart 🎯</h3>
         </a>
         <a class="info-card link-button" id="flutter" href="https://flutter.dev/">
             <h3>Flutter 🦋</h3>
+        </a>
+        <a class="info-card link-button" id="sass" href="https://sass-lang.com/">
+            <h3>Sass 💄</h3>
         </a>
         <a class="info-card link-button" id="react" href="https://reactjs.org/">
             <h3>React ⚡</h3>

@@ -1,10 +1,5 @@
 <script lang="ts">
-    /** Scrolls to an element within the page. */
-    function scroll_to_element(element_id: string) {
-        /* Todo: Offset position by a bit as to not scroll to the top edge of the element. */
-        document.getElementById(element_id).scrollIntoView();
-        window.scrollBy(0.0, -100.0); // This works but not well on smaller resolution devices, maybe find way to convert measurement based on viewport?
-    }
+
 </script>
 
 
@@ -32,7 +27,7 @@
         transition: opacity var(--transition-settings);
     }
 
-    .navbar-button {
+    .navbar-link {
         display: inline-block;
         font-size: 1.2rem;
         text-decoration: none;
@@ -48,7 +43,7 @@
         transition: all var(--transition-settings);
     }
 
-    .navbar-button::after {
+    .navbar-link::after {
         content: "";
         position: absolute;
         width: 50%;
@@ -61,16 +56,16 @@
         transition: transform var(--transition-settings);
     }
 
-    .navbar-button:hover::after, .navbar-button:focus::after {
+    .navbar-link:hover::after, .navbar-link:focus::after {
         transform: scaleX(1);
     }
 
-    .navbar-button:hover, .navbar-button:focus {
+    .navbar-link:hover, .navbar-link:focus {
         background-color: var(--hover-foreground-color);
         box-shadow: var(--link-box-shadow-size) var(--hover-background-color);
     }
 
-    .navbar-button:hover {
+    .navbar-link:hover {
         cursor: pointer;
     }
 </style>
@@ -78,11 +73,11 @@
 
 <div class="navigation-bar-container">
     <nav class="navigation-bar">
-        <button class="navbar-button" on:click={() => {scroll_to_element("welcome")}}>Welcome</button>
-        <button class="navbar-button" on:click={() => {scroll_to_element("about")}}>About</button>
-        <button class="navbar-button" on:click={() => {scroll_to_element("skills")}}>Skills</button>
-        <button class="navbar-button" on:click={() => {scroll_to_element("projects")}}>Projects</button>
-        <button class="navbar-button" on:click={() => {scroll_to_element("resume")}}>Resume</button>
-        <button class="navbar-button" on:click={() => {scroll_to_element("contact")}}>Contact</button>
+        <a class="navbar-link" href="#welcome">Welcome</a>
+        <a class="navbar-link" href="#about">About</a>
+        <a class="navbar-link" href="#skills">Skills</a>
+        <a class="navbar-link" href="#projects">Projects</a>
+        <a class="navbar-link" href="#resume">Resume</a>
+        <a class="navbar-link" href="#contact">Contact</a>
     </nav>
 </div>

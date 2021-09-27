@@ -38,7 +38,6 @@
         align-content: center;
         text-decoration: none;
         border-radius: var(--border-radius);
-        box-shadow: 0.2rem 0.2rem var(--button-background-color);
         background-color: var(--button-foreground-color);
         color: var(--base-text-color);
         transition: all var(--base-transition-settings);
@@ -63,7 +62,6 @@
 
     :global(.link-button:hover, .link-button:focus) {
         background-color: var(--hover-foreground-color);
-        box-shadow: 0.2rem 0.2rem var(--hover-background-color);
     }
 
     :global(.link-button:hover) {
