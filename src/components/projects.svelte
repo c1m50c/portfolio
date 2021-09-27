@@ -29,6 +29,11 @@
     .card-link::after {
         bottom: 7%;
     }
+
+    .project-date {
+        font-size: 0.75rem;
+        font-style: italic;
+    }
 </style>
 
 
@@ -36,7 +41,10 @@
     <h2>Projects</h2>
     <div class="card-container">
         <div class="project-card" id="personal-color-theme">
-            <h3>Personal VSCode Color Theme</h3>
+            <div class="text-container">
+                <h3 class="project-title">Personal VSCode Color Theme</h3>
+                <p class="project-date">Date Created: 06/13/21</p>
+            </div>
             <a href="https://github.com/c1m50c/c1m-theme" class="card-link link-button">Github</a>
             <a href="https://marketplace.visualstudio.com/items?itemName=c1m.c1m-theme" class="card-link link-button">Marketplace</a>
         </div>
