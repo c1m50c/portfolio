@@ -6,7 +6,6 @@
 <style>
     :root {
         --link-box-shadow-size: 0px 0px 0px;
-        --transition-settings: 500ms ease;
     }
 
     .navigation-bar-container {
@@ -24,7 +23,7 @@
         grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
         margin: auto;
         width: 95%;
-        transition: opacity var(--transition-settings);
+        transition: opacity var(--base-transition-settings);
     }
 
     .navbar-link {
@@ -40,7 +39,7 @@
         border-radius: 0px;
         background-color: var(--button-foreground-color);
         box-shadow: var(--link-box-shadow-size) var(--button-background-color);
-        transition: all var(--transition-settings);
+        transition: all var(--base-transition-settings);
     }
 
     .navbar-link::after {
@@ -53,7 +52,7 @@
         left: 25%;
         background-color: var(--button-text-color);
         transform-origin: center;
-        transition: transform var(--transition-settings);
+        transition: transform var(--base-transition-settings);
     }
 
     .navbar-link:hover::after, .navbar-link:focus::after {
@@ -73,7 +72,7 @@
 
 <div class="navigation-bar-container">
     <nav class="navigation-bar">
-        <a class="navbar-link" href="#welcome">Welcome</a>
+        <a class="navbar-link" href="#">Welcome</a>
         <a class="navbar-link" href="#about">About</a>
         <a class="navbar-link" href="#skills">Skills</a>
         <a class="navbar-link" href="#projects">Projects</a>

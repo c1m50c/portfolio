@@ -73,21 +73,13 @@
         gap: 2rem;
         padding: 3rem 1rem;
     }
-
-    .welcome-about-container {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
 </style>
 
 
 <NavigationBar/>
 <main>
-    <div class="welcome-about-container">
-        <Welcome/>
-        <About/>
-    </div>
+    <Welcome/>
+    <About/>
     <Skills/>
     <Projects/>
     <Resume/>
