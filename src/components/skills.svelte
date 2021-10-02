@@ -51,6 +51,12 @@
         <a class="info-card link-button" id="type_script" href="https://www.typescriptlang.org/">
             <h3>TypeScript 📰</h3>
         </a>
+        <a class="info-card link-button" id="react" href="https://reactjs.org/">
+            <h3>React ⚡</h3>
+        </a>
+        <a class="info-card link-button" id="svelte" href="https://svelte.dev/">
+            <h3>Svelte 📙</h3>
+        </a>
         <a class="info-card link-button" id="html" href="https://en.wikipedia.org/wiki/HTML">
             <h3>HTML 📄</h3>
         </a>
@@ -60,11 +66,8 @@
         <a class="info-card link-button" id="sass" href="https://sass-lang.com/">
             <h3>Sass 💄</h3>
         </a>
-        <a class="info-card link-button" id="react" href="https://reactjs.org/">
-            <h3>React ⚡</h3>
-        </a>
-        <a class="info-card link-button" id="svelte" href="https://svelte.dev/">
-            <h3>Svelte 📙</h3>
+        <a class="info-card link-button" id="lua" href="https://www.lua.org/">
+            <h3>Lua 🌌</h3>
         </a>
         <a class="info-card link-button" id="godot" href="https://godotengine.org/">
             <h3>Godot 🤖</h3>
