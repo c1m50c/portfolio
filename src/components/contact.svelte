@@ -69,5 +69,5 @@
             </svg>
         </a>
     </div>
-    <button id="email" on:click={() => {copy_to_clipboard(email)}}>{email} 📋</button>
+    <button id="email" on:click={() => {copy_to_clipboard(email)}}>{email}</button>
 </div>

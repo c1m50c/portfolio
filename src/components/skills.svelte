@@ -26,11 +26,24 @@
 <div class="info-container" id="skills">
     <h2>Skills</h2>
     <div class="info-card-container">
+        <!-- Todo: Arrange based on skill-level (comfortable-ness / experience) -->
         <a class="info-card link-button" id="python" href="https://www.python.org/">
             <h3>Python 🐍</h3>
         </a>
+        <a class="info-card link-button" id="flask" href="https://github.com/pallets/flask/">
+            <h3>Flask 🧪</h3>
+        </a>
         <a class="info-card link-button" id="rust" href="https://www.rust-lang.org/">
             <h3>Rust 🦀</h3>
+        </a>
+        <a class="info-card link-button" id="sqlite" href="https://sqlite.org/index.html">
+            <h3>SQLite 💾</h3>
+        </a>
+        <a class="info-card link-button" id="dart" href="https://dart.dev/">
+            <h3>Dart 🎯</h3>
+        </a>
+        <a class="info-card link-button" id="flutter" href="https://flutter.dev/">
+            <h3>Flutter 🦋</h3>
         </a>
         <a class="info-card link-button" id="java_script" href="https://www.javascript.com/">
             <h3>JavaScript ☕</h3>
@@ -38,11 +51,11 @@
         <a class="info-card link-button" id="type_script" href="https://www.typescriptlang.org/">
             <h3>TypeScript 📰</h3>
         </a>
-        <a class="info-card link-button" id="dart" href="https://dart.dev/">
-            <h3>Dart 🎯</h3>
+        <a class="info-card link-button" id="html" href="https://en.wikipedia.org/wiki/HTML">
+            <h3>HTML 📄</h3>
         </a>
-        <a class="info-card link-button" id="flutter" href="https://flutter.dev/">
-            <h3>Flutter 🦋</h3>
+        <a class="info-card link-button" id="css" href="https://en.wikipedia.org/wiki/CSS">
+            <h3>CSS 📑</h3>
         </a>
         <a class="info-card link-button" id="sass" href="https://sass-lang.com/">
             <h3>Sass 💄</h3>
