@@ -23,8 +23,8 @@
 
     #logo {
         margin: auto;
-        width: 300px;
-        height: 300px;
+        width: 20rem;
+        height: 20rem;
     }
 
     #logo path {
