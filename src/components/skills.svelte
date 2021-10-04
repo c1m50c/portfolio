@@ -5,6 +5,7 @@
 
 <style>
     h3 {
+        font-size: 1.25rem;
         text-align: center;
     }
 

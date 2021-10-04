@@ -66,16 +66,6 @@
     .navbar-link:hover {
         cursor: pointer;
     }
-
-    .navbar-link:first-child {
-        border-top-left-radius: var(--border-radius);
-        border-bottom-left-radius: var(--border-radius);
-    }
-
-    .navbar-link:last-child {
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
 </style>
 
 

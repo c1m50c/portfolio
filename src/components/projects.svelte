@@ -13,6 +13,7 @@
     .project-card {
         display: grid;
         background-color: rgb(45, 45, 45);
+        outline: var(--bright-text-color) solid 0.125rem;
         padding: 1rem;
         gap: 1rem;
         text-align: center;
@@ -38,7 +39,7 @@
 
 
 <div class="info-container" id="projects">
-    <h2>Projects</h2>
+    <h2>Public Projects</h2>
     <div class="card-container">
         <div class="project-card" id="personal-color-theme">
             <div class="text-container">
