@@ -69,6 +69,9 @@
         <a class="info-card link-button" id="lua" href="https://www.lua.org/">
             <h3>Lua 🌌</h3>
         </a>
+        <a class="info-card link-button" id="google" href="https://google.com">
+            <h3>Google 🔍</h3>
+        </a>
         <a class="info-card link-button" id="godot" href="https://godotengine.org/">
             <h3>Godot 🤖</h3>
         </a>

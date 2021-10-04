@@ -82,6 +82,5 @@
     <About/>
     <Skills/>
     <Projects/>
-    <Resume/>
     <Contact/>
 </main>
