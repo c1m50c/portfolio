@@ -115,6 +115,9 @@
             <a class="link-button info-card" id="git" href="https://git-scm.com/">
                 <h3>Git 💻</h3>
             </a>
+            <a class="link-button info-card" id="npm" href="https://www.npmjs.com/">
+                <h3>NPM 📦</h3>
+            </a>
         </div>
     </div>
 </div>
