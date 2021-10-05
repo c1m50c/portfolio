@@ -9,7 +9,7 @@
 
 
 <div class="info-container" id="about">
-    <h2>About Me</h2>
+    <h1>About Me</h1>
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iste temporibus inventore, vitae omnis cumque quasi libero perferendis voluptatibus? Assumenda, vero possimus! Animi natus deserunt hic odio facilis commodi sapiente.
         Atque labore ipsam eveniet asperiores necessitatibus, dignissimos dolor rerum sunt aut? Et, ipsa. Natus placeat libero eos nisi ullam repellendus magnam, enim possimus deserunt atque, inventore voluptatem sint maiores distinctio.

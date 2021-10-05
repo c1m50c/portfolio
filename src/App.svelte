@@ -31,13 +31,12 @@
 
     :global(.link-button) {
         display: flexbox;
-        padding: 2px;
+        padding: 0.25rem;
         position: relative;
         justify-content: center;
         text-align: center;
         align-content: center;
         text-decoration: none;
-        border-radius: var(--border-radius);
         background-color: var(--button-foreground-color);
         color: var(--base-text-color);
         transition: all var(--base-transition-settings);

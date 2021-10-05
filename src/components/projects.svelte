@@ -39,7 +39,7 @@
 
 
 <div class="info-container" id="projects">
-    <h2>Public Projects</h2>
+    <h1>Public Projects</h1>
     <div class="card-container">
         <div class="project-card" id="personal-color-theme">
             <div class="text-container">
