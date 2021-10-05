@@ -8,6 +8,7 @@
 
 
 <div class="info-container" id="about">
+    <!-- Todo: Write an actual about me -->
     <h1>About Me</h1>
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iste temporibus inventore, vitae omnis cumque quasi libero perferendis voluptatibus? Assumenda, vero possimus! Animi natus deserunt hic odio facilis commodi sapiente.

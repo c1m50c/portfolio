@@ -92,6 +92,9 @@
             <a class="link-button info-card" id="svelte" href="https://svelte.dev/">
                 <h3>Svelte 📙</h3>
             </a>
+            <a class="link-button info-card" id="tailwind" href="https://tailwindcss.com/">
+                <h3>Tailwind 🍃</h3>
+            </a>
             <a class="link-button info-card" id="sass" href="https://sass-lang.com/">
                 <h3>Sass 💄</h3>
             </a>
