@@ -26,6 +26,18 @@
         color: var(--base-text-color);
         text-decoration: none;
     }
+
+    .favorite { position: relative; }
+
+    .favorite::before {
+        content: "💖";
+        position: absolute;
+        width: 100%;
+        font-size: 1.5rem;
+        bottom: 5%;
+        left: 43%;
+        text-shadow: black 0.1rem 0.1rem 0.1rem;
+    }
 </style>
 
 
@@ -35,7 +47,7 @@
         <h2>Languages 💬</h2>
         <div class="info-card-container">
             <!-- Todo: Arrange based on skill-level (comfortable-ness / experience) -->
-            <a class="link-button info-card" id="python" href="https://www.python.org/">
+            <a class="link-button info-card favorite" id="python" href="https://www.python.org/">
                 <h3>Python 🐍</h3>
             </a>
             <a class="link-button info-card" id="rust" href="https://www.rust-lang.org/">
