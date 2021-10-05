@@ -28,7 +28,6 @@
     }
 
     .favorite { position: relative; }
-
     .favorite::before {
         content: "💖";
         position: absolute;
@@ -43,10 +42,10 @@
 
 <div class="info-container" id="skills">
     <h1>Skills</h1>
+    <!-- Todo: Arrange based on skill-level (comfortable-ness / experience) -->
     <div class="languages-container">
         <h2>Languages 💬</h2>
         <div class="info-card-container">
-            <!-- Todo: Arrange based on skill-level (comfortable-ness / experience) -->
             <a class="link-button info-card favorite" id="python" href="https://www.python.org/">
                 <h3>Python 🐍</h3>
             </a>
@@ -99,8 +98,8 @@
             </a>
         </div>
     </div>
-    <div class="misc-skills-container">
-        <h2>Miscellaneous Skills ❓</h2>
+    <div class="misc-tech-container">
+        <h2>Miscellaneous Technologies ❓</h2>
         <div class="info-card-container">
             <a class="link-button info-card" id="google" href="https://google.com">
                 <h3>Google 🔍</h3>

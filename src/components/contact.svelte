@@ -19,9 +19,10 @@
 
     .logo {
         fill: var(--button-foreground-color);
-        transition: all var(--base-transition-settings);
         width: 5rem;
         height: 5rem;
+        transition: all var(--base-transition-settings);
+
     }
 
     .logo:hover, .logo:focus { fill: var(--hover-foreground-color); }
