@@ -52,9 +52,6 @@
             <a class="link-button info-card" id="rust" href="https://www.rust-lang.org/">
                 <h3>Rust 🦀</h3>
             </a>
-            <a class="link-button info-card" id="dart" href="https://dart.dev/">
-                <h3>Dart 🎯</h3>
-            </a>
             <a class="link-button info-card" id="java_script" href="https://www.javascript.com/">
                 <h3>JavaScript ☕</h3>
             </a>
@@ -67,8 +64,14 @@
             <a class="link-button info-card" id="css" href="https://en.wikipedia.org/wiki/CSS">
                 <h3>CSS 📑</h3>
             </a>
+            <a class="link-button info-card" id="sql" href="https://en.wikipedia.org/wiki/SQL">
+                <h3>SQL 📂</h3>
+            </a>
             <a class="link-button info-card" id="lua" href="https://www.lua.org/">
                 <h3>Lua 🌌</h3>
+            </a>
+            <a class="link-button info-card" id="dart" href="https://dart.dev/">
+                <h3>Dart 🎯</h3>
             </a>
         </div>
     </div>
@@ -103,6 +106,9 @@
         <div class="info-card-container">
             <a class="link-button info-card" id="google" href="https://google.com">
                 <h3>Google 🔍</h3>
+            </a>
+            <a class="link-button info-card" id="git" href="https://git-scm.com/">
+                <h3>Git 💻</h3>
             </a>
         </div>
     </div>
