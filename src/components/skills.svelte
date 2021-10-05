@@ -1,5 +1,4 @@
 <script lang="ts">
-
 </script>
 
 
@@ -51,6 +50,9 @@
             </a>
             <a class="link-button info-card" id="rust" href="https://www.rust-lang.org/">
                 <h3>Rust 🦀</h3>
+            </a>
+            <a class="link-button info-card" id="go" href="https://golang.org/">
+                <h3>Go 💨</h3>
             </a>
             <a class="link-button info-card" id="java_script" href="https://www.javascript.com/">
                 <h3>JavaScript ☕</h3>

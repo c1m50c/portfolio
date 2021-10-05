@@ -1,5 +1,7 @@
 <script lang="ts">
-    let email: string = "pereiswell@gmail.com"
+    /** Business Email */
+    let email: string = "pereiswell@gmail.com";
+    /** Copys a string into the user's clipboard. */
     function copy_to_clipboard(str: string) {
         navigator.clipboard.writeText(str);
     }
