@@ -25,17 +25,6 @@
         color: var(--base-text-color);
         text-decoration: none;
     }
-
-    .favorite { position: relative; }
-    .favorite::before {
-        content: "💖";
-        position: absolute;
-        width: 100%;
-        font-size: 1.5rem;
-        bottom: 5%;
-        left: 43%;
-        text-shadow: black 0.1rem 0.1rem 0.1rem;
-    }
 </style>
 
 
@@ -45,14 +34,11 @@
     <div class="languages-container">
         <h2>Languages 💬</h2>
         <div class="info-card-container">
-            <a class="link-button info-card favorite" id="python" href="https://www.python.org/">
+            <a class="link-button info-card" id="python" href="https://www.python.org/">
                 <h3>Python 🐍</h3>
             </a>
             <a class="link-button info-card" id="rust" href="https://www.rust-lang.org/">
                 <h3>Rust 🦀</h3>
-            </a>
-            <a class="link-button info-card" id="go" href="https://golang.org/">
-                <h3>Go 💨</h3>
             </a>
             <a class="link-button info-card" id="java_script" href="https://www.javascript.com/">
                 <h3>JavaScript ☕</h3>
@@ -88,6 +74,9 @@
             </a>
             <a class="link-button info-card" id="react" href="https://reactjs.org/">
                 <h3>React ⚡</h3>
+            </a>
+            <a class="link-button info-card" id="vue" href="https://vuejs.org/">
+                <h3>Vue 🌴</h3>
             </a>
             <a class="link-button info-card" id="svelte" href="https://svelte.dev/">
                 <h3>Svelte 📙</h3>

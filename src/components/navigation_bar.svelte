@@ -18,14 +18,15 @@
     }
 
     .navigation-bar {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+        display: flex;
         margin: auto;
         width: 95%;
+        box-shadow: black 0.65rem 0.65rem 3rem;
         transition: opacity var(--base-transition-settings);
     }
 
     .navbar-link {
+        flex: 1;
         display: inline-block;
         font-size: 1.2rem;
         text-decoration: none;
