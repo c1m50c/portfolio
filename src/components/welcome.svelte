@@ -97,6 +97,6 @@
     </svg>
     <div id="h2-container">
         <h2 id="hey">Hey, I'm Pere</h2>
-        <p id="hook">But I'm also known as Big Hunk 😳👉👈</p>
+        <p id="hook">And I do software development 👌</p>
     </div>
 </div>
