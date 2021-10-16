@@ -24,7 +24,39 @@
         /* Todo: Shouldn't have to do this? */
         color: var(--base-text-color);
         text-decoration: none;
+        background-size: 175% 175%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
     }
+
+    /* Languages ~ Backgrounds */
+    #python { background-image: url("/logos/languages/python.svg/"); }
+    #rust { background-image: url("/logos/languages/rust.svg/"); }
+    #java_script { background-image: url("/logos/languages/java_script.svg/"); }
+    #type_script { background-image: url("/logos/languages/type_script.svg/"); }
+    #html { background-image: url("/logos/languages/html.svg/"); }
+    #css { background-image: url("/logos/languages/css.svg/"); }
+    #sql { background-image: url("/logos/languages/sql.svg/"); }
+    #lua { background-image: url("/logos/languages/lua.svg/"); }
+    #c_sharp { background-image: url("/logos/languages/c_sharp.svg/"); }
+    #dart { background-image: url("/logos/languages/dart.svg/"); }
+
+    /* Libs & Frameworks ~ Backgrounds */
+    #flask { background-image: url("/logos/languages/python.svg/"); }
+    #sqlite { background-image: url("/logos/languages/sql.svg/"); }
+    #react { background-image: url("/logos/languages/java_script.svg/"); }
+    #vue { background-image: url("/logos/languages/java_script.svg/"); }
+    #svelte { background-image: url("/logos/languages/java_script.svg/"); }
+    #tailwind { background-image: url("/logos/languages/css.svg/"); }
+    #sass { background-image: url("/logos/languages/css.svg/"); }
+    #flutter { background-image: url("/logos/languages/dart.svg/"); }
+    #godot { background-image: url("/logos/godot.svg/"); }
+
+    /* Misc Tech ~ Backgrounds */
+    #google { background-image: url("/logos/google.svg/"); }
+    #git { background-image: url("/logos/git.svg/"); }
+    #npm { background-image: url("/logos/languages/java_script.svg/"); }
 </style>
 
 
@@ -57,6 +89,9 @@
             </a>
             <a class="link-button info-card" id="lua" href="https://www.lua.org/">
                 <h3>Lua 🌌</h3>
+            </a>
+            <a class="link-button info-card" id="c_sharp" href="https://docs.microsoft.com/en-us/dotnet/csharp/">
+                <h3>C# 🌳</h3>
             </a>
             <a class="link-button info-card" id="dart" href="https://dart.dev/">
                 <h3>Dart 🎯</h3>
