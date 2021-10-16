@@ -28,7 +28,10 @@
         background-position: center;
         background-repeat: no-repeat;
         background-blend-mode: multiply;
+        transition: background-size var(--base-transition-settings);
     }
+
+    .info-card:hover { background-size: 125% 125%; }
 
     /* Languages ~ Backgrounds */
     #python { background-image: url("/logos/languages/python.svg/"); }
