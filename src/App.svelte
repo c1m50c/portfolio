@@ -15,9 +15,9 @@
         --button-text-color: var(--base-text-color);
         --info-container-bg-color: rgb(30, 30, 30);
         --border-radius: 1rem;
-        --button-foreground-color: rgb(53, 206, 135);
+        --button-foreground-color: rgb(28, 194, 117);
         --button-background-color: rgb(33, 126, 83);
-        --hover-foreground-color: rgb(94, 237, 170);
+        --hover-foreground-color: rgb(83, 206, 149);
         --hover-background-color: rgb(67, 135, 103);
         --base-transition-settings: 500ms ease
     }

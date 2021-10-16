@@ -29,7 +29,6 @@
         background-repeat: no-repeat;
         background-blend-mode: multiply;
         box-shadow: 0rem 0.5rem 0.5rem #101010;
-        transition: background-size var(--base-transition-settings);
     }
 
     .info-card:hover, .info-card:focus { background-size: 125% 125%; }
