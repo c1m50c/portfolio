@@ -18,7 +18,7 @@
         display: grid;
         gap: 1.5rem;
         justify-content: center;
-        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
     }
 
     .info-card {
@@ -28,6 +28,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-blend-mode: multiply;
+        box-shadow: 0rem 0.5rem 0.5rem #101010;
         transition: background-size var(--base-transition-settings);
     }
 
