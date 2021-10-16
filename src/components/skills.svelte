@@ -42,10 +42,11 @@
     #css { background-image: url("/logos/languages/css.svg/"); }
     #sql { background-image: url("/logos/languages/sql.svg/"); }
     #lua { background-image: url("/logos/languages/lua.svg/"); }
+    #gdscript { background-image: url("/logos/godot.svg/"); }
     #c_sharp { background-image: url("/logos/languages/c_sharp.svg/"); }
     #dart { background-image: url("/logos/languages/dart.svg/"); }
 
-    /* Libs & Frameworks ~ Backgrounds */
+    /* Libs, Engines & Frameworks ~ Backgrounds */
     #flask { background-image: url("/logos/languages/python.svg/"); }
     #sqlite { background-image: url("/logos/languages/sql.svg/"); }
     #react { background-image: url("/logos/languages/java_script.svg/"); }
@@ -93,6 +94,9 @@
             <a class="link-button info-card" id="lua" href="https://www.lua.org/">
                 <h3>Lua 🌌</h3>
             </a>
+            <a class="link-button info-card" id="gdscript" href="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html">
+                <h3>GDScript 🎮</h3>
+            </a>
             <a class="link-button info-card" id="c_sharp" href="https://docs.microsoft.com/en-us/dotnet/csharp/">
                 <h3>C# 🌳</h3>
             </a>
@@ -101,8 +105,8 @@
             </a>
         </div>
     </div>
-    <div class="libraies-and-frameworks-container">
-        <h2>Libraries & Frameworks 📚</h2>
+    <div class="libraies-engines-and-frameworks-container">
+        <h2>Libraries, Engines & Frameworks 📚</h2>
         <div class="info-card-container">
             <a class="link-button info-card" id="flask" href="https://github.com/pallets/flask/">
                 <h3>Flask 🧪</h3>
