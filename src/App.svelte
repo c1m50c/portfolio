@@ -17,9 +17,9 @@
         --border-radius: 1rem;
         --button-foreground-color: rgb(28, 194, 117);
         --button-background-color: rgb(33, 126, 83);
-        --hover-foreground-color: rgb(83, 206, 149);
+        --hover-foreground-color: rgb(102, 226, 168);
         --hover-background-color: rgb(67, 135, 103);
-        --base-transition-settings: 500ms ease
+        --base-transition-settings: 600ms ease;
     }
 
     :global(.info-container) {

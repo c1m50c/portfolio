@@ -54,18 +54,14 @@
         transition: transform var(--base-transition-settings);
     }
 
-    .navbar-link:hover::after, .navbar-link:focus::after {
-        transform: scaleX(1);
-    }
+    .navbar-link:hover::after, .navbar-link:focus::after { transform: scaleX(1); }
 
     .navbar-link:hover, .navbar-link:focus {
         background-color: var(--hover-foreground-color);
         box-shadow: var(--link-box-shadow-size) var(--hover-background-color);
     }
 
-    .navbar-link:hover {
-        cursor: pointer;
-    }
+    .navbar-link:hover { cursor: pointer; }
 </style>
 
 

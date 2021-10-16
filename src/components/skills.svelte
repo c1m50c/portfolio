@@ -24,14 +24,14 @@
     .info-card {
         color: var(--base-text-color);
         text-decoration: none;
-        background-size: 175% 175%;
+        background-size: 190% 190%;
         background-position: center;
         background-repeat: no-repeat;
         background-blend-mode: multiply;
         box-shadow: 0rem 0.5rem 0.5rem #101010;
     }
 
-    .info-card:hover, .info-card:focus { background-size: 125% 125%; }
+    .info-card:hover, .info-card:focus { background-size: 115% 115%; }
 
     /* Languages ~ Backgrounds */
     #python { background-image: url("/logos/languages/python.svg/"); }
