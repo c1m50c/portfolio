@@ -54,8 +54,10 @@
         opacity: 0;
     }
 
-    #email:hover, #email:focus { color: var(--hover-foreground-color); }
-    #email:hover { cursor: pointer; }
+    #email:hover {
+        cursor: pointer;
+        color: var(--hover-foreground-color);
+    }
 </style>
 
 

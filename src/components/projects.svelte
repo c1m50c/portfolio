@@ -45,7 +45,7 @@
         transition: fill var(--base-transition-settings);
     }
 
-    .logo:hover, .logo:focus { fill: var(--hover-foreground-color); }
+    .logo:hover { fill: var(--hover-foreground-color); }
 
     #portfolio-image { background-image: url("/projects/portfolio.png/"); }
     #rust-algorithms-image { background-image: url("/projects/rust-algorithms.png/"); }

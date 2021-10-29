@@ -54,16 +54,13 @@
         transition: transform var(--base-transition-settings);
     }
 
-    :global(.link-button:hover::after, .link-button:focus::after) {
+    :global(.link-button:hover::after) {
         transform: scaleX(1);
-    }
-
-    :global(.link-button:hover, .link-button:focus) {
-        background-color: var(--hover-foreground-color);
     }
 
     :global(.link-button:hover) {
         cursor: pointer;
+        background-color: var(--hover-foreground-color);
     }
 
     main {
