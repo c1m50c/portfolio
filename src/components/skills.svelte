@@ -31,7 +31,7 @@
         box-shadow: 0rem 0.5rem 0.5rem #101010;
     }
 
-    .info-card:hover, .info-card:focus { background-size: 115% 115%; }
+    .info-card:hover { background-size: 115% 115%; }
 
     /* Languages ~ Backgrounds */
     #python { background-image: url("/logos/languages/python.svg/"); }
@@ -44,9 +44,10 @@
     #lua { background-image: url("/logos/languages/lua.svg/"); }
     #gdscript { background-image: url("/logos/godot.svg/"); }
     #c_sharp { background-image: url("/logos/languages/c_sharp.svg/"); }
-    #dart { background-image: url("/logos/languages/dart.svg/"); }
 
     /* Libs, Engines & Frameworks ~ Backgrounds */
+    #matplotlib { background-image: url("/logos/languages/python.svg/"); }
+    #numpy { background-image: url("/logos/languages/python.svg/"); }
     #flask { background-image: url("/logos/languages/python.svg/"); }
     #sqlite { background-image: url("/logos/languages/sql.svg/"); }
     #react { background-image: url("/logos/languages/java_script.svg/"); }
@@ -54,7 +55,6 @@
     #svelte { background-image: url("/logos/languages/java_script.svg/"); }
     #tailwind { background-image: url("/logos/languages/css.svg/"); }
     #sass { background-image: url("/logos/languages/css.svg/"); }
-    #flutter { background-image: url("/logos/languages/dart.svg/"); }
     #godot { background-image: url("/logos/godot.svg/"); }
 
     /* Misc Tech ~ Backgrounds */
@@ -100,14 +100,17 @@
             <a class="link-button info-card" id="c_sharp" href="https://docs.microsoft.com/en-us/dotnet/csharp/">
                 <h3>C# 🌳</h3>
             </a>
-            <a class="link-button info-card" id="dart" href="https://dart.dev/">
-                <h3>Dart 🎯</h3>
-            </a>
         </div>
     </div>
     <div class="libraies-engines-and-frameworks-container">
         <h2>Libraries, Engines & Frameworks 📚</h2>
         <div class="info-card-container">
+            <a class="link-button info-card" id="matplotlib" href="https://matplotlib.org/">
+                <h3>Matplotlib 📈</h3>
+            </a>
+            <a class="link-button info-card" id="numpy" href="https://numpy.org/">
+                <h3>NumPy 🧮</h3>
+            </a>
             <a class="link-button info-card" id="flask" href="https://github.com/pallets/flask/">
                 <h3>Flask 🧪</h3>
             </a>
@@ -128,9 +131,6 @@
             </a>
             <a class="link-button info-card" id="sass" href="https://sass-lang.com/">
                 <h3>Sass 💄</h3>
-            </a>
-            <a class="link-button info-card" id="flutter" href="https://flutter.dev/">
-                <h3>Flutter 🦋</h3>
             </a>
             <a class="link-button info-card" id="godot" href="https://godotengine.org/">
                 <h3>Godot 🤖</h3>
