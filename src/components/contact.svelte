@@ -27,8 +27,10 @@
 
     }
 
-    .logo:hover, .logo:focus { fill: var(--hover-foreground-color); }
-    .logo:hover { cursor: pointer; }
+    .logo:hover {
+        cursor: pointer;
+        fill: var(--hover-foreground-color);
+    }
 
     #email {
         background: transparent;
