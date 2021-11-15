@@ -41,13 +41,17 @@
     #html { background-image: url("/logos/languages/html.svg/"); }
     #css { background-image: url("/logos/languages/css.svg/"); }
     #sql { background-image: url("/logos/languages/sql.svg/"); }
+    #c { background-image: url("/logos/languages/c.svg/"); }
+    #cpp { background-image: url("/logos/languages/cpp.svg/"); }
+    #c_sharp { background-image: url("/logos/languages/c_sharp.svg/"); }
     #lua { background-image: url("/logos/languages/lua.svg/"); }
     #gdscript { background-image: url("/logos/godot.svg/"); }
-    #c_sharp { background-image: url("/logos/languages/c_sharp.svg/"); }
 
     /* Libs, Engines & Frameworks ~ Backgrounds */
     #matplotlib { background-image: url("/logos/languages/python.svg/"); }
     #numpy { background-image: url("/logos/languages/python.svg/"); }
+    #opencv { background-image: url("/logos/languages/python.svg/"); }
+    #mediapipe { background-image: url("/logos/languages/python.svg/"); }
     #flask { background-image: url("/logos/languages/python.svg/"); }
     #sqlite { background-image: url("/logos/languages/sql.svg/"); }
     #react { background-image: url("/logos/languages/java_script.svg/"); }
@@ -91,14 +95,20 @@
             <a class="link-button info-card" id="sql" href="https://en.wikipedia.org/wiki/SQL">
                 <h3>SQL 📂</h3>
             </a>
+            <a class="link-button info-card" id="c" href="https://en.wikipedia.org/wiki/C_(programming_language)">
+                <h3>C 🔧</h3>
+            </a>
+            <a class="link-button info-card" id="cpp" href="https://en.wikipedia.org/wiki/C%2B%2B">
+                <h3>C++ 🔨</h3>
+            </a>
+            <a class="link-button info-card" id="c_sharp" href="https://docs.microsoft.com/en-us/dotnet/csharp/">
+                <h3>C# 🌳</h3>
+            </a>
             <a class="link-button info-card" id="lua" href="https://www.lua.org/">
                 <h3>Lua 🌌</h3>
             </a>
             <a class="link-button info-card" id="gdscript" href="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html">
                 <h3>GDScript 🎮</h3>
-            </a>
-            <a class="link-button info-card" id="c_sharp" href="https://docs.microsoft.com/en-us/dotnet/csharp/">
-                <h3>C# 🌳</h3>
             </a>
         </div>
     </div>
@@ -110,6 +120,12 @@
             </a>
             <a class="link-button info-card" id="numpy" href="https://numpy.org/">
                 <h3>NumPy 🧮</h3>
+            </a>
+            <a class="link-button info-card" id="opencv" href="https://opencv.org/">
+                <h3>OpenCV 📷</h3>
+            </a>
+            <a class="link-button info-card" id="mediapipe" href="https://google.github.io/mediapipe/">
+                <h3>Mediapipe 🔬</h3>
             </a>
             <a class="link-button info-card" id="flask" href="https://github.com/pallets/flask/">
                 <h3>Flask 🧪</h3>
