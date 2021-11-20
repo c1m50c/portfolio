@@ -47,11 +47,11 @@
 
     .logo:hover { fill: var(--hover-foreground-color); }
 
-    #portfolio-image { background-image: url("./../projects/portfolio.png/"); }
-    #cellular-automata-image { background-image: url("./../projects/cellular-automata.gif/"); }
-    #sorting-algorithm-visualizer-image { background-image: url("./../projects/sorting-algorithm-visualizer.gif/"); }
-    #rust-algorithms-image { background-image: url("./../projects/rust-algorithms.png/"); }
-    #rust-data-structures-image { background-image: url("./../projects/rust-data-structures.png/"); }
+    #portfolio-image { background-image: url("./../projects/portfolio.png"); }
+    #cellular-automata-image { background-image: url("./../projects/cellular-automata.gif"); }
+    #sorting-algorithm-visualizer-image { background-image: url("./../projects/sorting-algorithm-visualizer.gif"); }
+    #rust-algorithms-image { background-image: url("./../projects/rust-algorithms.png"); }
+    #rust-data-structures-image { background-image: url("./../projects/rust-data-structures.png"); }
 </style>
 
 
