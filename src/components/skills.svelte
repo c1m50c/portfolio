@@ -1,14 +1,9 @@
 <script lang="ts">
+    import SkillButton from "./skill_button.svelte";
 </script>
 
 
 <style>
-    h3 {
-        font-size: 1.75rem;
-        font-weight: 700;
-        text-align: center;
-    }
-
     .info-container {
         display: grid;
         gap: 1rem;
@@ -20,52 +15,6 @@
         justify-content: center;
         grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
     }
-
-    .info-card {
-        color: var(--base-text-color);
-        text-decoration: none;
-        background-size: 190% 190%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-blend-mode: multiply;
-        box-shadow: 0rem 0.5rem 0.5rem #101010;
-    }
-
-    .info-card:hover { background-size: 115% 115%; }
-
-    /* Languages ~ Backgrounds */
-    #python { background-image: url("./../logos/languages/python.svg"); }
-    #rust { background-image: url("./../logos/languages/rust.svg"); }
-    #java_script { background-image: url("./../logos/languages/java_script.svg"); }
-    #type_script { background-image: url("./../logos/languages/type_script.svg"); }
-    #html { background-image: url("./../logos/languages/html.svg"); }
-    #css { background-image: url("./../logos/languages/css.svg"); }
-    #sql { background-image: url("./../logos/languages/sql.svg"); }
-    #c { background-image: url("./../logos/languages/c.svg"); }
-    #cpp { background-image: url("./../logos/languages/cpp.svg"); }
-    #c_sharp { background-image: url("./../logos/languages/c_sharp.svg"); }
-    #lua { background-image: url("./../logos/languages/lua.svg"); }
-    #gdscript { background-image: url("./../logos/godot.svg"); }
-
-    /* Libs, Engines & Frameworks ~ Backgrounds */
-    #matplotlib { background-image: url("./../logos/languages/python.svg"); }
-    #pandas { background-image: url("./../logos/languages/python.svg"); }
-    #numpy { background-image: url("./../logos/languages/python.svg"); }
-    #opencv { background-image: url("./../logos/languages/python.svg"); }
-    #mediapipe { background-image: url("./../logos/languages/python.svg"); }
-    #flask { background-image: url("./../logos/languages/python.svg"); }
-    #sqlite { background-image: url("./../logos/languages/sql.svg"); }
-    #react { background-image: url("./../logos/languages/java_script.svg"); }
-    #vue { background-image: url("./../logos/languages/java_script.svg"); }
-    #svelte { background-image: url("./../logos/languages/java_script.svg"); }
-    #tailwind { background-image: url("./../logos/languages/css.svg"); }
-    #sass { background-image: url("./../logos/languages/css.svg"); }
-    #godot { background-image: url("./../logos/godot.svg"); }
-
-    /* Misc Tech ~ Backgrounds */
-    #google { background-image: url("./../logos/google.svg"); }
-    #git { background-image: url("./../logos/git.svg"); }
-    #npm { background-image: url("./../logos/languages/java_script.svg"); }
 </style>
 
 
@@ -75,100 +24,44 @@
     <div class="languages-container">
         <h2 class="section-title">Languages 💬</h2>
         <div class="info-card-container">
-            <a class="link-button info-card" id="python" href="https://www.python.org/">
-                <h3>Python 🐍</h3>
-            </a>
-            <a class="link-button info-card" id="rust" href="https://www.rust-lang.org/">
-                <h3>Rust 🦀</h3>
-            </a>
-            <a class="link-button info-card" id="java_script" href="https://www.javascript.com/">
-                <h3>JavaScript ☕</h3>
-            </a>
-            <a class="link-button info-card" id="type_script" href="https://www.typescriptlang.org/">
-                <h3>TypeScript 📰</h3>
-            </a>
-            <a class="link-button info-card" id="html" href="https://en.wikipedia.org/wiki/HTML">
-                <h3>HTML 📄</h3>
-            </a>
-            <a class="link-button info-card" id="css" href="https://en.wikipedia.org/wiki/CSS">
-                <h3>CSS 📑</h3>
-            </a>
-            <a class="link-button info-card" id="sql" href="https://en.wikipedia.org/wiki/SQL">
-                <h3>SQL 📂</h3>
-            </a>
-            <a class="link-button info-card" id="c" href="https://en.wikipedia.org/wiki/C_(programming_language)">
-                <h3>C 🔧</h3>
-            </a>
-            <a class="link-button info-card" id="cpp" href="https://en.wikipedia.org/wiki/C%2B%2B">
-                <h3>C++ 🔨</h3>
-            </a>
-            <a class="link-button info-card" id="c_sharp" href="https://docs.microsoft.com/en-us/dotnet/csharp/">
-                <h3>C# 🌳</h3>
-            </a>
-            <a class="link-button info-card" id="lua" href="https://www.lua.org/">
-                <h3>Lua 🌌</h3>
-            </a>
-            <a class="link-button info-card" id="gdscript" href="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html">
-                <h3>GDScript 🎮</h3>
-            </a>
+            <SkillButton background="python" name="Python 🐍" link="https://www.python.org/" />
+            <SkillButton background="rust" name="Rust 🦀" link="https://www.rust-lang.org/" />
+            <SkillButton background="java-script" name="JavaScript ☕" link="https://www.javascript.com/" />
+            <SkillButton background="type-script" name="TypeScript 📰" link="https://www.typescriptlang.org/" />
+            <SkillButton background="html" name="HTML 📄" link="https://en.wikipedia.org/wiki/HTML" />
+            <SkillButton background="css" name="CSS 📑" link="https://en.wikipedia.org/wiki/CSS" />
+            <SkillButton background="sql" name="SQL 📂" link="https://en.wikipedia.org/wiki/SQL" />
+            <SkillButton background="c" name="C 🔧" link="https://en.wikipedia.org/wiki/C_(programming_background)" />
+            <SkillButton background="cpp" name="C++ 🔨" link="https://en.wikipedia.org/wiki/C%2B%2B" />
+            <SkillButton background="c-sharp" name="C# 🌳" link="https://docs.microsoft.com/en-us/dotnet/csharp/" />
+            <SkillButton background="lua" name="Lua 🌌" link="https://www.lua.org/" />
+            <SkillButton background="gdscript" name="GDScript 🎮" link="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html" />
         </div>
     </div>
     <div class="libraies-engines-and-frameworks-container">
         <h2 class="section-title">Libraries, Engines & Frameworks 📚</h2>
         <div class="info-card-container">
-            <a class="link-button info-card" id="matplotlib" href="https://matplotlib.org/">
-                <h3>Matplotlib 📈</h3>
-            </a>
-            <a class="link-button info-card" id="pandas" href="https://pandas.pydata.org/">
-                <h3>Pandas 🐼</h3>
-            </a>
-            <a class="link-button info-card" id="numpy" href="https://numpy.org/">
-                <h3>NumPy 🧮</h3>
-            </a>
-            <a class="link-button info-card" id="opencv" href="https://opencv.org/">
-                <h3>OpenCV 📷</h3>
-            </a>
-            <a class="link-button info-card" id="mediapipe" href="https://google.github.io/mediapipe/">
-                <h3>Mediapipe 🔬</h3>
-            </a>
-            <a class="link-button info-card" id="flask" href="https://github.com/pallets/flask/">
-                <h3>Flask 🧪</h3>
-            </a>
-            <a class="link-button info-card" id="sqlite" href="https://sqlite.org/index.html">
-                <h3>SQLite 💾</h3>
-            </a>
-            <a class="link-button info-card" id="react" href="https://reactjs.org/">
-                <h3>React ⚡</h3>
-            </a>
-            <a class="link-button info-card" id="vue" href="https://vuejs.org/">
-                <h3>Vue 🌴</h3>
-            </a>
-            <a class="link-button info-card" id="svelte" href="https://svelte.dev/">
-                <h3>Svelte 📙</h3>
-            </a>
-            <a class="link-button info-card" id="tailwind" href="https://tailwindcss.com/">
-                <h3>Tailwind 🍃</h3>
-            </a>
-            <a class="link-button info-card" id="sass" href="https://sass-lang.com/">
-                <h3>Sass 💄</h3>
-            </a>
-            <a class="link-button info-card" id="godot" href="https://godotengine.org/">
-                <h3>Godot 🤖</h3>
-            </a>
+            <SkillButton background="python" name="Matplotlib 📊" link="https://matplotlib.org" />
+            <SkillButton background="python" name="Pandas 🐼" link="https://pandas.pydata.org/" />
+            <SkillButton background="python" name="NumPy 🧮" link="https://numpy.org/" />
+            <SkillButton background="python" name="OpenCV 📸" link="https://opencv.org/" />
+            <SkillButton background="python" name="mediapipe 🔬" link="https://google.github.io/mediapipe/" />
+            <SkillButton background="python" name="flask 🧪" link="https://github.com/pallets/flask/" />
+            <SkillButton background="sql" name="SQLite 💾" link="https://sqlite.org/index.html" />
+            <SkillButton background="java-script" name="React ⚡" link="https://reactjs.org/" />
+            <SkillButton background="java-script" name="Vue 🌴" link="https://vuejs.org/" />
+            <SkillButton background="java-script" name="Svelte 📙" link="https://svelte.dev/" />
+            <SkillButton background="css" name="Tailwind 🍃" link="https://tailwindcss.com/" />
+            <SkillButton background="css" name="SASS 💄" link="https://sass-lang.com/" />
+            <SkillButton background="gdscript" name="Godot 🤖" link="https://godotengine.org/" />
         </div>
     </div>
     <div class="misc-tech-container">
         <h2 class="section-title">Miscellaneous Technologies ❓</h2>
         <div class="info-card-container">
-            <a class="link-button info-card" id="google" href="https://google.com">
-                <h3>Google 🔍</h3>
-            </a>
-            <a class="link-button info-card" id="git" href="https://git-scm.com/">
-                <h3>Git 💻</h3>
-            </a>
-            <a class="link-button info-card" id="npm" href="https://www.npmjs.com/">
-                <h3>NPM 📦</h3>
-            </a>
+            <SkillButton background="google" name="Google 🔍" link="https://google.com" />
+            <SkillButton background="git" name="Git 💻" link="https://git-scm.com/" />
+            <SkillButton background="java-script" name="NPM 📦" link="https://www.npmjs.com/" />
         </div>
     </div>
 </div>
