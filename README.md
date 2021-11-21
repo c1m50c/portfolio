@@ -9,7 +9,7 @@ $ cd portfolio
 $ npm run dev
 ```
 ---
-If you would like to commit your changes and uploaded them to the Github Pages site you can run the following commands.
+If you would like to commit your changes and upload them to the Github Pages site you can run the following commands.
 ```bash
 $ cd portfolio
 $ npm run build
