@@ -70,10 +70,10 @@
 
 
 <div class="info-container" id="skills">
-    <h1>Skills</h1>
+    <h1 class="section-title">Skills</h1>
     <!-- Todo: Arrange based on skill-level (comfortable-ness / experience) -->
     <div class="languages-container">
-        <h2>Languages 💬</h2>
+        <h2 class="section-title">Languages 💬</h2>
         <div class="info-card-container">
             <a class="link-button info-card" id="python" href="https://www.python.org/">
                 <h3>Python 🐍</h3>
@@ -114,7 +114,7 @@
         </div>
     </div>
     <div class="libraies-engines-and-frameworks-container">
-        <h2>Libraries, Engines & Frameworks 📚</h2>
+        <h2 class="section-title">Libraries, Engines & Frameworks 📚</h2>
         <div class="info-card-container">
             <a class="link-button info-card" id="matplotlib" href="https://matplotlib.org/">
                 <h3>Matplotlib 📈</h3>
@@ -158,7 +158,7 @@
         </div>
     </div>
     <div class="misc-tech-container">
-        <h2>Miscellaneous Technologies ❓</h2>
+        <h2 class="section-title">Miscellaneous Technologies ❓</h2>
         <div class="info-card-container">
             <a class="link-button info-card" id="google" href="https://google.com">
                 <h3>Google 🔍</h3>

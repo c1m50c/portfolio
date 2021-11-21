@@ -8,7 +8,7 @@
 
 
 <div class="info-container" id="about">
-    <h1>About Me</h1>
+    <h1 class="section-title">About Me</h1>
     <p>
         I'm a sixteen-year-old software developer based in Lincoln, Nebraska.
         I've been programming since the age of nine and since then it has been my primary passion throughout life.

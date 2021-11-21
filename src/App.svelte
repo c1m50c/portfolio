@@ -63,6 +63,10 @@
         background-color: var(--hover-foreground-color);
     }
 
+    :global(.section-title) {
+        text-align: center;
+    }
+
     main {
         display: grid;
         gap: 2rem;

@@ -4,7 +4,7 @@
 
 <style>
     :root {
-        --background-blur-amount: 6px;
+        --background-blur-amount: 3px;
     }
 
     .project-card-container {
@@ -13,9 +13,12 @@
     }
 
     .project-card {
+        min-height: 15rem;
         text-align: center;
         position: relative;
         z-index: 2;
+        display: grid;
+        align-content: center;
     }
     
     .bg-image {
@@ -56,7 +59,7 @@
 
 
 <div class="info-container" id="projects">
-    <h1>Projects</h1>
+    <h1 class="section-title">Projects</h1>
     <div class="project-card-container">
         <div class="project-card">
             <div class="bg-image" id="portfolio-image" />
