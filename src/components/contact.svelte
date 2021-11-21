@@ -1,6 +1,13 @@
 <script lang="ts">
-    /** Business Email */
-    let email: string = "pereiswell@gmail.com";
+    import GithubLogoLink from "./logo-links/github_link.svelte";
+    import HackerRankLogoLink from "./logo-links/hacker_rank_link.svelte";
+    import LinkedInLogoLink from "./logo-links/linked_in.svelte";
+    
+    const email: string = "pereiswell@gmail.com";
+    const github_profile: string = "https://github.com/c1m50c";
+    const hacker_rank_profile: string = "https://www.hackerrank.com/c1m50c";
+    const linked_in_profile: string = "https://www.linkedin.com/in/pere-wells";
+    
     /** Copys a string into the user's clipboard. */
     function copy_to_clipboard(str: string) {
         navigator.clipboard.writeText(str);
@@ -19,7 +26,7 @@
         justify-content: center;
     }
 
-    .logo {
+    .logo-link-container :global(.logo) {
         fill: var(--button-foreground-color);
         width: 5rem;
         height: 5rem;
@@ -27,10 +34,7 @@
 
     }
 
-    .logo:hover {
-        cursor: pointer;
-        fill: var(--hover-foreground-color);
-    }
+    .logo-link-container :global(.logo:hover) { fill: var(--hover-foreground-color); }
 
     #email {
         background: transparent;
@@ -44,18 +48,6 @@
         transition: all var(--base-transition-settings);
     }
 
-    #email::after {
-        /* Todo: Implement animation */
-        content: "Copied to Clipboard! 📋";
-        position: absolute;
-        font-size: 1rem;
-        width: 100%;
-        top: 80%;
-        left: 0%;
-        color: var(--bright-text-color);
-        opacity: 0;
-    }
-
     #email:hover {
         cursor: pointer;
         color: var(--hover-foreground-color);
@@ -65,21 +57,9 @@
 
 <div class="info-container" id="contact">
     <div class="logo-link-container">
-        <a href="https://github.com/c1m50c" id="github-profile-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="logo" id="github-logo">
-                <path d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.5,4.7,2.2,8.9,6.3,10.5C8.7,21.4,9,21.2,9,20.8v-1.6c0,0-0.4,0.1-0.9,0.1 c-1.4,0-2-1.2-2.1-1.9c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1 c0.4,0,0.7-0.1,0.9-0.2c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6c0-0.4,0-0.9,0.2-1.3 C7.2,6.1,7.4,6,7.5,6c0,0,0.1,0,0.1,0C8.1,6.1,9.1,6.4,10,7.3C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3c0.9-0.9,2-1.2,2.5-1.3 c0,0,0.1,0,0.1,0c0.2,0,0.3,0.1,0.4,0.3C17,6.7,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4c0.7,0.8,1.2,1.8,1.2,3c0,2.2-1.7,3.5-4,4 c0.6,0.5,1,1.4,1,2.3v2.6c0,0.3,0.3,0.6,0.7,0.5c3.7-1.5,6.3-5.1,6.3-9.3C22,6.1,16.9,1.4,10.9,2.1z" />
-            </svg>
-        </a>
-        <a href="https://www.hackerrank.com/c1m50c" id="hacker-rank-profile-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hacker-rank-logo logo">
-                <path d="M11.9985 2.25C10.6688 2.25 4.1514 5.98793 3.49365 7.12793C2.83515 8.26868 2.83515 15.7373 3.49365 16.8735C4.1544 18.0128 10.6718 21.75 11.9985 21.75C13.3215 21.75 19.8389 18.015 20.5019 16.8765C21.1672 15.735 21.1672 8.26054 20.5019 7.12354V7.12207C19.8337 5.98432 13.317 2.25 11.9985 2.25ZM11.9971 3.75879C13.2698 4.02354 18.3133 6.91257 19.1968 7.88232C19.6018 9.11307 19.601 14.8832 19.1968 16.1162C18.3193 17.0845 13.2713 19.9772 11.9971 20.2412C10.7236 19.9787 5.67929 17.0874 4.80029 16.1177C4.39904 14.8817 4.39904 9.11682 4.80029 7.88232C5.67704 6.91257 10.7228 4.02129 11.9971 3.75879ZM9.74999 6.75L8.24999 8.25H8.99999V15.75H10.5V12.75H13.5V15.75H12.75L14.25 17.25L15.75 15.75H15V9H13.5V11.25H10.5V8.25H11.25L9.74999 6.75Z" />
-            </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/pere-wells" id="linked-in-profile-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="linkedin-logo logo">
-                <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z" />
-            </svg>
-        </a>
+        <GithubLogoLink link={github_profile} />
+        <HackerRankLogoLink link={hacker_rank_profile} />
+        <LinkedInLogoLink link={linked_in_profile} />
     </div>
     <button id="email" on:click={() => {copy_to_clipboard(email)}}>{email}</button>
 </div>
