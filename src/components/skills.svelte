@@ -34,37 +34,37 @@
     .info-card:hover { background-size: 115% 115%; }
 
     /* Languages ~ Backgrounds */
-    #python { background-image: url("/logos/languages/python.svg/"); }
-    #rust { background-image: url("/logos/languages/rust.svg/"); }
-    #java_script { background-image: url("/logos/languages/java_script.svg/"); }
-    #type_script { background-image: url("/logos/languages/type_script.svg/"); }
-    #html { background-image: url("/logos/languages/html.svg/"); }
-    #css { background-image: url("/logos/languages/css.svg/"); }
-    #sql { background-image: url("/logos/languages/sql.svg/"); }
-    #c { background-image: url("/logos/languages/c.svg/"); }
-    #cpp { background-image: url("/logos/languages/cpp.svg/"); }
-    #c_sharp { background-image: url("/logos/languages/c_sharp.svg/"); }
-    #lua { background-image: url("/logos/languages/lua.svg/"); }
-    #gdscript { background-image: url("/logos/godot.svg/"); }
+    #python { background-image: url("./../logos/languages/python.svg"); }
+    #rust { background-image: url("./../logos/languages/rust.svg"); }
+    #java_script { background-image: url("./../logos/languages/java_script.svg"); }
+    #type_script { background-image: url("./../logos/languages/type_script.svg"); }
+    #html { background-image: url("./../logos/languages/html.svg"); }
+    #css { background-image: url("./../logos/languages/css.svg"); }
+    #sql { background-image: url("./../logos/languages/sql.svg"); }
+    #c { background-image: url("./../logos/languages/c.svg"); }
+    #cpp { background-image: url("./../logos/languages/cpp.svg"); }
+    #c_sharp { background-image: url("./../logos/languages/c_sharp.svg"); }
+    #lua { background-image: url("./../logos/languages/lua.svg"); }
+    #gdscript { background-image: url("./../logos/godot.svg"); }
 
     /* Libs, Engines & Frameworks ~ Backgrounds */
-    #matplotlib { background-image: url("/logos/languages/python.svg/"); }
-    #numpy { background-image: url("/logos/languages/python.svg/"); }
-    #opencv { background-image: url("/logos/languages/python.svg/"); }
-    #mediapipe { background-image: url("/logos/languages/python.svg/"); }
-    #flask { background-image: url("/logos/languages/python.svg/"); }
-    #sqlite { background-image: url("/logos/languages/sql.svg/"); }
-    #react { background-image: url("/logos/languages/java_script.svg/"); }
-    #vue { background-image: url("/logos/languages/java_script.svg/"); }
-    #svelte { background-image: url("/logos/languages/java_script.svg/"); }
-    #tailwind { background-image: url("/logos/languages/css.svg/"); }
-    #sass { background-image: url("/logos/languages/css.svg/"); }
-    #godot { background-image: url("/logos/godot.svg/"); }
+    #matplotlib { background-image: url("./../logos/languages/python.svg"); }
+    #numpy { background-image: url("./../logos/languages/python.svg"); }
+    #opencv { background-image: url("./../logos/languages/python.svg"); }
+    #mediapipe { background-image: url("./../logos/languages/python.svg"); }
+    #flask { background-image: url("./../logos/languages/python.svg"); }
+    #sqlite { background-image: url("./../logos/languages/sql.svg"); }
+    #react { background-image: url("./../logos/languages/java_script.svg"); }
+    #vue { background-image: url("./../logos/languages/java_script.svg"); }
+    #svelte { background-image: url("./../logos/languages/java_script.svg"); }
+    #tailwind { background-image: url("./../logos/languages/css.svg"); }
+    #sass { background-image: url("./../logos/languages/css.svg"); }
+    #godot { background-image: url("./../logos/godot.svg"); }
 
     /* Misc Tech ~ Backgrounds */
-    #google { background-image: url("/logos/google.svg/"); }
-    #git { background-image: url("/logos/git.svg/"); }
-    #npm { background-image: url("/logos/languages/java_script.svg/"); }
+    #google { background-image: url("./../logos/google.svg"); }
+    #git { background-image: url("./../logos/git.svg"); }
+    #npm { background-image: url("./../logos/languages/java_script.svg"); }
 </style>
 
 

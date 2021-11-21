@@ -14,7 +14,7 @@
         justify-content: center;
 
         /* Todo: Find way to color based on variable */
-        background-image: url("/background_waves.svg");
+        background-image: url("./../background_waves.svg");
         background-position: 0% 50%;
         background-size: cover;
         background-repeat: repeat;
