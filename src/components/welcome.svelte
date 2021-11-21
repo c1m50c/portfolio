@@ -56,11 +56,11 @@
     #hook::after {
         content: "";
         position: absolute;
-        width: 100%;
+        width: 75%;
         height: 3px;
         transform: scaleX(0);
         bottom: -20%;
-        left: 0;
+        left: 12.5%;
         background-color: var(--button-foreground-color);
         transform-origin: center;
         animation: var(--underline-animation-time) underline-animation 500ms forwards;
@@ -97,6 +97,6 @@
     </svg>
     <div id="h2-container">
         <h2 id="hey">Hey, I'm Pere</h2>
-        <p id="hook">And I do software development 👌</p>
+        <p id="hook">I do software development</p>
     </div>
 </div>
