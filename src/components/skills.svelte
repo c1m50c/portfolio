@@ -49,6 +49,7 @@
 
     /* Libs, Engines & Frameworks ~ Backgrounds */
     #matplotlib { background-image: url("./../logos/languages/python.svg"); }
+    #pandas { background-image: url("./../logos/languages/python.svg"); }
     #numpy { background-image: url("./../logos/languages/python.svg"); }
     #opencv { background-image: url("./../logos/languages/python.svg"); }
     #mediapipe { background-image: url("./../logos/languages/python.svg"); }
@@ -117,6 +118,9 @@
         <div class="info-card-container">
             <a class="link-button info-card" id="matplotlib" href="https://matplotlib.org/">
                 <h3>Matplotlib 📈</h3>
+            </a>
+            <a class="link-button info-card" id="pandas" href="https://pandas.pydata.org/">
+                <h3>Pandas 🐼</h3>
             </a>
             <a class="link-button info-card" id="numpy" href="https://numpy.org/">
                 <h3>NumPy 🧮</h3>
