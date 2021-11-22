@@ -26,6 +26,7 @@
         <div class="info-card-container">
             <SkillButton background="python" name="Python 🐍" link="https://www.python.org/" />
             <SkillButton background="rust" name="Rust 🦀" link="https://www.rust-lang.org/" />
+            <SkillButton background="go" name="Go 💨" link="https://golang.org/" />
             <SkillButton background="java-script" name="JavaScript ☕" link="https://www.javascript.com/" />
             <SkillButton background="type-script" name="TypeScript 📰" link="https://www.typescriptlang.org/" />
             <SkillButton background="html" name="HTML 📄" link="https://en.wikipedia.org/wiki/HTML" />
@@ -45,8 +46,8 @@
             <SkillButton background="python" name="Pandas 🐼" link="https://pandas.pydata.org/" />
             <SkillButton background="python" name="NumPy 🧮" link="https://numpy.org/" />
             <SkillButton background="python" name="OpenCV 📸" link="https://opencv.org/" />
-            <SkillButton background="python" name="mediapipe 🔬" link="https://google.github.io/mediapipe/" />
-            <SkillButton background="python" name="flask 🧪" link="https://github.com/pallets/flask/" />
+            <SkillButton background="python" name="Mediapipe 🔬" link="https://google.github.io/mediapipe/" />
+            <SkillButton background="python" name="Flask 🧪" link="https://github.com/pallets/flask/" />
             <SkillButton background="sql" name="SQLite 💾" link="https://sqlite.org/index.html" />
             <SkillButton background="java-script" name="React ⚡" link="https://reactjs.org/" />
             <SkillButton background="java-script" name="Vue 🌴" link="https://vuejs.org/" />

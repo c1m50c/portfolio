@@ -27,6 +27,7 @@
     /* Backgrounds */
     .python { background-image: url("./../logos/languages/python.svg"); }
     .rust { background-image: url("./../logos/languages/rust.svg"); }
+    .go { background-image: url("./../logos/languages/go.svg"); }
     .java-script { background-image: url("./../logos/languages/java_script.svg"); }
     .type-script { background-image: url("./../logos/languages/type_script.svg"); }
     .html { background-image: url("./../logos/languages/html.svg"); }
