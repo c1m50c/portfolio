@@ -78,7 +78,6 @@
 <NavigationBar/>
 <main>
     <Welcome/>
-    <About/>
     <Skills/>
     <Projects/>
     <Contact/>

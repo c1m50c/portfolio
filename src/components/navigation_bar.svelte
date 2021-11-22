@@ -67,7 +67,6 @@
 <div class="navigation-bar-container">
     <nav class="navigation-bar">
         <a class="navbar-link" href="#">Welcome</a>
-        <a class="navbar-link" href="#about">About</a>
         <a class="navbar-link" href="#skills">Skills</a>
         <a class="navbar-link" href="#projects">Projects</a>
         <a class="navbar-link" href="#contact">Contact</a>
