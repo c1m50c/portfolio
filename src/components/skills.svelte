@@ -20,7 +20,7 @@
 
 <div class="info-container" id="skills">
     <h1 class="section-title">Skills</h1>
-    <!-- Todo: Arrange based on skill-level (comfortable-ness / experience) -->
+    <!-- TODO: Arrange based on skill-level (comfortable-ness / experience) -->
     <div class="languages-container">
         <h2 class="section-title">Languages 💬</h2>
         <div class="info-card-container">
@@ -45,9 +45,11 @@
             <SkillButton background="python" name="Matplotlib 📊" link="https://matplotlib.org" />
             <SkillButton background="python" name="Pandas 🐼" link="https://pandas.pydata.org/" />
             <SkillButton background="python" name="NumPy 🧮" link="https://numpy.org/" />
+            <SkillButton background="python" name="PyTest 🥼" link="https://github.com/pytest-dev/pytest" />
             <SkillButton background="python" name="OpenCV 📸" link="https://opencv.org/" />
             <SkillButton background="python" name="Mediapipe 🔬" link="https://google.github.io/mediapipe/" />
             <SkillButton background="python" name="Flask 🧪" link="https://github.com/pallets/flask/" />
+            <SkillButton background="rust" name="CPython 🔗" link="https://github.com/dgrunwald/rust-cpython" />
             <SkillButton background="sql" name="SQLite 💾" link="https://sqlite.org/index.html" />
             <SkillButton background="java-script" name="React ⚡" link="https://reactjs.org/" />
             <SkillButton background="java-script" name="Vue 🌴" link="https://vuejs.org/" />
