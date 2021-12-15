@@ -1,6 +1,38 @@
 <script lang="ts">
+    /**
+     * Name of the logo to display in the background of the button.
+     * 
+     * ## Valid Options
+     * - **Languages**
+     *    - python
+     *    - rust
+     *    - go
+     *    - java-script
+     *    - type-script
+     *    - html
+     *    - css
+     *    - sql
+     *    - c
+     *    - cpp
+     *    - c-sharp
+     *    - lua
+     *    - gdscript
+     * - **Technologies**
+     *    - google
+     *    - git
+    */
     export let background: string;
+
+
+    /**
+     * Name of the Skill, the primary text on the skill button.
+     */
     export let name: string;
+
+
+    /**
+     * Coresponding Skill Link, when the button is pressed it will redirect the user to the site.
+     */
     export let link: string;
 </script>
 
