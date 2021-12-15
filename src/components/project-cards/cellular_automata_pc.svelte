@@ -1,5 +1,5 @@
 <script lang="ts">
-    import GithubLogoLink from "../logo-links/github_link.svelte";
+    import LogoLink, { Icons } from "../logo_link.svelte";
     const github_repo_link: string = "https://github.com/c1m50c/cellular-automata";
 </script>
 
@@ -15,7 +15,7 @@
         <h1>Cellular Automata</h1>
         <p>Python project implementing Conway's Game of Life with PyGame.</p>
         <div class="logo-link-container">
-            <GithubLogoLink link={github_repo_link} />
+            <LogoLink link={github_repo_link} icon={Icons.Github} />
         </div>
     </div>
 </div>

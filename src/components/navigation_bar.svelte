@@ -66,6 +66,7 @@
 
 <div class="navigation-bar-container">
     <nav class="navigation-bar">
+        <!-- svelte-ignore a11y-invalid-attribute -->
         <a class="navbar-link" href="#">Welcome</a>
         <a class="navbar-link" href="#skills">Skills</a>
         <a class="navbar-link" href="#projects">Projects</a>

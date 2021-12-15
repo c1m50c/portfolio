@@ -1,8 +1,6 @@
 <script lang="ts">
-    import GithubLogoLink from "./logo-links/github_link.svelte";
-    import HackerRankLogoLink from "./logo-links/hacker_rank_link.svelte";
-    import LinkedInLogoLink from "./logo-links/linked_in.svelte";
-    
+    import LogoLink, { Icons } from "./logo_link.svelte";
+
     const email: string = "pereiswell@gmail.com";
     const github_profile: string = "https://github.com/c1m50c";
     const hacker_rank_profile: string = "https://www.hackerrank.com/c1m50c";
@@ -57,9 +55,9 @@
 
 <div class="info-container" id="contact">
     <div class="logo-link-container">
-        <GithubLogoLink link={github_profile} />
-        <HackerRankLogoLink link={hacker_rank_profile} />
-        <LinkedInLogoLink link={linked_in_profile} />
+        <LogoLink link={github_profile} icon={Icons.Github} />
+        <LogoLink link={hacker_rank_profile} icon={Icons.HackerRank} />
+        <LogoLink link={linked_in_profile} icon={Icons.LinkedIn} />
     </div>
     <button id="email" on:click={() => {copy_to_clipboard(email)}}>{email}</button>
 </div>

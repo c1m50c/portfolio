@@ -3,6 +3,7 @@
      * Enum containing all valid backgrounds for the prop `background`.
      */
     export enum Backgrounds {
+        // PascalCaseIdentifier = CSSClassName,
         Python = "python",
         Rust = "rust",
         Go = "go",

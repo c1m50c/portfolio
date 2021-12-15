@@ -1,6 +1,4 @@
 <script lang="ts">
-    import GithubLogoLink from "./logo-links/github_link.svelte";
-
     import PortfolioPc from "./project-cards/portfolio_pc.svelte";
     import CellularAutomataPc from "./project-cards/cellular_automata_pc.svelte";
     import SortingAlgorithmVisualizerPc from "./project-cards/sorting_algorithm_visualizer_pc.svelte";

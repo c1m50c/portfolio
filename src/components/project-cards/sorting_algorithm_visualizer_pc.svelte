@@ -1,5 +1,5 @@
 <script lang="ts">
-    import GithubLogoLink from "../logo-links/github_link.svelte";
+    import LogoLink, { Icons } from "../logo_link.svelte";
     const github_repo_link: string = "https://github.com/c1m50c/sorting-algorithm-visualizer";
 </script>
 
@@ -16,7 +16,7 @@
         <p>Visualizes various sorting algorithms using Matplotlib and Python.</p>
         <img src="https://github.com/c1m50c/sorting-algorithm-visualizer/actions/workflows/tests.yml/badge.svg?branch=main" alt="Tests Status" />
         <div class="logo-link-container">
-            <GithubLogoLink link={github_repo_link} />
+            <LogoLink link={github_repo_link} icon={Icons.Github} />
         </div>
     </div>
 </div>
