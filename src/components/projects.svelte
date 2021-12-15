@@ -14,7 +14,7 @@
 
     .project-card-container {
         display: grid;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .project-card-container :global(.project-card) {

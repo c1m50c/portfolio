@@ -3,6 +3,7 @@
      * Enum containing all valid icons for a `LogoLink`.
      */
     export enum Icons {
+        // PascalCaseIdentifier = ClassName,
         Github = "github-link",
         HackerRank = "hacker-rank-link",
         LinkedIn = "linked-in-link",

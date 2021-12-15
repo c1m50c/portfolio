@@ -14,7 +14,7 @@
         --bright-text-color: rgb(238, 238, 238);
         --button-text-color: var(--base-text-color);
         --info-container-bg-color: rgb(30, 30, 30);
-        --border-radius: 1rem;
+        --border-radius: 0.5rem;
         --button-foreground-color: rgb(28, 194, 117);
         --button-background-color: rgb(33, 126, 83);
         --hover-foreground-color: rgb(102, 226, 168);

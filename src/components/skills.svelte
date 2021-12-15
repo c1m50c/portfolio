@@ -15,12 +15,15 @@
         justify-content: center;
         grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
     }
+
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 2rem; }
 </style>
 
 
 <div class="info-container" id="skills">
     <h1 class="section-title">Skills</h1>
-    <!-- TODO: Arrange based on skill-level (comfortable-ness / experience) -->
+    <!-- TODO: Arrange based on skill-level (coziness || experience) -->
     <div class="languages-container">
         <h2 class="section-title">Languages 💬</h2>
         <div class="info-card-container">
