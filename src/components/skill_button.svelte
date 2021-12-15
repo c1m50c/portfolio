@@ -1,27 +1,32 @@
+<script lang="ts" context="module">
+    /**
+     * Enum containing all valid backgrounds for the prop `background`.
+     */
+    export enum Backgrounds {
+        Python = "python",
+        Rust = "rust",
+        Go = "go",
+        JavaScript = "java-script",
+        TypeScript = "type-script",
+        HTML = "html",
+        CSS = "css",
+        SQL = "sql",
+        C = "c",
+        CPlusPlus = "cpp",
+        CSharp = "c-sharp",
+        Lua = "lua",
+        Godot = "godot",
+        Google = "google",
+        Git = "git",
+    }
+</script>
+
+
 <script lang="ts">
     /**
      * Name of the logo to display in the background of the button.
-     * 
-     * ## Valid Options
-     * - **Languages**
-     *    - python
-     *    - rust
-     *    - go
-     *    - java-script
-     *    - type-script
-     *    - html
-     *    - css
-     *    - sql
-     *    - c
-     *    - cpp
-     *    - c-sharp
-     *    - lua
-     *    - gdscript
-     * - **Technologies**
-     *    - google
-     *    - git
     */
-    export let background: string;
+    export let background: Backgrounds;
 
 
     /**
@@ -56,7 +61,7 @@
 
     .skill-button:hover { background-size: 115% 115%; }
 
-    /* Backgrounds */
+    /* Backgrounds, Should corespond to the values of the enum `Backgrounds` */
     .python { background-image: url("./../logos/languages/python.svg"); }
     .rust { background-image: url("./../logos/languages/rust.svg"); }
     .go { background-image: url("./../logos/languages/go.svg"); }
@@ -69,7 +74,7 @@
     .cpp { background-image: url("./../logos/languages/cpp.svg"); }
     .c-sharp { background-image: url("./../logos/languages/c_sharp.svg"); }
     .lua { background-image: url("./../logos/languages/lua.svg"); }
-    .gdscript { background-image: url("./../logos/godot.svg"); }
+    .godot { background-image: url("./../logos/godot.svg"); }
     .google { background-image: url("./../logos/google.svg"); }
     .git { background-image: url("./../logos/git.svg"); }
 </style>
