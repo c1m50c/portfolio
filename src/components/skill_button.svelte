@@ -2,7 +2,7 @@
     /**
      * Enum containing all valid backgrounds for the prop `background`.
      */
-    export enum Backgrounds {
+    export const enum Backgrounds {
         // PascalCaseIdentifier = ClassName,
         Python = "python",
         Rust = "rust",
