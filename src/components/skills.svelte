@@ -68,6 +68,7 @@
             <SkillButton background={Backgrounds.Google} name="Google 🔍" link="https://google.com" />
             <SkillButton background={Backgrounds.Git} name="Git 💻" link="https://git-scm.com/" />
             <SkillButton background={Backgrounds.JavaScript} name="NPM 📦" link="https://www.npmjs.com/" />
+            <SkillButton background={Backgrounds.WebAssembly} name="WebAssembly 🏭" link="https://webassembly.org/" />
         </div>
     </div>
 </div>

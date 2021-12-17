@@ -15,6 +15,7 @@
     .project-card-container {
         display: grid;
         gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(1fr, 20rem));
     }
 
     .project-card-container :global(.project-card) {

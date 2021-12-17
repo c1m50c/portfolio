@@ -19,6 +19,7 @@
         Godot = "godot",
         Google = "google",
         Git = "git",
+        WebAssembly = "web-assembly",
     }
 </script>
 
@@ -78,6 +79,7 @@
     .godot { background-image: url("./../logos/godot.svg"); }
     .google { background-image: url("./../logos/google.svg"); }
     .git { background-image: url("./../logos/git.svg"); }
+    .web-assembly { background-image: url("./../logos/web_assembly.svg"); }
 </style>
 
 
