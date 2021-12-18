@@ -1,7 +1,7 @@
 <script lang="ts">
     import NavigationBar from "./components/navigation_bar.svelte";
     import Welcome from "./components/welcome.svelte";
-    import About from "./components/about.svelte";
+    // import About from "./components/about.svelte";
     import Skills from "./components/skills.svelte";
     import Projects from "./components/projects.svelte";
     import Contact from "./components/contact.svelte";
@@ -14,12 +14,12 @@
         --bright-text-color: rgb(238, 238, 238);
         --button-text-color: var(--base-text-color);
         --info-container-bg-color: rgb(30, 30, 30);
-        --border-radius: 0.5rem;
         --button-foreground-color: rgb(28, 194, 117);
         --button-background-color: rgb(33, 126, 83);
         --hover-foreground-color: rgb(102, 226, 168);
         --hover-background-color: rgb(67, 135, 103);
         --base-transition-settings: 600ms ease;
+        --border-radius: 0.75rem;
     }
 
     :global(.info-container) {
@@ -68,8 +68,8 @@
     }
 
     main {
-        display: grid;
         gap: 2rem;
+        display: grid;
         padding: 3rem 1rem;
     }
 </style>

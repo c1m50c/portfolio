@@ -1,4 +1,5 @@
 <script lang="ts">
+    /* TODO: Have a better way of creating project cards, maybe something like a extendable template? */
     import PortfolioPc from "./project-cards/portfolio_pc.svelte";
     import CellularAutomataPc from "./project-cards/cellular_automata_pc.svelte";
     import SortingAlgorithmVisualizerPc from "./project-cards/sorting_algorithm_visualizer_pc.svelte";
