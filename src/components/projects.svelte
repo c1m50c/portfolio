@@ -9,10 +9,6 @@
 
 
 <style>
-    :root {
-        --background-blur-amount: 3px;
-    }
-
     .project-card-container {
         display: grid;
         gap: 1.5rem;
@@ -37,7 +33,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        filter: blur(var(--background-blur-amount)) brightness(0.25);
+        filter: blur(3px) brightness(0.25);
         border-radius: var(--border-radius);
     }
 
