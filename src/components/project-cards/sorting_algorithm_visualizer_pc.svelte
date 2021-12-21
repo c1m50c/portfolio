@@ -7,7 +7,7 @@
 <ProjectCard
     title="Sorting Algorithm Visualizer"
     description="Visualizes various sorting algorithms using Matplotlib and Python."
-    background_url="../projects/sorting-algorithm-visualizer.gif"
+    background_url="./projects/sorting-algorithm-visualizer.gif"
 >
     <img slot="status-badge" src="https://github.com/c1m50c/sorting-algorithm-visualizer/actions/workflows/tests.yml/badge.svg?branch=main" alt="Tests Status" />
     <div slot="logo-link-container">

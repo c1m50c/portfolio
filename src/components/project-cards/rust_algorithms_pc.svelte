@@ -7,7 +7,7 @@
 <ProjectCard
     title="Rust Algorithms"
     description="A Rust library implementing various algorithms."
-    background_url="../projects/rust-algorithms.png"
+    background_url="./projects/rust-algorithms.png"
 >
     <img slot="status-badge" src="https://github.com/c1m50c/rust-algorithms/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status" />
     <div slot="logo-link-container">

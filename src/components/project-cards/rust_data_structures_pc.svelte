@@ -7,7 +7,7 @@
 <ProjectCard
     title="Rust Data Structures"
     description="A library implementing various Data Structures in Rust, made strictly for learning purposes."
-    background_url="../projects/rust-data-structures.png"
+    background_url="./projects/rust-data-structures.png"
 >
     <img slot="status-badge" src="https://github.com/c1m50c/rust-data-structures/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status" />
     <div slot="logo-link-container">
