@@ -1,7 +1,8 @@
 {
-  "name": "svelte-app",
+  "name": "portfolio",
   "version": "1.0.0",
   "private": true,
+  "homepage": "c1m50c.github.io/portfolio",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
