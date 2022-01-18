@@ -4,6 +4,7 @@
     import SortingAlgorithmVisualizerPc from "./project-cards/sorting_algorithm_visualizer_pc.svelte";
     import RustAlgorithmsPc from "./project-cards/rust_algorithms_pc.svelte";
     import RustDataStructuresPc from "./project-cards/rust_data_structures_pc.svelte";
+    import FixedVectors from "./project-cards/fixed_vectors.svelte";
 </script>
 
 
@@ -20,8 +21,9 @@
     <h1 class="section-title">Projects</h1>
     <div class="project-card-container">
         <PortfolioPc />
-        <CellularAutomataPc />
+        <FixedVectors />
         <SortingAlgorithmVisualizerPc />
+        <CellularAutomataPc />
         <RustAlgorithmsPc />
         <RustDataStructuresPc />
     </div>
