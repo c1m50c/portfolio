@@ -1,4 +1,8 @@
 # **portfolio**
+
+![GitHub](https://img.shields.io/github/license/c1m50c/portfolio?color=blue&style=for-the-badge)
+![Lines of code](https://img.shields.io/tokei/lines/github/c1m50c/portfolio?style=for-the-badge)
+
 My personal portfolio website, created with <a href="https://svelte.dev/">Svelte</a> and <a href="https://www.typescriptlang.org/">TypeScript</a> and hosted with Github Pages.
 ![Preview](https://github.com/c1m50c/portfolio/blob/main/public/projects/portfolio.png?raw=true)
 
