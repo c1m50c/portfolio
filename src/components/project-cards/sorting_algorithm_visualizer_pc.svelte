@@ -9,7 +9,11 @@
     description="Visualizes various sorting algorithms using Matplotlib and Python."
     background_url="./projects/sorting-algorithm-visualizer.gif"
 >
-    <img slot="status-badge" src="https://github.com/c1m50c/sorting-algorithm-visualizer/actions/workflows/tests.yml/badge.svg?branch=main" alt="Tests Status" />
+    <div slot="status-badge">
+        <img src="https://img.shields.io/github/workflow/status/c1m50c/sorting-algorithm-visualizer/Tests?style=for-the-badge" alt="Tests" />
+        <img src="https://img.shields.io/github/license/c1m50c/sorting-algorithm-visualizer?color=blue&style=for-the-badge" alt="License" />
+        <img src="https://img.shields.io/tokei/lines/github/c1m50c/sorting-algorithm-visualizer?style=for-the-badge" alt="Lines of Code" />
+    </div>
     <div slot="logo-link-container">
         <LogoLink link="https://github.com/c1m50c/sorting-algorithm-visualizer" icon={Icons.Github} />
     </div>
