@@ -19,5 +19,6 @@
     <div slot="logo-link-container">
         <LogoLink link="https://github.com/c1m50c/fixed-vectors" icon={Icons.Github} />
         <LogoLink link="https://crates.io/crates/fixed-vectors/" icon={Icons.CratesIO} />
+        <LogoLink link="https://docs.rs/crate/fixed-vectors/latest" icon={Icons.DocsRS} />
     </div>
 </ProjectCard>
