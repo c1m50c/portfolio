@@ -23,52 +23,52 @@
 
 <div class="info-container" id="skills">
     <h1 class="section-title">Skills</h1>
-    <!-- TODO: Arrange based on skill-level (coziness || experience) -->
+    <!-- TODO: Maybe do a svelte loop to make these? -->
     <div class="languages-container">
         <h2 class="section-title">Languages 💬</h2>
         <div class="info-card-container">
             <SkillButton json="skills/python.json" />
-            <!-- <SkillButton background={Backgrounds.Rust} name="Rust 🦀" link="https://www.rust-lang.org/" description="" />
-            <SkillButton background={Backgrounds.Go} name="Go 💨" link="https://golang.org/" description="" />
-            <SkillButton background={Backgrounds.JavaScript} name="JavaScript ☕" link="https://www.javascript.com/" description="" />
-            <SkillButton background={Backgrounds.TypeScript} name="TypeScript 📰" link="https://www.typescriptlang.org/" description="" />
-            <SkillButton background={Backgrounds.HTML} name="HTML 📄" link="https://en.wikipedia.org/wiki/HTML" description="" />
-            <SkillButton background={Backgrounds.CSS} name="CSS 📑" link="https://en.wikipedia.org/wiki/CSS" description="" />
-            <SkillButton background={Backgrounds.SQL} name="SQL 📂" link="https://en.wikipedia.org/wiki/SQL" description="" />
-            <SkillButton background={Backgrounds.C} name="C 🔧" link="https://en.wikipedia.org/wiki/C_(programming_background)" description="" />
-            <SkillButton background={Backgrounds.CPlusPlus} name="C++ 🔨" link="https://en.wikipedia.org/wiki/C%2B%2B" description="" />
-            <SkillButton background={Backgrounds.CSharp} name="C# 🌳" link="https://docs.microsoft.com/en-us/dotnet/csharp/" description="" />
-            <SkillButton background={Backgrounds.Lua} name="Lua 🌌" link="https://www.lua.org/" description="" />
-            <SkillButton background={Backgrounds.Godot} name="GDScript 🎮" link="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html" description="" /> -->
+            <SkillButton json="skills/rust.json" />
+            <SkillButton json="skills/go.json" />
+            <SkillButton json="skills/java_script.json" />
+            <SkillButton json="skills/type_script.json" />
+            <SkillButton json="skills/html.json" />
+            <SkillButton json="skills/css.json" />
+            <SkillButton json="skills/sql.json" />
+            <SkillButton json="skills/c.json" />
+            <SkillButton json="skills/cpp.json" />
+            <SkillButton json="skills/csharp.json" />
+            <SkillButton json="skills/lua.json" />
+            <SkillButton json="skills/gdscript.json" />
         </div>
     </div>
     <div class="libraies-engines-and-frameworks-container">
         <h2 class="section-title">Libraries, Engines & Frameworks 📚</h2>
         <div class="info-card-container">
-            <!-- <SkillButton background={Backgrounds.Python} name="Matplotlib 📊" link="https://matplotlib.org" description="" />
-            <SkillButton background={Backgrounds.Python} name="Pandas 🐼" link="https://pandas.pydata.org/" description="" />
-            <SkillButton background={Backgrounds.Python} name="NumPy 🧮" link="https://numpy.org/" description="" />
-            <SkillButton background={Backgrounds.Python} name="PyTest 🥼" link="https://github.com/pytest-dev/pytest" description="" />
-            <SkillButton background={Backgrounds.Python} name="OpenCV 📸" link="https://opencv.org/" description="" />
-            <SkillButton background={Backgrounds.Python} name="Mediapipe 🔬" link="https://google.github.io/mediapipe/" description="" />
-            <SkillButton background={Backgrounds.Python} name="Flask 🧪" link="https://github.com/pallets/flask/" description="" />
-            <SkillButton background={Backgrounds.Rust} name="CPython 🔗" link="https://github.com/dgrunwald/rust-cpython" description="" />
-            <SkillButton background={Backgrounds.SQL} name="SQLite 💾" link="https://sqlite.org/index.html" description="" />
-            <SkillButton background={Backgrounds.JavaScript} name="React ⚡" link="https://reactjs.org/" description="" />
-            <SkillButton background={Backgrounds.JavaScript} name="Vue 🌴" link="https://vuejs.org/" description="" />
-            <SkillButton background={Backgrounds.JavaScript} name="Svelte 📙" link="https://svelte.dev/" description="" />
-            <SkillButton background={Backgrounds.CSS} name="Tailwind 🍃" link="https://tailwindcss.com/" description="" />
-            <SkillButton background={Backgrounds.CSS} name="SASS 💄" link="https://sass-lang.com/" description="" />
-            <SkillButton background={Backgrounds.Godot} name="Godot 🤖" link="https://godotengine.org/" description="" /> -->
+            <SkillButton json="skills/matplotlib.json" />
+            <SkillButton json="skills/pandas.json" />
+            <SkillButton json="skills/numpy.json" />
+            <SkillButton json="skills/pytest.json" />
+            <SkillButton json="skills/opencv.json" />
+            <SkillButton json="skills/mediapipe.json" />
+            <SkillButton json="skills/flask.json" />
+            <SkillButton json="skills/rust_cpython.json" />
+            <SkillButton json="skills/sqlite.json" />
+            <SkillButton json="skills/react.json" />
+            <SkillButton json="skills/vue.json" />
+            <SkillButton json="skills/svelte.json" />
+            <SkillButton json="skills/tailwind.json" />
+            <SkillButton json="skills/sass.json" />
+            <SkillButton json="skills/godot.json" />
         </div>
     </div>
     <div class="misc-tech-container">
         <h2 class="section-title">Miscellaneous Technologies ❓</h2>
         <div class="info-card-container">
-            <!-- <SkillButton background={Backgrounds.Google} name="Googling 🔍" link="https://google.com" description="" />
-            <SkillButton background={Backgrounds.Git} name="Git 💻" link="https://git-scm.com/" description="" />
-            <SkillButton background={Backgrounds.JavaScript} name="NPM 📦" link="https://www.npmjs.com/" description="" />
-            <SkillButton background={Backgrounds.WebAssembly} name="WebAssembly 🏭" link="https://webassembly.org/" description="" /> -->
+            <SkillButton json="skills/google.json" />
+            <SkillButton json="skills/git.json" />
+            <SkillButton json="skills/npm.json" />
+            <SkillButton json="skills/web_assembly.json" />
         </div>
     </div>
 </div>
