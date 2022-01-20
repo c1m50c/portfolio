@@ -27,7 +27,7 @@
     <div class="languages-container">
         <h2 class="section-title">Languages 💬</h2>
         <div class="info-card-container">
-            <SkillButton json="../skills/python.json" />
+            <SkillButton json="./../skills/python.json" />
             <!-- <SkillButton background={Backgrounds.Rust} name="Rust 🦀" link="https://www.rust-lang.org/" description="" />
             <SkillButton background={Backgrounds.Go} name="Go 💨" link="https://golang.org/" description="" />
             <SkillButton background={Backgrounds.JavaScript} name="JavaScript ☕" link="https://www.javascript.com/" description="" />
