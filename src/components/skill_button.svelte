@@ -1,61 +1,45 @@
-<script lang="ts" context="module">
-    /**
-     * Enum containing all valid backgrounds for the prop `background`.
-     */
-    export enum Backgrounds {
-        // PascalCaseIdentifier = ClassName,
-        Python = "python",
-        Rust = "rust",
-        Go = "go",
-        JavaScript = "java-script",
-        TypeScript = "type-script",
-        HTML = "html",
-        CSS = "css",
-        SQL = "sql",
-        C = "c",
-        CPlusPlus = "cpp",
-        CSharp = "c-sharp",
-        Lua = "lua",
-        Godot = "godot",
-        Google = "google",
-        Git = "git",
-        WebAssembly = "web-assembly",
-    }
-</script>
-
-
 <script lang="ts">
     import SkillInfo from "./skill_info.svelte";
 
+    /**
+     * Contains the path of the `.json` file coresponding to the Skill.
+     */
     export let json: string;
-    let json_promise = fetch_json();
 
+
+    /**
+     * Contains a `Promise` containing the `Object` of the `json` File.
+     */
+    let json_promise: Promise<Object> = fetch_json();
+
+
+    /**
+     * Fetches the `.json` file at the path of the `json` prop, 
+     * setting `json_promise` to the `Promise` of the `Object`.
+     */
     async function fetch_json(): Promise<Object> {
         console.log(json);
         const response = await fetch(json);
         const obj = await response.json();
 
         if (response.ok) {
-            console.log(obj);
             return obj;
         }
         
         throw new Error(obj);
     }
 
+    /**
+     * Pops up a `SkillInfo` Component coresponding to the items within the passed through `skill_obj`.
+     */
     function add_skill_info(skill_obj: Object) {
-        let link: string = skill_obj["link"];
-        let name: string = skill_obj["name"];
-        let description: string = skill_obj["description"];
-        let background: string = skill_obj["background"];
-        
-        let skill_info = new SkillInfo({
+        let _ = new SkillInfo({
             target: document.body,
             props: {
-                link: link,
-                name: name,
-                background: background,
-                description: description,
+                link: skill_obj["link"],
+                name: skill_obj["name"],
+                background: skill_obj["background"],
+                description: skill_obj["description"],
             },
         });
     }

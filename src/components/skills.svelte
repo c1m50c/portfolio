@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SkillButton, { Backgrounds } from "./skill_button.svelte";
+    import SkillButton from "./skill_button.svelte";
 </script>
 
 

@@ -1,15 +1,39 @@
 <script lang="ts">
     import LogoLink, { Icons } from "./logo_link.svelte";
 
+
+    /**
+     * Primary link of the Skill, normally the Skill's website.
+     */
     export let link: string;
+
+
+    /**
+     * Name of the Skill.
+     */
     export let name: string;
+
+
+    /**
+     * Description of the Skill, detailing its uses.
+     */
     export let description: string;
+
+
+    /**
+     * Background of the Skill, see the `Backgrounds` classes within the CSS for options.
+     */
     export let background: string;
 
-    let background_ref: HTMLElement | null;
+
+    /**
+     * Reference to the Background of the `SkillInfo`.
+     */
+    let bg_ref: HTMLElement | null;
+
 
     function delete_self() {
-        background_ref.parentNode.removeChild(background_ref);
+        bg_ref.parentNode.removeChild(bg_ref);
     }
 </script>
 
@@ -77,7 +101,7 @@
 </style>
 
 
-<div class="skill-info background" bind:this={background_ref} on:click|self={delete_self}>
+<div class="skill-info background" bind:this={bg_ref} on:click|self={() => bg_ref.parentNode.removeChild(bg_ref)}>
     <div class="info-box {background}">
         <header>
             <h1 class="name">{name}</h1>
