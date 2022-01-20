@@ -27,32 +27,28 @@
 <script lang="ts">
     import SkillInfo from "./skill_info.svelte";
 
+    export let json: string;
+    let json_promise = fetch_json();
 
-    /**
-     * Name of the logo to display in the background of the button.
-    */
-    export let background: Backgrounds;
+    async function fetch_json(): Promise<Object> {
+        console.log(json);
+        const response = await fetch(json);
+        const obj = await response.json();
 
+        if (response.ok) {
+            console.log(obj);
+            return obj;
+        }
+        
+        throw new Error(obj);
+    }
 
-    /**
-     * Name of the Skill, the primary text on the skill button.
-     */
-    export let name: string;
-
-
-    /**
-     * Coresponding Skill Link, when the button is pressed it will redirect the user to the site.
-     */
-    export let link: string;
-
-
-    /**
-     * Description of the Skill, what it's built to do and its purposes.
-     */
-    export let description: string;
-
-
-    function add_skill_info() {
+    function add_skill_info(skill_obj: Object) {
+        let link: string = skill_obj["link"];
+        let name: string = skill_obj["name"];
+        let description: string = skill_obj["description"];
+        let background: string = skill_obj["background"];
+        
         let skill_info = new SkillInfo({
             target: document.body,
             props: {
@@ -106,6 +102,8 @@
 </style>
 
 
-<button class="link-button skill-button {background}" on:click={add_skill_info}>
-    <h3>{name}</h3>
-</button>
+{#await json_promise then skill_obj}
+    <button class="link-button skill-button {skill_obj["background"]}" on:click={() => { add_skill_info(skill_obj) }}>
+        <h3>{skill_obj["name"]}</h3>
+    </button>
+{/await}

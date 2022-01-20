@@ -1,11 +1,10 @@
 <script lang="ts">
     import LogoLink, { Icons } from "./logo_link.svelte";
-    import type { Backgrounds } from "./skill_button.svelte";
 
     export let link: string;
     export let name: string;
     export let description: string;
-    export let background: Backgrounds;
+    export let background: string;
 
     let background_ref: HTMLElement | null;
 
