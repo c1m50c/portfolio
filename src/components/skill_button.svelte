@@ -25,6 +25,9 @@
 
 
 <script lang="ts">
+    import SkillInfo from "./skill_info.svelte";
+
+
     /**
      * Name of the logo to display in the background of the button.
     */
@@ -41,6 +44,25 @@
      * Coresponding Skill Link, when the button is pressed it will redirect the user to the site.
      */
     export let link: string;
+
+
+    /**
+     * Description of the Skill, what it's built to do and its purposes.
+     */
+    export let description: string;
+
+
+    function add_skill_info() {
+        let skill_info = new SkillInfo({
+            target: document.body,
+            props: {
+                link: link,
+                name: name,
+                background: background,
+                description: description,
+            },
+        });
+    }
 </script>
 
 
@@ -58,6 +80,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-blend-mode: multiply;
+        border: none;
         box-shadow: 0rem 0.5rem 0.5rem #101010;
     }
 
@@ -83,6 +106,6 @@
 </style>
 
 
-<a class="link-button skill-button {background}" href={link}>
+<button class="link-button skill-button {background}" on:click={add_skill_info}>
     <h3>{name}</h3>
-</a>
+</button>
