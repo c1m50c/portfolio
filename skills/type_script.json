@@ -1,6 +1,6 @@
 {
     "name": "TypeScript 📰",
-    "description": "",
+    "description": "A super-set of JavaScript, this language provides a syntax for types which can provide incredible safety when it comes to errors.",
     "background": "type-script",
     "link": "https://www.typescriptlang.org/",
     "tags": []

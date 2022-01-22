@@ -1,6 +1,6 @@
 {
     "name": "Go 💨",
-    "description": "",
+    "description": "A language with a focus on concurrency, memory safety, and a simplistic syntax.",
     "background": "go",
     "link": "https://golang.org/",
     "tags": []
