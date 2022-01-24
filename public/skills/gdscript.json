@@ -1,6 +1,6 @@
 {
     "name": "GDScript 🎮",
-    "description": "",
+    "description": "GDScript is the custom made language for the Godot Game Engine, an open source engine for game-development. It's a high-level scripting language with a pythonic syntax, strong suited for game-development.",
     "background": "godot",
     "link": "https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html",
     "tags": []
