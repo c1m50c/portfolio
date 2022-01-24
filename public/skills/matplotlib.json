@@ -1,6 +1,6 @@
 {
     "name": "Matplotlib 📊",
-    "description": "",
+    "description": "A Python library used for static, animated, or interactive data visualizations.",
     "background": "python",
     "link": "https://matplotlib.org",
     "tags": []

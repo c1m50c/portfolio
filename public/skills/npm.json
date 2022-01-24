@@ -1,6 +1,6 @@
 {
     "name": "NPM 📦",
-    "description": "",
+    "description": "Node Package Manager is the world's largest software registry. Mainly used for adapting JavaScript packages to a project.",
     "background": "java-script",
     "link": "https://www.npmjs.com/",
     "tags": []
