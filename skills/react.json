@@ -1,6 +1,6 @@
 {
     "name": "React ⚡",
-    "description": "",
+    "description": "JavaScript component based library for building user interfaces on the web. React Native allows the use to build native applications.",
     "background": "java-script",
     "link": "https://reactjs.org/",
     "tags": []

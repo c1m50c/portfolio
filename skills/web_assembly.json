@@ -1,6 +1,6 @@
 {
     "name": "WebAssembly 🏭",
-    "description": "",
+    "description": "Allows for languages like Rust and Go to run as libraries on the Web. Languages can set WebAssembly as a compilation-target and enable the language to be deployed on the client and server side of the Web.",
     "background": "web-assembly",
     "link": "https://webassembly.org/",
     "tags": []

@@ -1,6 +1,6 @@
 {
     "name": "Pandas 🐼",
-    "description": "",
+    "description": "Commonly used in the world of Data Science, Pandas is a Python library for analysis and manipulation of data.",
     "background": "python",
     "link": "https://pandas.pydata.org/",
     "tags": []
