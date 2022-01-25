@@ -2,6 +2,8 @@
     "name": "Pytest 🥼",
     "description": "Python Framework making it easy to test Python code, and ensure it's working correctly for production.",
     "background": "python",
-    "link": "https://github.com/pytest-dev/pytest",
+    "links": [
+        {"icon": "github", "link": "https://github.com/pytest-dev/pytest"}
+    ],
     "tags": []
 }

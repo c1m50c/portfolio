@@ -2,6 +2,8 @@
     "name": "Numpy 🧮",
     "description": "Python library providing essential mathematical and scientific functions, algorithms, and data structures; Used just about everywhere within the Python ecosystem.",
     "background": "python",
-    "link": "https://numpy.org/",
+    "links": [
+        {"icon": "website", "link": "https://numpy.org/"}
+    ],
     "tags": []
 }

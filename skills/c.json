@@ -2,6 +2,8 @@
     "name": "C 🔧",
     "description": "C is a low-level general-purpose procedural programming language, known as the Mother of all programming languages you can do anything within C.",
     "background": "c",
-    "link": "https://en.wikipedia.org/wiki/C_(programming_background)",
+    "links": [
+        {"icon": "wikipedia", "link": "https://en.wikipedia.org/wiki/C_(programming_background)"}
+    ],
     "tags": []
 }

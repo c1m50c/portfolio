@@ -2,6 +2,9 @@
     "name": "Godot 🤖",
     "description": "An open-source game engine that makes writing games simple. Having a very broad language choice from GDScript, C#, to even more languages provided by the engine's GDNative extensions. Godot is an incredibly powerful engine and will only become more powerful as time goes on.",
     "background": "godot",
-    "link": "https://godotengine.org/",
+    "links": [
+        {"icon": "github", "link": "https://github.com/godotengine/godot"},
+        {"icon": "website", "link": "https://godotengine.org/"}
+    ],
     "tags": []
 }

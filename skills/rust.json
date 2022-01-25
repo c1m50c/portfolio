@@ -2,6 +2,9 @@
     "name": "Rust 🦀",
     "description": "A low-level language based around memory safety and zero-cost abstractions. Most commonly found within the back-end of web applications, and various CLI tools.",
     "background": "rust",
-    "link": "https://www.rust-lang.org/",
+    "links": [
+        {"icon": "github", "link": "https://github.com/rust-lang/rust"},
+        {"icon": "website", "link": "https://www.rust-lang.org/"}
+    ],
     "tags": []
 }

@@ -2,6 +2,8 @@
     "name": "Git 💻",
     "description": "An open-source version control system designed for small and large projects, popularly extended upon by projects like Github and Gitlab. An essential skill to have for programmers working on large-scale projects.",
     "background": "git",
-    "link": "https://git-scm.com/",
+    "links": [
+        {"icon": "website", "link": "https://git-scm.com/"}
+    ],
     "tags": []
 }

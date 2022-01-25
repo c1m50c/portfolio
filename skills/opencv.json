@@ -2,6 +2,8 @@
     "name": "OpenCV 📸",
     "description": "Open source library for computer-vision, written mainly with C++. OpenCV allows for powerful real-time operations through the use of GPU acceleration.",
     "background": "cpp",
-    "link": "https://opencv.org/",
+    "links": [
+        {"icon": "website", "link": "https://opencv.org/"}
+    ],
     "tags": []
 }

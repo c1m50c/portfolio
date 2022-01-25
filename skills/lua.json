@@ -2,6 +2,8 @@
     "name": "Lua 🌌",
     "description": "Lua is a high-level, lightweight programming language normally used for modding, or scripting a video game. Popular games that use this language for such are Roblox, World of Warcraft, Teardown, and Garry's Mod.",
     "background": "lua",
-    "link": "https://www.lua.org/",
+    "links": [
+        {"icon": "website", "link": "https://www.lua.org/"}
+    ],
     "tags": []
 }

@@ -2,6 +2,8 @@
     "name": "HTML 📄",
     "description": "The markup language of the Web, HyperText Markup Language is used for the construction of web-based documents.",
     "background": "html",
-    "link": "https://en.wikipedia.org/wiki/HTML",
+    "links": [
+        {"icon": "website", "link": "https://en.wikipedia.org/wiki/HTML"}
+    ],
     "tags": []
 }

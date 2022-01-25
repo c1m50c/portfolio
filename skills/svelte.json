@@ -2,6 +2,8 @@
     "name": "Svelte 📙",
     "description": "JavaScript framework that contains no virtual DOM, instead compiling into tiny, vanilla JavaScript files. Svelte also requires no state management libraries to become reactive.",
     "background": "java-script",
-    "link": "https://svelte.dev/",
+    "links": [
+        {"icon": "website", "link": "https://svelte.dev/"}
+    ],
     "tags": []
 }
