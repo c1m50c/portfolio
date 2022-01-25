@@ -5,5 +5,12 @@
     "links": [
         {"icon": "website", "link": "https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html"}
     ],
-    "tags": []
+    "tags": [
+        "high-level",
+        "object-oriented",
+        "scripting",
+        "game-engine",
+        "godot",
+        "interpreted"
+    ]
 }

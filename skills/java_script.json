@@ -5,5 +5,10 @@
     "links": [
         {"icon": "website", "link": "https://www.javascript.com/"}
     ],
-    "tags": []
+    "tags": [
+        "high-level",
+        "event-driven",
+        "object-oriented",
+        "web"
+    ]
 }

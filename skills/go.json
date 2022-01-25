@@ -5,5 +5,11 @@
     "links": [
         {"icon": "website", "link": "https://golang.org/"}
     ],
-    "tags": []
+    "tags": [
+        "compiled",
+        "concurrent",
+        "low-level",
+        "memory-safe",
+        "object-oriented"
+    ]
 }
