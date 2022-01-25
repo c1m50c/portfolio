@@ -36,10 +36,7 @@
         let _ = new SkillInfo({
             target: document.body,
             props: {
-                link: skill_obj["link"],
-                name: skill_obj["name"],
-                background: skill_obj["background"],
-                description: skill_obj["description"],
+                obj: skill_obj,
             },
         });
     }

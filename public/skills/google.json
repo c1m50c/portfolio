@@ -2,6 +2,8 @@
     "name": "Google 🔎",
     "description": "Google is the world's most popular search-engine, and an incredible skill for any person in any field to have. Google allows the ability to research any topic thoroughly, and through it is possible to learn anything. It is an essential skill to have for programmers.",
     "background": "google",
-    "link": "https://google.com",
+    "links": [
+        {"icon": "website", "link": "https://google.com"}
+    ],
     "tags": []
 }

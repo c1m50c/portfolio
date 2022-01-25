@@ -2,6 +2,8 @@
     "name": "JavaScript ☕",
     "description": "The primary langauge run upon the Web, found in just about every field of programming. The primary focus and use is the Web but is extendable towards many other programming fields.",
     "background": "java-script",
-    "link": "https://www.javascript.com/",
+    "links": [
+        {"icon": "website", "link": "https://www.javascript.com/"}
+    ],
     "tags": []
 }

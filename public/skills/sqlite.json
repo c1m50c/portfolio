@@ -2,6 +2,8 @@
     "name": "SQLite 💾",
     "description": "A C library implementing a SQL database engine that is fast, self-contained, and fully featured. It's also the most used database engine in the world.",
     "background": "sql",
-    "link": "https://sqlite.org/index.html",
+    "links": [
+        {"icon": "website", "link": "https://sqlite.org/index.html"}
+    ],
     "tags": []
 }

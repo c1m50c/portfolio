@@ -3,42 +3,23 @@
 
 
     /**
-     * Primary link of the Skill, normally the Skill's website.
+     * `Object` from the parsed `json` file within `SkillButton`.
      */
-    export let link: string;
-
-
-    /**
-     * Name of the Skill.
-     */
-    export let name: string;
-
-
-    /**
-     * Description of the Skill, detailing its uses.
-     */
-    export let description: string;
-
-
-    /**
-     * Background of the Skill, see the `Backgrounds` classes within the CSS for options.
-     */
-    export let background: string;
+    export let obj: Object;
 
 
     /**
      * Reference to the Background of the `SkillInfo`.
      */
     let bg_ref: HTMLElement | null;
-
-
-    function delete_self() {
-        bg_ref.parentNode.removeChild(bg_ref);
-    }
 </script>
 
 
 <style>
+    .skill-info {
+        animation: fade-in 200ms linear;
+    }
+
     .background {
         position: fixed;
         background-color: rgba(26, 26, 26, 0.75);
@@ -81,6 +62,16 @@
         fill: var(--hover-foreground-color);
     }
 
+    .details {
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    .details-card .list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     /* Backgrounds, Should corespond to the values of the enum `Backgrounds` */
     .python { background-image: url("./../logos/languages/python.svg"); }
     .rust { background-image: url("./../logos/languages/rust.svg"); }
@@ -98,17 +89,41 @@
     .google { background-image: url("./../logos/google.svg"); }
     .git { background-image: url("./../logos/git.svg"); }
     .web-assembly { background-image: url("./../logos/web_assembly.svg"); }
+
+    @keyframes fade-in {
+        0% { opacity: 0%; }
+        100% { opacity: 100%; }
+    }
+
+    @keyframes fade-out {
+        0% { opacity: 100%; }
+        100% { opacity: 0%; }
+    }
 </style>
 
 
 <div class="skill-info background" bind:this={bg_ref} on:click|self={() => bg_ref.parentNode.removeChild(bg_ref)}>
-    <div class="info-box {background}">
+    <div class="info-box {obj["background"]}">
         <header>
-            <h1 class="name">{name}</h1>
-            <LogoLink link={link} icon={Icons.Website} />
+            <h1 class="name">{obj["name"]}</h1>
         </header>
-        <p class="description">
-            {description}
-        </p>
+        <div class="details">
+            {#if "description" in obj}
+                <div class="details-card description">
+                    <h2>Description</h2>
+                    <p>{obj["description"]}</p>
+                </div>
+            {/if}
+            {#if "links" in obj}
+                <div class="details-card links">
+                    <h2>Links</h2>
+                    <div class="list">
+                        {#each obj["links"] as link}
+                            <LogoLink link={link["link"]} icon={link["icon"]} />
+                        {/each}
+                    </div>
+                </div>
+            {/if}
+        </div>
     </div>
 </div>

@@ -2,6 +2,8 @@
     "name": "Tailwind 🍃",
     "description": "Library containing a new way to write CSS, by including built-in classes that makes writing CSS a breeze.",
     "background": "css",
-    "link": "https://tailwindcss.com/",
+    "links": [
+        {"icon": "website", "link": "https://tailwindcss.com/"}
+    ],
     "tags": []
 }

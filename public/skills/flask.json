@@ -2,6 +2,8 @@
     "name": "Flask 🧪",
     "description": "Micro-framework for Python that allows for the creation of Web applications.",
     "background": "python",
-    "link": "https://github.com/pallets/flask/",
+    "links": [
+        {"icon": "github", "link": "https://github.com/pallets/flask/"}
+    ],
     "tags": []
 }
