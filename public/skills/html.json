@@ -5,5 +5,8 @@
     "links": [
         {"icon": "wikipedia", "link": "https://en.wikipedia.org/wiki/HTML"}
     ],
-    "tags": []
+    "tags": [
+        "markup",
+        "web"
+    ]
 }

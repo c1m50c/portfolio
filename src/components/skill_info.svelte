@@ -36,8 +36,8 @@
     .info-box {
         background-color: rgb(48, 48, 48);
         padding: 0.25rem 1rem;
-        width: 75%;
-        height: 75%;
+        width: 80%;
+        height: 80%;
 
         background-size: 175% 175%;
         background-position: center;
@@ -72,6 +72,16 @@
         flex-wrap: wrap;
     }
 
+    .tags .list {
+        gap: 0.25em;
+    }
+
+    .tag {
+        background-color: var(--button-foreground-color);
+        color: var(--base-text-color);
+        padding: 0.25em;
+    }
+
     @keyframes fade-in {
         0% { opacity: 0%; }
         100% { opacity: 100%; }
@@ -94,6 +104,16 @@
                 <div class="details-card description">
                     <h2>Description</h2>
                     <p>{obj["description"]}</p>
+                </div>
+            {/if}
+            {#if "tags" in obj}
+                <div class="details-card tags">
+                    <h2>Tags</h2>
+                    <div class="list">
+                        {#each obj["tags"] as tag}
+                            <strong class="tag">{tag}</strong>
+                        {/each}
+                    </div>
                 </div>
             {/if}
             {#if "links" in obj}

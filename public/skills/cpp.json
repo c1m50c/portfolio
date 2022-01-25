@@ -5,5 +5,11 @@
     "links": [
         {"icon": "wikipedia", "link": "https://en.wikipedia.org/wiki/C%2B%2B"}
     ],
-    "tags": []
+    "tags": [
+        "compiled",
+        "low-level",
+        "procedural",
+        "object-oriented",
+        "c-lang"
+    ]
 }

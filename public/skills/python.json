@@ -6,5 +6,11 @@
         {"icon": "wikipedia", "link": "https://en.wikipedia.org/wiki/Python_(programming_language)"},
         {"icon": "website", "link": "https://www.python.org/"}
     ],
-    "tags": []
+    "tags": [
+        "interpreted",
+        "object-oriented",
+        "high-level",
+        "data-science",
+        "machine-learning"
+    ]
 }

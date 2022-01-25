@@ -5,5 +5,12 @@
     "links": [
         {"icon": "website", "link": "https://www.typescriptlang.org/"}
     ],
-    "tags": []
+    "tags": [
+        "high-level",
+        "event-driven",
+        "object-oriented",
+        "type-safety",
+        "super-set",
+        "web"
+    ]
 }

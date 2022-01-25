@@ -5,5 +5,10 @@
     "links": [
         {"icon": "website", "link": "https://docs.microsoft.com/en-us/dotnet/csharp/"}
     ],
-    "tags": []
+    "tags": [
+        "compiled",
+        "concurrent",
+        "object-oriented",
+        "c-lang"
+    ]
 }

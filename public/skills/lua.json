@@ -5,5 +5,11 @@
     "links": [
         {"icon": "website", "link": "https://www.lua.org/"}
     ],
-    "tags": []
+    "tags": [
+        "interpreted",
+        "high-level",
+        "lightweight",
+        "modding",
+        "scripting"
+    ]
 }
