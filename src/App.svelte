@@ -67,6 +67,23 @@
         text-align: center;
     }
 
+    :global(.python) { background-image: url("./../logos/languages/python.svg"); }
+    :global(.rust) { background-image: url("./../logos/languages/rust.svg"); }
+    :global(.go) { background-image: url("./../logos/languages/go.svg"); }
+    :global(.java-script) { background-image: url("./../logos/languages/java_script.svg"); }
+    :global(.type-script) { background-image: url("./../logos/languages/type_script.svg"); }
+    :global(.html) { background-image: url("./../logos/languages/html.svg"); }
+    :global(.css) { background-image: url("./../logos/languages/css.svg"); }
+    :global(.sql) { background-image: url("./../logos/languages/sql.svg"); }
+    :global(.c) { background-image: url("./../logos/languages/c.svg"); }
+    :global(.cpp) { background-image: url("./../logos/languages/cpp.svg"); }
+    :global(.c-sharp) { background-image: url("./../logos/languages/c_sharp.svg"); }
+    :global(.lua) { background-image: url("./../logos/languages/lua.svg"); }
+    :global(.godot) { background-image: url("./../logos/godot.svg"); }
+    :global(.google) { background-image: url("./../logos/google.svg"); }
+    :global(.git) { background-image: url("./../logos/git.svg"); }
+    :global(.web-assembly) { background-image: url("./../logos/web_assembly.svg"); }
+
     main {
         gap: 2rem;
         display: grid;

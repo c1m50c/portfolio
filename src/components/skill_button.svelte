@@ -62,24 +62,6 @@
     }
 
     .skill-button:hover { background-size: 115% 115%; }
-
-    /* Backgrounds, Should corespond to the values of the enum `Backgrounds` */
-    .python { background-image: url("./../logos/languages/python.svg"); }
-    .rust { background-image: url("./../logos/languages/rust.svg"); }
-    .go { background-image: url("./../logos/languages/go.svg"); }
-    .java-script { background-image: url("./../logos/languages/java_script.svg"); }
-    .type-script { background-image: url("./../logos/languages/type_script.svg"); }
-    .html { background-image: url("./../logos/languages/html.svg"); }
-    .css { background-image: url("./../logos/languages/css.svg"); }
-    .sql { background-image: url("./../logos/languages/sql.svg"); }
-    .c { background-image: url("./../logos/languages/c.svg"); }
-    .cpp { background-image: url("./../logos/languages/cpp.svg"); }
-    .c-sharp { background-image: url("./../logos/languages/c_sharp.svg"); }
-    .lua { background-image: url("./../logos/languages/lua.svg"); }
-    .godot { background-image: url("./../logos/godot.svg"); }
-    .google { background-image: url("./../logos/google.svg"); }
-    .git { background-image: url("./../logos/git.svg"); }
-    .web-assembly { background-image: url("./../logos/web_assembly.svg"); }
 </style>
 
 
