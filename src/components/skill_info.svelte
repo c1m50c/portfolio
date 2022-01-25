@@ -36,8 +36,9 @@
     .info-box {
         background-color: rgb(48, 48, 48);
         padding: 0.25rem 1rem;
-        width: 80%;
+        overflow-y: scroll;
         height: 80%;
+        width: 80%;
 
         background-size: 175% 175%;
         background-position: center;
