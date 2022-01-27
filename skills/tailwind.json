@@ -3,7 +3,17 @@
     "description": "Library containing a new way to write CSS, by including built-in classes that makes writing CSS a breeze.",
     "background": "css",
     "links": [
+        {"icon": "github", "link": "https://github.com/tailwindlabs/tailwindcss"},
         {"icon": "website", "link": "https://tailwindcss.com/"}
     ],
-    "tags": []
+    "tags": [
+        "css",
+        "java-script",
+        "library",
+        "responsive",
+        "framework",
+        "user-interface",
+        "utility",
+        "web-development"
+    ]
 }
