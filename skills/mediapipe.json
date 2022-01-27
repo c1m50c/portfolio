@@ -1,9 +1,17 @@
 {
     "name": "Mediapipe 🔬",
     "description": "Google Mediapipe is a library written for Python and JavaScript for very customizable machine-learning solutions, mainly meant for live and streaming media.",
-    "background": "python",
+    "background": "cpp",
     "links": [
+        {"icon": "github", "link": "https://github.com/google/mediapipe"},
         {"icon": "website", "link": "https://google.github.io/mediapipe/"}
     ],
-    "tags": []
+    "tags": [
+        "c++",
+        "python",
+        "java-script",
+        "machine-learning",
+        "google",
+        "computer-vision"
+    ]
 }

@@ -3,7 +3,14 @@
     "description": "Micro-framework for Python that allows for the creation of Web applications.",
     "background": "python",
     "links": [
-        {"icon": "github", "link": "https://github.com/pallets/flask/"}
+        {"icon": "github", "link": "https://github.com/pallets/flask/"},
+        {"icon": "website", "link": "https://flask.palletsprojects.com/en/2.0.x/"}
     ],
-    "tags": []
+    "tags": [
+        "python",
+        "web-development",
+        "web-framework",
+        "framework",
+        "wsgi"
+    ]
 }

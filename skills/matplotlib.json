@@ -3,7 +3,13 @@
     "description": "A Python library used for static, animated, or interactive data visualizations.",
     "background": "python",
     "links": [
+        {"icon": "github", "link": "https://github.com/matplotlib/matplotlib"},
         {"icon": "website", "link": "https://matplotlib.org"}
     ],
-    "tags": []
+    "tags": [
+        "python",
+        "data-science",
+        "data-visualization",
+        "plotting"
+    ]
 }
