@@ -3,7 +3,15 @@
     "description": "Rust Bindings for Python, CPython its self is the reference implementation of Python. CPython has a foreign function interface for several languages, which allow the binding.",
     "background": "rust",
     "links": [
-        {"icon": "github", "link": "https://github.com/dgrunwald/rust-cpython"}
+        {"icon": "github", "link": "https://github.com/dgrunwald/rust-cpython"},
+        {"icon": "crates-io", "link": "https://crates.io/crates/cpython"},
+        {"icon": "docs-rs", "link": "https://dgrunwald.github.io/rust-cpython/doc/cpython/"}
     ],
-    "tags": []
+    "tags": [
+        "rust",
+        "python",
+        "c-python",
+        "bindings",
+        "library"
+    ]
 }

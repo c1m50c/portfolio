@@ -3,7 +3,14 @@
     "description": "Versatile JavaScript component based framework for building a performant user-interface.",
     "background": "java-script",
     "links": [
+        {"icon": "github", "link": "https://github.com/vuejs/vue"},
         {"icon": "website", "link": "https://vuejs.org/"}
     ],
-    "tags": []
+    "tags": [
+        "java-script",
+        "type-script",
+        "framework",
+        "user-interface",
+        "web-development"
+    ]
 }

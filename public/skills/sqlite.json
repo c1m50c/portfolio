@@ -5,5 +5,10 @@
     "links": [
         {"icon": "website", "link": "https://sqlite.org/index.html"}
     ],
-    "tags": []
+    "tags": [
+        "sql",
+        "c",
+        "database",
+        "engine"
+    ]
 }

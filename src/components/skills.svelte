@@ -58,7 +58,6 @@
             <SkillButton json="skills/vue.json" />
             <SkillButton json="skills/svelte.json" />
             <SkillButton json="skills/tailwind.json" />
-            <SkillButton json="skills/sass.json" />
             <SkillButton json="skills/godot.json" />
         </div>
     </div>

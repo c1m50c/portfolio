@@ -3,7 +3,15 @@
     "description": "JavaScript component based library for building user interfaces on the web. React Native allows the use to build native applications.",
     "background": "java-script",
     "links": [
+        {"icon": "github", "link": "https://github.com/facebook/react/"},
         {"icon": "website", "link": "https://reactjs.org/"}
     ],
-    "tags": []
+    "tags": [
+        "java-script",
+        "type-script",
+        "library",
+        "user-interface",
+        "web-development",
+        "meta"
+    ]
 }

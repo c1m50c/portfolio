@@ -6,5 +6,11 @@
         {"icon": "github", "link": "https://github.com/godotengine/godot"},
         {"icon": "website", "link": "https://godotengine.org/"}
     ],
-    "tags": []
+    "tags": [
+        "gdscript",
+        "c++",
+        "c#",
+        "engine",
+        "game-development"
+    ]
 }
