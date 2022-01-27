@@ -5,5 +5,9 @@
     "links": [
         {"icon": "website", "link": "https://google.com"}
     ],
-    "tags": []
+    "tags": [
+        "google",
+        "search-engine",
+        "research"
+    ]
 }
