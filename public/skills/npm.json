@@ -3,7 +3,14 @@
     "description": "Node Package Manager is the world's largest software registry. Mainly used for adapting JavaScript packages to a project.",
     "background": "java-script",
     "links": [
+        {"icon": "github", "link": "https://github.com/npm/cli"},
         {"icon": "website", "link": "https://www.npmjs.com/"}
     ],
-    "tags": []
+    "tags": [
+        "java-script",
+        "package-manager",
+        "cli",
+        "nodejs",
+        "web-development"
+    ]
 }
