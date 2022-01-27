@@ -49,8 +49,8 @@
             <SkillButton json="skills/pandas.json" />
             <SkillButton json="skills/numpy.json" />
             <SkillButton json="skills/pytest.json" />
-            <SkillButton json="skills/mediapipe.json" />
             <SkillButton json="skills/flask.json" />
+            <SkillButton json="skills/mediapipe.json" />
             <SkillButton json="skills/opencv.json" />
             <SkillButton json="skills/rust_cpython.json" />
             <SkillButton json="skills/sqlite.json" />

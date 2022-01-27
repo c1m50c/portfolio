@@ -3,7 +3,13 @@
     "description": "Python Framework making it easy to test Python code, and ensure it's working correctly for production.",
     "background": "python",
     "links": [
-        {"icon": "github", "link": "https://github.com/pytest-dev/pytest"}
+        {"icon": "github", "link": "https://github.com/pytest-dev/pytest"},
+        {"icon": "website", "link": "https://docs.pytest.org/en/stable/"}
     ],
-    "tags": []
+    "tags": [
+        "python",
+        "testing",
+        "unit-testing",
+        "test"
+    ]
 }
