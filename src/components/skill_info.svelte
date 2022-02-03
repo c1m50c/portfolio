@@ -1,5 +1,5 @@
 <script lang="ts">
-    import LogoLink, { Icons } from "./logo_link.svelte";
+    import LogoLink from "./logo_link.svelte";
 
 
     /**
