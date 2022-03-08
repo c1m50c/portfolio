@@ -6,6 +6,7 @@
     import RustDataStructures from "./project-cards/rust_data_structures_pc.svelte";
     import FixedVectors from "./project-cards/fixed_vectors.svelte";
     import Lists from "./project-cards/lists.svelte";
+    import Evaluator from "./project-cards/evaluator.svelte";
 </script>
 
 
@@ -24,6 +25,7 @@
         <PortfolioPc />
         <Lists />
         <FixedVectors />
+        <Evaluator />
         <SortingAlgorithmVisualizer />
         <RustAlgorithms />
         <RustDataStructures />
