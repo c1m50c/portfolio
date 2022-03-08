@@ -1,9 +1,9 @@
 <script lang="ts">
-    import PortfolioPc from "./project-cards/portfolio_pc.svelte";
-    import CellularAutomata from "./project-cards/cellular_automata_pc.svelte";
-    import SortingAlgorithmVisualizer from "./project-cards/sorting_algorithm_visualizer_pc.svelte";
-    import RustAlgorithms from "./project-cards/rust_algorithms_pc.svelte";
-    import RustDataStructures from "./project-cards/rust_data_structures_pc.svelte";
+    import PortfolioPc from "./project-cards/portfolio.svelte";
+    import CellularAutomata from "./project-cards/cellular_automata.svelte";
+    import SortingAlgorithmVisualizer from "./project-cards/sorting_algorithm_visualizer.svelte";
+    import RustAlgorithms from "./project-cards/rust_algorithms.svelte";
+    import RustDataStructures from "./project-cards/rust_data_structures.svelte";
     import FixedVectors from "./project-cards/fixed_vectors.svelte";
     import Lists from "./project-cards/lists.svelte";
     import Evaluator from "./project-cards/evaluator.svelte";
