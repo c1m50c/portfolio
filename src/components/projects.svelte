@@ -7,6 +7,7 @@
     import FixedVectors from "./project-cards/fixed_vectors.svelte";
     import Lists from "./project-cards/lists.svelte";
     import Evaluator from "./project-cards/evaluator.svelte";
+    import PasswordGenerator from "./project-cards/password_generator.svelte";
 </script>
 
 
@@ -26,6 +27,7 @@
         <Lists />
         <FixedVectors />
         <Evaluator />
+        <PasswordGenerator />
         <SortingAlgorithmVisualizer />
         <RustAlgorithms />
         <RustDataStructures />
