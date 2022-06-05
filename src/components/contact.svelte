@@ -6,9 +6,8 @@
     const hacker_rank_profile: string = "https://www.hackerrank.com/c1m50c";
     const linked_in_profile: string = "https://www.linkedin.com/in/pere-wells";
     
-    /** Copys a string into the user's clipboard. */
-    function copy_to_clipboard(str: string) {
-        navigator.clipboard.writeText(str);
+    function handle_email(str: string) {
+        window.open("mailto:${str}");
     }
 </script>
 
@@ -59,5 +58,5 @@
         <LogoLink link={hacker_rank_profile} icon={Icons.HackerRank} />
         <LogoLink link={linked_in_profile} icon={Icons.LinkedIn} />
     </div>
-    <button id="email" on:click={() => {copy_to_clipboard(email)}}>{email}</button>
+    <button id="email" on:click={() => {handle_email(email)}}>{email}</button>
 </div>
