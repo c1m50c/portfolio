@@ -1,7 +1,4 @@
 :root {
-    --scrollbar-color: rgb(58, 240, 155);
-    --scrollbar-track-color: rgb(10, 10, 10);
-    --scrollbar-width: 0.5rem;
     --default-text-color: rgb(222, 222, 222);
     --page-background-color: rgb(24, 22, 22);
 }
@@ -22,11 +19,6 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
         "Helvetica Neue", sans-serif;
     overflow-y: scroll;
-    scrollbar-color: var(--scrollbar-color);
-    scrollbar-width: var(--scrollbar-width);
 }
 
-body::-webkit-scrollbar { width: var(--scrollbar-width); }
-body::-webkit-scrollbar-track { background-color: var(--scrollbar-track-color); }
-body::-webkit-scrollbar-thumb { background: var(--scrollbar-color); }
 label { display: block; }
