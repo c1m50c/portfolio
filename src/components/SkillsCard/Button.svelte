@@ -1,5 +1,7 @@
 <script lang="ts">
-    export let name: string;
+    import type { Skill } from "./SkillsCard.svelte";
+
+    export let skill: Skill;
 </script>
 
 <style>
@@ -25,5 +27,5 @@
 </style>
 
 <button class="skill-button">
-    <p>{ name }</p>
+    <p>{ skill.name }</p>
 </button>

@@ -10,6 +10,9 @@ var app = (function () {
             tar[k] = src[k];
         return tar;
     }
+    function is_promise(value) {
+        return value && typeof value === 'object' && typeof value.then === 'function';
+    }
     function add_location(element, file, line, column, char) {
         element.__svelte_meta = {
             loc: { file, line, column, char }
@@ -88,6 +91,12 @@ var app = (function () {
     function detach(node) {
         node.parentNode.removeChild(node);
     }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
     function element(name) {
         return document.createElement(name);
     }
@@ -96,6 +105,9 @@ var app = (function () {
     }
     function space() {
         return text(' ');
+    }
+    function empty() {
+        return text('');
     }
     function attr(node, attribute, value) {
         if (value == null)
@@ -115,6 +127,11 @@ var app = (function () {
     let current_component;
     function set_current_component(component) {
         current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error('Function called outside component initialization');
+        return current_component;
     }
 
     const dirty_components = [];
@@ -182,6 +199,19 @@ var app = (function () {
     }
     const outroing = new Set();
     let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
     function transition_in(block, local) {
         if (block && block.i) {
             outroing.delete(block);
@@ -203,6 +233,88 @@ var app = (function () {
             });
             block.o(local);
         }
+    }
+
+    function handle_promise(promise, info) {
+        const token = info.token = {};
+        function update(type, index, key, value) {
+            if (info.token !== token)
+                return;
+            info.resolved = value;
+            let child_ctx = info.ctx;
+            if (key !== undefined) {
+                child_ctx = child_ctx.slice();
+                child_ctx[key] = value;
+            }
+            const block = type && (info.current = type)(child_ctx);
+            let needs_flush = false;
+            if (info.block) {
+                if (info.blocks) {
+                    info.blocks.forEach((block, i) => {
+                        if (i !== index && block) {
+                            group_outros();
+                            transition_out(block, 1, 1, () => {
+                                if (info.blocks[i] === block) {
+                                    info.blocks[i] = null;
+                                }
+                            });
+                            check_outros();
+                        }
+                    });
+                }
+                else {
+                    info.block.d(1);
+                }
+                block.c();
+                transition_in(block, 1);
+                block.m(info.mount(), info.anchor);
+                needs_flush = true;
+            }
+            info.block = block;
+            if (info.blocks)
+                info.blocks[index] = block;
+            if (needs_flush) {
+                flush();
+            }
+        }
+        if (is_promise(promise)) {
+            const current_component = get_current_component();
+            promise.then(value => {
+                set_current_component(current_component);
+                update(info.then, 1, info.value, value);
+                set_current_component(null);
+            }, error => {
+                set_current_component(current_component);
+                update(info.catch, 2, info.error, error);
+                set_current_component(null);
+                if (!info.hasCatch) {
+                    throw error;
+                }
+            });
+            // if we previously had a then/catch block, destroy it
+            if (info.current !== info.pending) {
+                update(info.pending, 0);
+                return true;
+            }
+        }
+        else {
+            if (info.current !== info.then) {
+                update(info.then, 1, info.value, promise);
+                return true;
+            }
+            info.resolved = promise;
+        }
+    }
+    function update_await_block_branch(info, ctx, dirty) {
+        const child_ctx = ctx.slice();
+        const { resolved } = info;
+        if (info.current === info.then) {
+            child_ctx[info.value] = resolved;
+        }
+        if (info.current === info.catch) {
+            child_ctx[info.error] = resolved;
+        }
+        info.block.p(child_ctx, dirty);
     }
     function create_component(block) {
         block && block.c();
@@ -361,6 +473,15 @@ var app = (function () {
             return;
         dispatch_dev('SvelteDOMSetData', { node: text, data });
         text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
     }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
@@ -869,16 +990,17 @@ var app = (function () {
     function create_fragment$2(ctx) {
     	let button;
     	let p;
+    	let t_value = /*skill*/ ctx[0].name + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			button = element("button");
     			p = element("p");
-    			t = text(/*name*/ ctx[0]);
-    			add_location(p, file$2, 26, 4, 594);
+    			t = text(t_value);
+    			add_location(p, file$2, 26, 4, 595);
     			attr_dev(button, "class", "skill-button svelte-1lapkvh");
-    			add_location(button, file$2, 25, 0, 559);
+    			add_location(button, file$2, 25, 0, 560);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -889,7 +1011,7 @@ var app = (function () {
     			append_dev(p, t);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*name*/ 1) set_data_dev(t, /*name*/ ctx[0]);
+    			if (dirty & /*skill*/ 1 && t_value !== (t_value = /*skill*/ ctx[0].name + "")) set_data_dev(t, t_value);
     		},
     		i: noop,
     		o: noop,
@@ -912,34 +1034,34 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Button', slots, []);
-    	let { name } = $$props;
-    	const writable_props = ['name'];
+    	let { skill } = $$props;
+    	const writable_props = ['skill'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Button> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$$set = $$props => {
-    		if ('name' in $$props) $$invalidate(0, name = $$props.name);
+    		if ('skill' in $$props) $$invalidate(0, skill = $$props.skill);
     	};
 
-    	$$self.$capture_state = () => ({ name });
+    	$$self.$capture_state = () => ({ skill });
 
     	$$self.$inject_state = $$props => {
-    		if ('name' in $$props) $$invalidate(0, name = $$props.name);
+    		if ('skill' in $$props) $$invalidate(0, skill = $$props.skill);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name];
+    	return [skill];
     }
 
     class Button extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { name: 0 });
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { skill: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -951,16 +1073,16 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*name*/ ctx[0] === undefined && !('name' in props)) {
-    			console.warn("<Button> was created without expected prop 'name'");
+    		if (/*skill*/ ctx[0] === undefined && !('skill' in props)) {
+    			console.warn("<Button> was created without expected prop 'skill'");
     		}
     	}
 
-    	get name() {
+    	get skill() {
     		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set name(value) {
+    	set skill(value) {
     		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -968,197 +1090,252 @@ var app = (function () {
     /* src\components\SkillsCard\SkillsCard.svelte generated by Svelte v3.42.5 */
     const file$1 = "src\\components\\SkillsCard\\SkillsCard.svelte";
 
-    // (15:4) 
-    function create_inner_card_slot(ctx) {
-    	let div;
-    	let button0;
-    	let t0;
-    	let button1;
-    	let t1;
-    	let button2;
-    	let t2;
-    	let button3;
-    	let t3;
-    	let button4;
-    	let t4;
-    	let button5;
-    	let t5;
-    	let button6;
-    	let t6;
-    	let button7;
-    	let t7;
-    	let button8;
-    	let t8;
-    	let button9;
-    	let t9;
-    	let button10;
-    	let t10;
-    	let button11;
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[3] = list[i];
+    	return child_ctx;
+    }
+
+    // (1:0) <script context="module" lang="ts">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {      function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }
+    function create_catch_block(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block.name,
+    		type: "catch",
+    		source: "(1:0) <script context=\\\"module\\\" lang=\\\"ts\\\">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {      function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (43:41)               {#each skills as skill}
+    function create_then_block(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value = /*skills*/ ctx[2];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*get_skills*/ 1) {
+    				each_value = /*skills*/ ctx[2];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block.name,
+    		type: "then",
+    		source: "(43:41)               {#each skills as skill}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (44:12) {#each skills as skill}
+    function create_each_block(ctx) {
+    	let button;
     	let current;
 
-    	button0 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button1 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button2 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button3 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button4 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button5 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button6 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button7 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button8 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button9 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button10 = new Button({
-    			props: { name: "Python" },
-    			$$inline: true
-    		});
-
-    	button11 = new Button({
-    			props: { name: "Python" },
+    	button = new Button({
+    			props: { skill: /*skill*/ ctx[3] },
     			$$inline: true
     		});
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			create_component(button0.$$.fragment);
-    			t0 = space();
-    			create_component(button1.$$.fragment);
-    			t1 = space();
-    			create_component(button2.$$.fragment);
-    			t2 = space();
-    			create_component(button3.$$.fragment);
-    			t3 = space();
-    			create_component(button4.$$.fragment);
-    			t4 = space();
-    			create_component(button5.$$.fragment);
-    			t5 = space();
-    			create_component(button6.$$.fragment);
-    			t6 = space();
-    			create_component(button7.$$.fragment);
-    			t7 = space();
-    			create_component(button8.$$.fragment);
-    			t8 = space();
-    			create_component(button9.$$.fragment);
-    			t9 = space();
-    			create_component(button10.$$.fragment);
-    			t10 = space();
-    			create_component(button11.$$.fragment);
-    			attr_dev(div, "slot", "inner-card");
-    			attr_dev(div, "class", "button-container svelte-1t2y921");
-    			add_location(div, file$1, 14, 4, 362);
+    			create_component(button.$$.fragment);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(button0, div, null);
-    			append_dev(div, t0);
-    			mount_component(button1, div, null);
-    			append_dev(div, t1);
-    			mount_component(button2, div, null);
-    			append_dev(div, t2);
-    			mount_component(button3, div, null);
-    			append_dev(div, t3);
-    			mount_component(button4, div, null);
-    			append_dev(div, t4);
-    			mount_component(button5, div, null);
-    			append_dev(div, t5);
-    			mount_component(button6, div, null);
-    			append_dev(div, t6);
-    			mount_component(button7, div, null);
-    			append_dev(div, t7);
-    			mount_component(button8, div, null);
-    			append_dev(div, t8);
-    			mount_component(button9, div, null);
-    			append_dev(div, t9);
-    			mount_component(button10, div, null);
-    			append_dev(div, t10);
-    			mount_component(button11, div, null);
+    			mount_component(button, target, anchor);
     			current = true;
     		},
     		p: noop,
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(button0.$$.fragment, local);
-    			transition_in(button1.$$.fragment, local);
-    			transition_in(button2.$$.fragment, local);
-    			transition_in(button3.$$.fragment, local);
-    			transition_in(button4.$$.fragment, local);
-    			transition_in(button5.$$.fragment, local);
-    			transition_in(button6.$$.fragment, local);
-    			transition_in(button7.$$.fragment, local);
-    			transition_in(button8.$$.fragment, local);
-    			transition_in(button9.$$.fragment, local);
-    			transition_in(button10.$$.fragment, local);
-    			transition_in(button11.$$.fragment, local);
+    			transition_in(button.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(button0.$$.fragment, local);
-    			transition_out(button1.$$.fragment, local);
-    			transition_out(button2.$$.fragment, local);
-    			transition_out(button3.$$.fragment, local);
-    			transition_out(button4.$$.fragment, local);
-    			transition_out(button5.$$.fragment, local);
-    			transition_out(button6.$$.fragment, local);
-    			transition_out(button7.$$.fragment, local);
-    			transition_out(button8.$$.fragment, local);
-    			transition_out(button9.$$.fragment, local);
-    			transition_out(button10.$$.fragment, local);
-    			transition_out(button11.$$.fragment, local);
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(44:12) {#each skills as skill}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1:0) <script context="module" lang="ts">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {      function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }
+    function create_pending_block(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block.name,
+    		type: "pending",
+    		source: "(1:0) <script context=\\\"module\\\" lang=\\\"ts\\\">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {      function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (42:4) 
+    function create_inner_card_slot(ctx) {
+    	let div;
+    	let current;
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		hasCatch: false,
+    		pending: create_pending_block,
+    		then: create_then_block,
+    		catch: create_catch_block,
+    		value: 2,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(/*get_skills*/ ctx[0](), info);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			info.block.c();
+    			attr_dev(div, "slot", "inner-card");
+    			attr_dev(div, "class", "button-container svelte-1t2y921");
+    			add_location(div, file$1, 41, 4, 2003);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			info.block.m(div, info.anchor = null);
+    			info.mount = () => div;
+    			info.anchor = null;
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			update_await_block_branch(info, ctx, dirty);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			destroy_component(button0);
-    			destroy_component(button1);
-    			destroy_component(button2);
-    			destroy_component(button3);
-    			destroy_component(button4);
-    			destroy_component(button5);
-    			destroy_component(button6);
-    			destroy_component(button7);
-    			destroy_component(button8);
-    			destroy_component(button9);
-    			destroy_component(button10);
-    			destroy_component(button11);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
     		}
     	};
 
@@ -1166,7 +1343,7 @@ var app = (function () {
     		block,
     		id: create_inner_card_slot.name,
     		type: "slot",
-    		source: "(15:4) ",
+    		source: "(42:4) ",
     		ctx
     	});
 
@@ -1201,7 +1378,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const card_changes = {};
 
-    			if (dirty & /*$$scope*/ 1) {
+    			if (dirty & /*$$scope*/ 64) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -1232,17 +1409,114 @@ var app = (function () {
     	return block;
     }
 
+    undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+    	function adopt(value) {
+    		return value instanceof P
+    		? value
+    		: new P(function (resolve) {
+    					resolve(value);
+    				});
+    	}
+
+    	return new (P || (P = Promise))(function (resolve, reject) {
+    			function fulfilled(value) {
+    				try {
+    					step(generator.next(value));
+    				} catch(e) {
+    					reject(e);
+    				}
+    			}
+
+    			function rejected(value) {
+    				try {
+    					step(generator["throw"](value));
+    				} catch(e) {
+    					reject(e);
+    				}
+    			}
+
+    			function step(result) {
+    				result.done
+    				? resolve(result.value)
+    				: adopt(result.value).then(fulfilled, rejected);
+    			}
+
+    			step((generator = generator.apply(thisArg, _arguments || [])).next());
+    		});
+    };
+
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('SkillsCard', slots, []);
+
+    	var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
+    		function adopt(value) {
+    			return value instanceof P
+    			? value
+    			: new P(function (resolve) {
+    						resolve(value);
+    					});
+    		}
+
+    		return new (P || (P = Promise))(function (resolve, reject) {
+    				function fulfilled(value) {
+    					try {
+    						step(generator.next(value));
+    					} catch(e) {
+    						reject(e);
+    					}
+    				}
+
+    				function rejected(value) {
+    					try {
+    						step(generator["throw"](value));
+    					} catch(e) {
+    						reject(e);
+    					}
+    				}
+
+    				function step(result) {
+    					result.done
+    					? resolve(result.value)
+    					: adopt(result.value).then(fulfilled, rejected);
+    				}
+
+    				step((generator = generator.apply(thisArg, _arguments || [])).next());
+    			});
+    	};
+
+    	const get_skills = () => __awaiter(void 0, void 0, void 0, function* () {
+    		let skills = new Array();
+
+    		// TODO:
+    		// Add `file-system` to NPM
+    		// Read files from `/skills/`
+    		return skills;
+    	});
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<SkillsCard> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ Card, Button });
-    	return [];
+    	$$self.$capture_state = () => ({
+    		__awaiter,
+    		__awaiter,
+    		Card,
+    		Button,
+    		get_skills
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('__awaiter' in $$props) __awaiter = $$props.__awaiter;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [get_skills];
     }
 
     class SkillsCard extends SvelteComponentDev {
