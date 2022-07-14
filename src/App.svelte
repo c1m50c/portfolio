@@ -1,6 +1,5 @@
 <script lang="ts">
     import Navigation from "./components/Navigation/Navigation.svelte";
-    import Card from "./components/Card/Card.svelte";
     import SkillsCard from "./components/SkillsCard/SkillsCard.svelte";
 </script>
 
@@ -21,6 +20,5 @@
 
 <Navigation />
 <main>
-    <!-- <Card title="About Me" /> -->
     <SkillsCard />
 </main>

@@ -1,7 +1,17 @@
 <script lang="ts">
+    import ButtonPopup from "./ButtonPopup.svelte";
     import type { Skill } from "./SkillsCard.svelte";
 
     export let skill: Skill;
+
+    const popup = () => {
+        let _ = new ButtonPopup({
+            target: document.body,
+            props: {
+                skill: skill
+            },
+        });
+    }
 </script>
 
 <style>
@@ -26,6 +36,6 @@
     }
 </style>
 
-<button class="skill-button">
+<button class="skill-button" on:click={popup}>
     <p>{ skill.name }</p>
 </button>

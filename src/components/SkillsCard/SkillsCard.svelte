@@ -8,12 +8,22 @@
     import Card from "../Card/Card.svelte";
     import Button from "./Button.svelte";
 
+    const fetch_file = async (path: string): Promise<Skill> => {
+        const response = await fetch(path);
+        const object = await response.json();
+
+        if (response.ok) {
+            return object;
+        }
+
+        throw new Error(object);
+    }
+
     const get_skills = async (): Promise<Skill[]> => {
         let skills: Skill[] = new Array();
 
-        // TODO:
-        // Add `file-system` to NPM
-        // Read files from `/skills/`
+        // TODO: Find better way of doing this.
+        skills.push(await fetch_file("/skills/python.json"));
 
         return skills;
     }
