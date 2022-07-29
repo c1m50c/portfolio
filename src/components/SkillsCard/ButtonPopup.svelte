@@ -7,6 +7,7 @@
 
 <style>
     .button-popup {
+        text-align: center;
     }
 </style>
 
@@ -14,5 +15,6 @@
     <div slot="center" class="button-popup">
         <h1>{ skill.name }</h1>
         <hr />
+        <p>{ skill.description }</p>
     </div>
 </Popup>

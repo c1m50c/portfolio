@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
     export type Skill = {
         name: string;
+        description: string;
     };
 </script>
 
@@ -8,7 +9,7 @@
     import Card from "../Card/Card.svelte";
     import Button from "./Button.svelte";
 
-    const fetch_file = async (path: string): Promise<Skill> => {
+    const fetch_file = async (path: string): Promise<object> => {
         const response = await fetch(path);
         const object = await response.json();
 
@@ -22,8 +23,13 @@
     const get_skills = async (): Promise<Skill[]> => {
         let skills: Skill[] = new Array();
 
-        // TODO: Find better way of doing this.
-        skills.push(await fetch_file("/skills/python.json"));
+        let skills_obj = await fetch_file("skills.json");
+        for (let key in skills_obj) {
+            skills.push({
+                name: key,
+                description: skills_obj[key]["description"]
+            })
+        }
 
         return skills;
     }
