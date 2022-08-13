@@ -2,6 +2,7 @@
     export type Skill = {
         name: string;
         description: string;
+        category: string;
     };
 </script>
 
@@ -27,12 +28,7 @@
         console.log(skills_obj)
 
         for (let key in skills_obj["skills"]) {
-            let arr = skills_obj["skills"]
-
-            skills.push({
-                name: arr[key]["name"],
-                description: arr[key]["description"]
-            })
+            skills.push(skills_obj["skills"][key])
         }
 
         return skills;

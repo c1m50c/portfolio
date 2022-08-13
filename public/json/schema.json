@@ -18,9 +18,22 @@
                     "description": {
                         "description": "Summary of the skill.",
                         "type": "string"
+                    },
+                    "category": {
+                        "description": "What category the skill falls into.",
+                        "type":"string",
+                        "enum": [ "language", "library" ]
+                    },
+                    "tags": {
+                        "description": "Array containing tags that describe some of the attributes of the skill.",
+                        "type": "array",
+                        "items": {
+                            "type":"string",
+                            "description": "Tag which describes some attribute of the skill."
+                        }
                     }
                 },
-                "required": [ "name", "description" ]
+                "required": [ "name", "description", "category" ]
             }
         }
     }

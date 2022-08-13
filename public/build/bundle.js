@@ -1486,7 +1486,7 @@ var app = (function () {
     	return block;
     }
 
-    // (57:41)               {#each skills as skill}
+    // (53:41)               {#each skills as skill}
     function create_then_block(ctx) {
     	let each_1_anchor;
     	let current;
@@ -1575,14 +1575,14 @@ var app = (function () {
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(57:41)               {#each skills as skill}",
+    		source: "(53:41)               {#each skills as skill}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (58:12) {#each skills as skill}
+    // (54:12) {#each skills as skill}
     function create_each_block(ctx) {
     	let button;
     	let current;
@@ -1619,7 +1619,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(58:12) {#each skills as skill}",
+    		source: "(54:12) {#each skills as skill}",
     		ctx
     	});
 
@@ -1648,7 +1648,7 @@ var app = (function () {
     	return block;
     }
 
-    // (56:4) 
+    // (52:4) 
     function create_inner_card_slot(ctx) {
     	let div;
     	let current;
@@ -1673,7 +1673,7 @@ var app = (function () {
     			info.block.c();
     			attr_dev(div, "slot", "inner-card");
     			attr_dev(div, "class", "button-container svelte-1t2y921");
-    			add_location(div, file$1, 55, 4, 2480);
+    			add_location(div, file$1, 51, 4, 2365);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1711,7 +1711,7 @@ var app = (function () {
     		block,
     		id: create_inner_card_slot.name,
     		type: "slot",
-    		source: "(56:4) ",
+    		source: "(52:4) ",
     		ctx
     	});
 
@@ -1870,12 +1870,7 @@ var app = (function () {
     		console.log(skills_obj);
 
     		for (let key in skills_obj["skills"]) {
-    			let arr = skills_obj["skills"];
-
-    			skills.push({
-    				name: arr[key]["name"],
-    				description: arr[key]["description"]
-    			});
+    			skills.push(skills_obj["skills"][key]);
     		}
 
     		return skills;

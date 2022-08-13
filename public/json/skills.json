@@ -3,7 +3,9 @@
     "skills": [
         {
             "name": "Python",
-            "description": "Description talking about Python."
+            "description": "Description talking about Python.",
+            "category": "language",
+            "tags": [ "object-oriented" ]
         }
     ]
 }
