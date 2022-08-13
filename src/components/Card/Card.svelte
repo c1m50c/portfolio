@@ -13,19 +13,20 @@
     .card header {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        justify-content: center;
+        flex-direction: column;
     }
 
-    .card header p {
+    .card header span {
         filter: opacity(50%);
     }
 </style>
 
-<div class="card">
+<div class="card" id={ title }>
     <header>
         <h1>{ title }</h1>
         {#if description}
-            <p>{ description }</p>
+            <span>{ description }</span>
         {/if}
     </header>
     <hr />

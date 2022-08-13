@@ -794,27 +794,27 @@ var app = (function () {
     const get_inner_card_slot_changes = dirty => ({});
     const get_inner_card_slot_context = ctx => ({});
 
-    // (26:8) {#if description}
+    // (27:8) {#if description}
     function create_if_block(ctx) {
-    	let p;
+    	let span;
     	let t;
 
     	const block = {
     		c: function create() {
-    			p = element("p");
+    			span = element("span");
     			t = text(/*description*/ ctx[1]);
-    			attr_dev(p, "class", "svelte-1j93iyu");
-    			add_location(p, file$5, 26, 12, 468);
+    			attr_dev(span, "class", "svelte-1swz3qw");
+    			add_location(span, file$5, 27, 12, 531);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			append_dev(p, t);
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*description*/ 2) set_data_dev(t, /*description*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(span);
     		}
     	};
 
@@ -822,7 +822,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(26:8) {#if description}",
+    		source: "(27:8) {#if description}",
     		ctx
     	});
 
@@ -857,14 +857,15 @@ var app = (function () {
     			t3 = space();
     			div0 = element("div");
     			if (inner_card_slot) inner_card_slot.c();
-    			add_location(h1, file$5, 24, 8, 409);
-    			attr_dev(header, "class", "svelte-1j93iyu");
-    			add_location(header, file$5, 23, 4, 391);
-    			add_location(hr, file$5, 29, 4, 526);
+    			add_location(h1, file$5, 25, 8, 472);
+    			attr_dev(header, "class", "svelte-1swz3qw");
+    			add_location(header, file$5, 24, 4, 454);
+    			add_location(hr, file$5, 30, 4, 595);
     			attr_dev(div0, "class", "inner-card");
-    			add_location(div0, file$5, 30, 4, 538);
-    			attr_dev(div1, "class", "card svelte-1j93iyu");
-    			add_location(div1, file$5, 22, 0, 367);
+    			add_location(div0, file$5, 31, 4, 607);
+    			attr_dev(div1, "class", "card svelte-1swz3qw");
+    			attr_dev(div1, "id", /*title*/ ctx[0]);
+    			add_location(div1, file$5, 23, 0, 417);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -916,6 +917,10 @@ var app = (function () {
     						get_inner_card_slot_context
     					);
     				}
+    			}
+
+    			if (!current || dirty & /*title*/ 1) {
+    				attr_dev(div1, "id", /*title*/ ctx[0]);
     			}
     		},
     		i: function intro(local) {
