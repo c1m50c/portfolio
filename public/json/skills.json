@@ -1,0 +1,9 @@
+{
+    "$schema": "./schema.json",
+    "skills": [
+        {
+            "name": "Python",
+            "description": "Description talking about Python."
+        }
+    ]
+}

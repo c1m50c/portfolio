@@ -23,11 +23,15 @@
     const get_skills = async (): Promise<Skill[]> => {
         let skills: Skill[] = new Array();
 
-        let skills_obj = await fetch_file("skills.json");
-        for (let key in skills_obj) {
+        let skills_obj = await fetch_file("json/skills.json");
+        console.log(skills_obj)
+
+        for (let key in skills_obj["skills"]) {
+            let arr = skills_obj["skills"]
+
             skills.push({
-                name: key,
-                description: skills_obj[key]["description"]
+                name: arr[key]["name"],
+                description: arr[key]["description"]
             })
         }
 

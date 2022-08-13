@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Skills",
+    "description": "JSON file for storing skills.",
+    "type": "object",
+    "properties": {
+        "skills": {
+            "description": "Array containing objects that define skills.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "Object that defines a skill.",
+                "properties": {
+                    "name": {
+                        "description": "Name of the skill.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Summary of the skill.",
+                        "type": "string"
+                    }
+                },
+                "required": [ "name", "description" ]
+            }
+        }
+    }
+}
