@@ -3,6 +3,7 @@
         name: string;
         description: string;
         category: string;
+        tags: string[] | undefined;
     };
 </script>
 

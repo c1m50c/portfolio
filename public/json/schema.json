@@ -28,8 +28,27 @@
                         "description": "Array containing tags that describe some of the attributes of the skill.",
                         "type": "array",
                         "items": {
-                            "type":"string",
-                            "description": "Tag which describes some attribute of the skill."
+                            "description": "Tag which describes some attribute of the skill.",
+                            "type": "string"
+                        }
+                    },
+                    "links": {
+                        "description": "Array containing links to various websites that describe the skill in more detail.",
+                        "type": "array",
+                        "items": {
+                            "description": "Link to a website that adds detail to the skill.",
+                            "type": "object",
+                            "properties": {
+                                "url": {
+                                    "description": "Redirect URL for the link.",
+                                    "type": "string"
+                                },
+                                "icon": {
+                                    "description": "Icon of the link",
+                                    "type": "string",
+                                    "enum": [ "github" ]
+                                }
+                            }
                         }
                     }
                 },

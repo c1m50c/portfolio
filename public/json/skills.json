@@ -5,7 +5,13 @@
             "name": "Python",
             "description": "Description talking about Python.",
             "category": "language",
-            "tags": [ "object-oriented" ]
+            "tags": [ "object-oriented", "interpreted", "scripting", "data-science" ],
+            "links": [
+                {
+                    "url": "https://github.com/python/",
+                    "icon": "github"
+                }
+            ]
         }
     ]
 }
