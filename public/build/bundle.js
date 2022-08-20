@@ -129,6 +129,9 @@ var app = (function () {
     function children(element) {
         return Array.from(element.childNodes);
     }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
     function custom_event(type, detail, bubbles = false) {
         const e = document.createEvent('CustomEvent');
         e.initCustomEvent(type, bubbles, false, detail);
@@ -1169,7 +1172,136 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (30:12) {#if skill.tags}
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[4] = list[i];
+    	return child_ctx;
+    }
+
+    // (35:12) {#if skill.links}
+    function create_if_block_1(ctx) {
+    	let div1;
+    	let h2;
+    	let t1;
+    	let div0;
+    	let each_value_1 = /*skill*/ ctx[0].links;
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Links";
+    			t1 = space();
+    			div0 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(h2, file$3, 36, 20, 917);
+    			attr_dev(div0, "class", "link-container");
+    			add_location(div0, file$3, 37, 20, 953);
+    			attr_dev(div1, "class", "attribute svelte-1s9kql");
+    			set_style(div1, "grid-column", "1 / span 2");
+    			add_location(div1, file$3, 35, 16, 839);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h2);
+    			append_dev(div1, t1);
+    			append_dev(div1, div0);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div0, null);
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*skill*/ 1) {
+    				each_value_1 = /*skill*/ ctx[0].links;
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(35:12) {#if skill.links}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (39:24) {#each skill.links as link}
+    function create_each_block_1(ctx) {
+    	let a;
+    	let t;
+    	let a_href_value;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t = text("ICON GOES HERE");
+    			attr_dev(a, "href", a_href_value = /*link*/ ctx[4].url);
+    			add_location(a, file$3, 39, 28, 1064);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*skill*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[4].url)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(a);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(39:24) {#each skill.links as link}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (45:12) {#if skill.tags}
     function create_if_block(ctx) {
     	let div1;
     	let h2;
@@ -1195,11 +1327,13 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$3, 31, 20, 633);
-    			attr_dev(div0, "class", "tag-container svelte-1t6mydi");
-    			add_location(div0, file$3, 32, 20, 668);
-    			attr_dev(div1, "class", "tags-attribute");
-    			add_location(div1, file$3, 30, 16, 583);
+    			add_location(h2, file$3, 46, 20, 1350);
+    			attr_dev(div0, "class", "tag-container");
+    			add_location(div0, file$3, 47, 20, 1385);
+    			attr_dev(div1, "class", "attribute svelte-1s9kql");
+    			set_style(div1, "grid-row", "1 / span 2");
+    			set_style(div1, "grid-column", "3 / 3");
+    			add_location(div1, file$3, 45, 16, 1255);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1246,14 +1380,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(30:12) {#if skill.tags}",
+    		source: "(45:12) {#if skill.tags}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:24) {#each skill.tags as tag}
+    // (49:24) {#each skill.tags as tag}
     function create_each_block$1(ctx) {
     	let p;
     	let t_value = /*tag*/ ctx[1] + "";
@@ -1263,8 +1397,8 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			attr_dev(p, "class", "tag svelte-1t6mydi");
-    			add_location(p, file$3, 34, 28, 776);
+    			attr_dev(p, "class", "tag svelte-1s9kql");
+    			add_location(p, file$3, 49, 28, 1493);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1282,14 +1416,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(34:24) {#each skill.tags as tag}",
+    		source: "(49:24) {#each skill.tags as tag}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (26:4) 
+    // (27:4) 
     function create_center_slot(ctx) {
     	let div2;
     	let h1;
@@ -1299,14 +1433,16 @@ var app = (function () {
     	let hr;
     	let t2;
     	let div1;
-    	let t3;
     	let div0;
     	let h2;
-    	let t5;
+    	let t4;
     	let p;
-    	let t6_value = /*skill*/ ctx[0].description + "";
+    	let t5_value = /*skill*/ ctx[0].description + "";
+    	let t5;
     	let t6;
-    	let if_block = /*skill*/ ctx[0].tags && create_if_block(ctx);
+    	let t7;
+    	let if_block0 = /*skill*/ ctx[0].links && create_if_block_1(ctx);
+    	let if_block1 = /*skill*/ ctx[0].tags && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -1317,25 +1453,28 @@ var app = (function () {
     			hr = element("hr");
     			t2 = space();
     			div1 = element("div");
-    			if (if_block) if_block.c();
-    			t3 = space();
     			div0 = element("div");
     			h2 = element("h2");
     			h2.textContent = "Description";
-    			t5 = space();
+    			t4 = space();
     			p = element("p");
-    			t6 = text(t6_value);
-    			add_location(h1, file$3, 26, 8, 453);
-    			add_location(hr, file$3, 27, 8, 486);
-    			add_location(h2, file$3, 40, 16, 973);
-    			add_location(p, file$3, 41, 16, 1011);
-    			attr_dev(div0, "class", "description-attribute");
-    			add_location(div0, file$3, 39, 12, 920);
-    			attr_dev(div1, "class", "attribute-container svelte-1t6mydi");
-    			add_location(div1, file$3, 28, 8, 502);
+    			t5 = text(t5_value);
+    			t6 = space();
+    			if (if_block0) if_block0.c();
+    			t7 = space();
+    			if (if_block1) if_block1.c();
+    			add_location(h1, file$3, 27, 8, 534);
+    			add_location(hr, file$3, 28, 8, 567);
+    			add_location(h2, file$3, 31, 16, 704);
+    			add_location(p, file$3, 32, 16, 742);
+    			attr_dev(div0, "class", "attribute svelte-1s9kql");
+    			set_style(div0, "grid-column", "1 / span 2");
+    			add_location(div0, file$3, 30, 12, 630);
+    			attr_dev(div1, "class", "attribute-container svelte-1s9kql");
+    			add_location(div1, file$3, 29, 8, 583);
     			attr_dev(div2, "slot", "center");
-    			attr_dev(div2, "class", "button-popup svelte-1t6mydi");
-    			add_location(div2, file$3, 25, 4, 403);
+    			attr_dev(div2, "class", "button-popup svelte-1s9kql");
+    			add_location(div2, file$3, 26, 4, 484);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1345,35 +1484,50 @@ var app = (function () {
     			append_dev(div2, hr);
     			append_dev(div2, t2);
     			append_dev(div2, div1);
-    			if (if_block) if_block.m(div1, null);
-    			append_dev(div1, t3);
     			append_dev(div1, div0);
     			append_dev(div0, h2);
-    			append_dev(div0, t5);
+    			append_dev(div0, t4);
     			append_dev(div0, p);
-    			append_dev(p, t6);
+    			append_dev(p, t5);
+    			append_dev(div1, t6);
+    			if (if_block0) if_block0.m(div1, null);
+    			append_dev(div1, t7);
+    			if (if_block1) if_block1.m(div1, null);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*skill*/ 1 && t0_value !== (t0_value = /*skill*/ ctx[0].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*skill*/ 1 && t5_value !== (t5_value = /*skill*/ ctx[0].description + "")) set_data_dev(t5, t5_value);
 
-    			if (/*skill*/ ctx[0].tags) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
+    			if (/*skill*/ ctx[0].links) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block(ctx);
-    					if_block.c();
-    					if_block.m(div1, t3);
+    					if_block0 = create_if_block_1(ctx);
+    					if_block0.c();
+    					if_block0.m(div1, t7);
     				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
     			}
 
-    			if (dirty & /*skill*/ 1 && t6_value !== (t6_value = /*skill*/ ctx[0].description + "")) set_data_dev(t6, t6_value);
+    			if (/*skill*/ ctx[0].tags) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block(ctx);
+    					if_block1.c();
+    					if_block1.m(div1, null);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
-    			if (if_block) if_block.d();
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
     		}
     	};
 
@@ -1381,7 +1535,7 @@ var app = (function () {
     		block,
     		id: create_center_slot.name,
     		type: "slot",
-    		source: "(26:4) ",
+    		source: "(27:4) ",
     		ctx
     	});
 
@@ -1414,7 +1568,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const popup_changes = {};
 
-    			if (dirty & /*$$scope, skill*/ 17) {
+    			if (dirty & /*$$scope, skill*/ 129) {
     				popup_changes.$$scope = { dirty, ctx };
     			}
 
