@@ -1,19 +1,5 @@
-<script context="module" lang="ts">
-    export type Link = {
-        url: string;
-        icon: string;
-    }
-
-    export type Skill = {
-        name: string;
-        description: string;
-        category: string;
-        tags: string[] | undefined;
-        links: Link[] | undefined;
-    };
-</script>
-
 <script lang="ts">
+    import type { Skill } from "../../types";
     import Card from "../Card/Card.svelte";
     import Button from "./Button.svelte";
 

@@ -1,6 +1,6 @@
 <script lang="ts">
     import ButtonPopup from "./ButtonPopup.svelte";
-    import type { Skill } from "./SkillsCard.svelte";
+    import type { Skill } from "../../types";
 
     export let skill: Skill;
 

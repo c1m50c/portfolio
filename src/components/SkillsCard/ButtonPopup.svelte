@@ -1,6 +1,6 @@
 <script lang="ts">
     import Popup from "../Popup/Popup.svelte";
-    import type { Skill } from "./SkillsCard.svelte";
+    import type { Skill } from "../../types";
 
     export let skill: Skill;
 </script>
