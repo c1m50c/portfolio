@@ -1,59 +1,61 @@
 <script lang="ts">
     import Popup from "../Popup/Popup.svelte";
+    import Links from "./Attributes/Links.svelte";
+    import Tags from "./Attributes/Tags.svelte";
     import type { Skill } from "../../types";
 
     export let skill: Skill;
 </script>
 
 <style>
+    :root {
+        --logo-link-clr: rgb(238, 186, 74);
+        --logo-link-hover-clr: rgb(241, 199, 109);
+    }
+
     .button-popup {
         text-align: center;
-        border: 2px solid red;
     }
 
     .attribute-container {
+        gap: 1rem;
         display: grid;
-        grid-template-columns: repeat(3, 10rem); 
-        grid-template-rows: repeat(3, 10rem); 
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); 
+        grid-template-rows: repeat(auto-fit, minmax(12rem, 1fr)); 
+        justify-content: center;
     }
 
-    .attribute {
+    :global(.attribute) {
+        background-color: rgb(32, 32, 32);
+        overflow-y: auto;
+        padding: 1rem;
     }
 
-    .tag {
-        /* padding: 0 1rem; */
-        font-weight: 600;
+    :global(.attribute .logo) {
+        fill: var(--logo-link-clr);
+        height: 3em;
+        width: 3em;
+        transition: all 300ms ease;
+    }
+
+    :global(.attribute .logo:hover) {
+        fill: var(--logo-link-hover-clr);
     }
 </style>
 
 <Popup>
     <div slot="center" class="button-popup">
         <h1>{ skill.name }</h1>
-        <hr />
         <div class="attribute-container">
             <div class="attribute" style="grid-column: 1 / span 2;">
                 <h2>Description</h2>
                 <p>{ skill.description }</p>
             </div>
             {#if skill.links}
-                <div class="attribute" style="grid-column: 1 / span 2;">
-                    <h2>Links</h2>
-                    <div class="link-container">
-                        {#each skill.links as link}
-                            <a href={ link.url }>ICON GOES HERE</a>
-                        {/each}
-                    </div>
-                </div>
+                <Links links={ skill.links } />
             {/if}
             {#if skill.tags}
-                <div class="attribute" style="grid-row: 1 / span 2; grid-column: 3 / 3;">
-                    <h2>Tags</h2>
-                    <div class="tag-container">
-                        {#each skill.tags as tag}
-                            <p class="tag">{ tag }</p>
-                        {/each}
-                    </div>
-                </div>
+                <Tags tags={ skill.tags } />
             {/if}
         </div>
     </div>

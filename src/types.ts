@@ -1,10 +1,10 @@
-export enum Icon {
-    github = "github"
+export enum Icons {
+    GitHub = "github"
 }
 
 export type Link = {
     url: string;
-    icon: Icon | string;
+    icon: Icons | string;
 }
 
 export type Skill = {
