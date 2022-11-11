@@ -1,4 +1,5 @@
 use navigation_bar::NavigationBar; mod navigation_bar;
+use category::Category; mod category;
 
 use stylist::{StyleSource, YieldStyle, css};
 use yew::prelude::*;
@@ -15,14 +16,19 @@ impl Component for App {
         return Self {  };
     }
 
-    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
-        return false;
-    }
-
     fn view(&self, _ctx: &Context<Self>) -> Html {
         return html! {
             <div class={ self.style_class() }>
                 <NavigationBar />
+                <Category title={ "Skills" }>
+                    <p>{ "Lorem ipsum" }</p>
+                </Category>
+                <Category title={ "Projects" }>
+                    <p>{ "Lorem ipsum" }</p>
+                </Category>
+                <Category title={ "Contact" }>
+                    <p>{ "Lorem ipsum" }</p>
+                </Category>
             </div>
         }
     }
@@ -31,6 +37,8 @@ impl Component for App {
 
 impl YieldStyle for App {
     fn style_from(&self) -> StyleSource<'static> {
-        return css!("");
+        return css!("
+            padding: 2.5rem 0;
+        ");
     }
 }

@@ -16,9 +16,9 @@ impl Component for NavigationBar {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         return html! {
             <nav class={ self.style_class() }>
-                <a href="#skills">{ "Skills" }</a>
-                <a href="#projects">{ "Projects" }</a>
-                <a href="#contact">{ "Contact" }</a>
+                <a href="#Skills">{ "Skills" }</a>
+                <a href="#Projects">{ "Projects" }</a>
+                <a href="#Contact">{ "Contact" }</a>
             </nav>
         };
     }
@@ -31,6 +31,7 @@ impl YieldStyle for NavigationBar {
             padding: 1rem 0;
             position: fixed;
             width: 100vw;
+            top: 0;
 
             display: flex;
             justify-content: center;
@@ -38,12 +39,12 @@ impl YieldStyle for NavigationBar {
             
             a {
                 text-decoration: none;
-                font-size: 1.25rem;
+                font-size: 1.33rem;
                 font-weight: 600;
 
                 opacity: 12.5%;
                 color: var(--text-color);
-                transition: all 300ms ease-in;
+                transition: color 300ms ease-in, opacity 300ms ease-in;
             }
 
             a:hover {
