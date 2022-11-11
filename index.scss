@@ -27,14 +27,3 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
-
-
-/*
-    TODO: Find a way to do selectors in Rust CSS,
-    Having to do selectors in the global CSS file seems dumb and not scalable.
-*/
-
-a:hover {
-    color: var(--link-hover-color);
-    opacity: 100%;
-}

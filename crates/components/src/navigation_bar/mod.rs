@@ -1,5 +1,3 @@
-use button::NavigationButton; mod button;
-
 use stylist::{YieldStyle, StyleSource, css};
 use yew::prelude::*;
 
@@ -18,9 +16,9 @@ impl Component for NavigationBar {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         return html! {
             <nav class={ self.style_class() }>
-                <NavigationButton link={ "#skills" } title={ "Skills" } />
-                <NavigationButton link={ "#projects" } title={ "Projects" } />
-                <NavigationButton link={ "#contact" } title={ "Contact" } />
+                <a href="#skills">{ "Skills" }</a>
+                <a href="#projects">{ "Projects" }</a>
+                <a href="#contact">{ "Contact" }</a>
             </nav>
         };
     }
@@ -37,6 +35,21 @@ impl YieldStyle for NavigationBar {
             display: flex;
             justify-content: center;
             gap: 1rem;
+            
+            a {
+                text-decoration: none;
+                font-size: 1.25rem;
+                font-weight: 600;
+
+                opacity: 12.5%;
+                color: var(--text-color);
+                transition: all 300ms ease-in;
+            }
+
+            a:hover {
+                color: var(--link-hover-color);
+                opacity: 100%;
+            }
         ");
     }
 }
