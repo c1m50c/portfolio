@@ -1,3 +1,5 @@
+use navigation_bar::NavigationBar; mod navigation_bar;
+
 use stylist::{StyleSource, YieldStyle, css};
 use yew::prelude::*;
 
@@ -19,9 +21,9 @@ impl Component for App {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         return html! {
-            <h1 class={ self.style_class() }>
-                { "Hello, World!" }
-            </h1>
+            <div class={ self.style_class() }>
+                <NavigationBar />
+            </div>
         }
     }
 }
@@ -29,8 +31,6 @@ impl Component for App {
 
 impl YieldStyle for App {
     fn style_from(&self) -> StyleSource<'static> {
-        return css!("
-            border: 5px solid red;
-        ");
+        return css!("");
     }
 }
