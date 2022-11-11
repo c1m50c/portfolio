@@ -1,12 +1,5 @@
-use yew::{function_component, html};
+use components::App;
+use yew::start_app;
 
 
-#[function_component(App)]
-fn app() -> Html {
-    return html! {  };
-}
-
-
-fn main() {
-    yew::start_app::<App>();
-}
+fn main() { start_app::<App>(); }
