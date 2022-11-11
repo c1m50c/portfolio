@@ -1,3 +1,4 @@
+use stylist::{StyleSource, YieldStyle, css};
 use yew::prelude::*;
 
 
@@ -17,6 +18,19 @@ impl Component for App {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
-        return html! { <h1>{ "Hello, World!" }</h1> }
+        return html! {
+            <h1 class={ self.style_class() }>
+                { "Hello, World!" }
+            </h1>
+        }
+    }
+}
+
+
+impl YieldStyle for App {
+    fn style_from(&self) -> StyleSource<'static> {
+        return css!("
+            border: 5px solid red;
+        ");
     }
 }
