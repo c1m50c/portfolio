@@ -30,7 +30,12 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 name = "components"
 version = "0.1.0"
 dependencies = [
+ "serde",
+ "serde_json",
  "stylist",
+ "types",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
  "yew",
 ]
 
@@ -277,6 +282,7 @@ name = "portfolio"
 version = "0.1.0"
 dependencies = [
  "components",
+ "types",
  "yew",
 ]
 
@@ -447,6 +453,15 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
+]
+
+[[package]]
+name = "types"
+version = "0.1.0"
+dependencies = [
+ "once_cell",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

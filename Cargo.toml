@@ -6,8 +6,9 @@ edition = "2021"
 
 [dependencies]
 components = { version = "0.1.0", path="crates/components" }
+types = { version = "0.1.0", path="crates/types" }
 yew = "0.19.3"
 
 
 [workspace]
-members = [ "crates/components" ]
+members = [ "crates/components", "crates/types" ]

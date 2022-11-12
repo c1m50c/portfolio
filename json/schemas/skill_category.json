@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "name": "Skill Category",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Name of the skill category.",
+            "examples": [ "Languages" ],
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "description": "Brief summary of the skill category.",
+            "examples": [ "A list of languages that I'm proficent at." ],
+            "type": "string",
+            "default": ""
+        },
+        "skills": {
+            "description": "List of Skill objects describing an entry in the Skill Category.",
+            "examples": [  ],
+            "type": "array",
+            "items": {
+                "description": "Skill object describing an entry in the Skill Category.",
+                "examples": [  ],
+                "type": "object",
+                "default": {  },
+                "properties": {
+                    "name": {
+                        "description": "Name of the skill.",
+                        "examples": [ "Rust" ],
+                        "type": "string",
+                        "default": ""
+                    },
+                    "description": {
+                        "description": "Brief summary of the skill.",
+                        "examples": [ "Quite the crabby language." ],
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "default": [  ]
+        }
+    }
+}

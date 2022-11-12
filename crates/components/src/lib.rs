@@ -1,3 +1,4 @@
+use skill_category::SkillCategory; mod skill_category;
 use navigation_bar::NavigationBar; mod navigation_bar;
 use category::Category; mod category;
 
@@ -21,14 +22,10 @@ impl Component for App {
             <div class={ self.style_class() }>
                 <NavigationBar />
                 <Category title={ "Skills" }>
-                    <p>{ "Lorem ipsum" }</p>
+                    <SkillCategory path="Languages" />
                 </Category>
-                <Category title={ "Projects" }>
-                    <p>{ "Lorem ipsum" }</p>
-                </Category>
-                <Category title={ "Contact" }>
-                    <p>{ "Lorem ipsum" }</p>
-                </Category>
+                <Category title={ "Projects" } />
+                <Category title={ "Contact" } />
             </div>
         }
     }

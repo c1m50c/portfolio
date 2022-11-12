@@ -1,0 +1,11 @@
+{
+    "$schema": "../schemas/skill_category.json",
+    "name": "Languages",
+    "description": "",
+    "skills": [
+        {
+            "name": "Rust",
+            "description": "Quite a crabby language."
+        }
+    ]
+}
