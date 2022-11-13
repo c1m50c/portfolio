@@ -18,7 +18,7 @@ pub struct SkillProps {
 
 
 pub enum SkillMsg {
-    Toggled,
+    Toggled{ target_class: String },
 }
 
 
@@ -36,8 +36,14 @@ impl Component for Skill {
     #[allow(unreachable_patterns)]
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         return match msg {
-            SkillMsg::Toggled => {
-                self.toggled = !self.toggled;
+            SkillMsg::Toggled{ target_class } => {
+                match target_class.as_str() {
+                    x if x == self.style_class() => self.toggled = true,
+                    "skill-title" => self.toggled = true,
+                    "info" => self.toggled = false,
+                    _ => {  },
+                };
+
                 true
             },
 
@@ -46,19 +52,16 @@ impl Component for Skill {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let clicked_info_bg = ctx.link().batch_callback(|event: MouseEvent| {
+        let toggle_info = ctx.link().callback(|event: MouseEvent| {
             let target: Element = event.target().unwrap()
                 .into_js_result().unwrap().into();
-            
-            if target.class_name() == "info" {
-                return Some(SkillMsg::Toggled)
-            } None
+            return SkillMsg::Toggled { target_class: target.class_name() }
         });
 
         let maybe_info = move || -> Html {
             if self.toggled {
                 html! {
-                    <div class={ "info" } onclick={ clicked_info_bg }>
+                    <div class={ "info" }>
                         <div class={ "content" }>
                             <header>
                                 <h1>{ &self.obj.name }</h1>
@@ -71,10 +74,8 @@ impl Component for Skill {
         };
 
         return html! {
-            <div class={ self.style_class() }>
-                <h3 onclick={ ctx.link().callback(|_| SkillMsg::Toggled) }>
-                    { &self.obj.name }
-                </h3>
+            <div class={ self.style_class() } onclick={ toggle_info }>
+                <h3 class={ "skill-title" }>{ &self.obj.name }</h3>
                 { maybe_info() }
             </div>
         };

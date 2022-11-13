@@ -1,4 +1,3 @@
-use info::SkillInfo; mod info;
 use skill::Skill; mod skill;
 
 use stylist::{YieldStyle, css, StyleSource};
