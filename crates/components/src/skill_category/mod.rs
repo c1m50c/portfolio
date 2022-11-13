@@ -29,17 +29,17 @@ impl Component for SkillCategory {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
+        let maybe_children = move || -> Html {
+            self.obj.skills.iter().map(|skill| {
+                html! { <Skill obj={ &*skill } /> }
+            }).collect()
+        };
+
         return html! {
             <div class={ self.style_class() }>
                 <h2>{ &self.obj.name }</h2>
                 <div class={ "skill-container" }>
-                    {
-                        for self.obj.skills.iter().map(
-                            |skill| {
-                                html! { <Skill obj={ &*skill } /> }
-                            }
-                        )
-                    }
+                    { maybe_children() }
                 </div>
             </div>
         };
