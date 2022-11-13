@@ -1,5 +1,7 @@
+use info::SkillInfo; mod info;
 use skill::Skill; mod skill;
 
+use stylist::{YieldStyle, css, StyleSource};
 use yew::prelude::*;
 use types::json;
 
@@ -28,9 +30,9 @@ impl Component for SkillCategory {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         return html! {
-            <div>
-                <h1>{ &self.obj.name }</h1>
-                <div>
+            <div class={ self.style_class() }>
+                <h2>{ &self.obj.name }</h2>
+                <div class={ "skill-container" }>
                     {
                         for self.obj.skills.iter().map(
                             |skill| {
@@ -41,5 +43,20 @@ impl Component for SkillCategory {
                 </div>
             </div>
         };
+    }
+}
+
+
+impl YieldStyle for SkillCategory {
+    fn style_from(&self) -> StyleSource<'static> {
+        return css!("
+            .skill-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+                justify-content: center;
+                column-gap: 1rem;
+                row-gap: 0.5rem;
+            }
+        ");
     }
 }

@@ -5,7 +5,39 @@
     "skills": [
         {
             "name": "Rust",
-            "description": "Quite a crabby language."
+            "description": ""
+        },
+        {
+            "name": "Python",
+            "description": ""
+        },
+        {
+            "name": "Go",
+            "description": ""
+        },
+        {
+            "name": "Java",
+            "description": ""
+        },
+        {
+            "name": "JavaScript",
+            "description": ""
+        },
+        {
+            "name": "TypeScript",
+            "description": ""
+        },
+        {
+            "name": "C#",
+            "description": ""
+        },
+        {
+            "name": "Lua",
+            "description": ""
+        },
+        {
+            "name": "GDScript",
+            "description": ""
         }
     ]
 }
