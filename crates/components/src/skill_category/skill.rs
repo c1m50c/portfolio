@@ -1,8 +1,8 @@
-use stylist::{YieldStyle, StyleSource, css};
 use wasm_bindgen::__rt::IntoJsResult;
+use types::{json, StyledComponent};
+use stylist::{css, Style};
 use web_sys::Element;
 use yew::prelude::*;
-use types::json;
 
 
 pub struct Skill {
@@ -27,18 +27,18 @@ impl Component for Skill {
     type Message = SkillMsg;
 
     fn create(ctx: &Context<Self>) -> Self {
-        return Self {
+        Self {
             obj: &ctx.props().obj,
             toggled: false,
-        };
+        }
     }
 
     #[allow(unreachable_patterns)]
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
-        return match msg {
+        match msg {
             SkillMsg::Toggled{ target_class } => {
                 match target_class.as_str() {
-                    x if x == self.style_class() => self.toggled = true,
+                    x if x == self.style().get_class_name() => self.toggled = true,
                     "skill-title" => self.toggled = true,
                     "info" => self.toggled = false,
                     _ => {  },
@@ -48,14 +48,14 @@ impl Component for Skill {
             },
 
             _msg => unimplemented!(),
-        };
+        }
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         let toggle_info = ctx.link().callback(|event: MouseEvent| {
             let target: Element = event.target().unwrap()
                 .into_js_result().unwrap().into();
-            return SkillMsg::Toggled { target_class: target.class_name() }
+            SkillMsg::Toggled { target_class: target.class_name() }
         });
 
         let maybe_info = move || -> Html {
@@ -73,19 +73,19 @@ impl Component for Skill {
             } else { html! {  } }
         };
 
-        return html! {
-            <div class={ self.style_class() } onclick={ toggle_info }>
+        html! {
+            <div class={ self.style() } onclick={ toggle_info }>
                 <h3 class={ "skill-title" }>{ &self.obj.name }</h3>
                 { maybe_info() }
             </div>
-        };
+        }
     }
 }
 
 
-impl YieldStyle for Skill {
-    fn style_from(&self) -> StyleSource<'static> {
-        return css!("
+impl StyledComponent for Skill {
+    fn style(&self) -> Style {
+        let css = css!("
             padding: 0 1em;
             text-align: center;
             background-color: var(--tag-color);
@@ -119,5 +119,8 @@ impl YieldStyle for Skill {
                 top: 0;
             }
         ");
+
+        Style::create("skill", css)
+            .expect("Failed to create `Style`")
     }
 }

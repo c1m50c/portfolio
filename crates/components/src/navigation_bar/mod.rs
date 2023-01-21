@@ -1,4 +1,5 @@
-use stylist::{YieldStyle, StyleSource, css};
+use types::StyledComponent;
+use stylist::{css, Style};
 use yew::prelude::*;
 
 
@@ -10,24 +11,24 @@ impl Component for NavigationBar {
     type Message = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        return Self {  };
+        Self {  }
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
-        return html! {
-            <nav class={ self.style_class() }>
+        html! {
+            <nav class={ self.style().clone() }>
                 <a href="#Skills">{ "Skills" }</a>
                 <a href="#Projects">{ "Projects" }</a>
                 <a href="#Contact">{ "Contact" }</a>
             </nav>
-        };
+        }
     }
 }
 
 
-impl YieldStyle for NavigationBar {
-    fn style_from(&self) -> StyleSource<'static> {
-        return css!("
+impl StyledComponent for NavigationBar {
+    fn style(&self) -> Style {
+        let css = css!("
             padding: 1rem 0;
             position: fixed;
             width: 100vw;
@@ -52,5 +53,8 @@ impl YieldStyle for NavigationBar {
                 opacity: 100%;
             }
         ");
+
+        Style::create("navigation-bar", css)
+            .expect("Failed to create `Style`")
     }
 }

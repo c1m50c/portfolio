@@ -1,8 +1,9 @@
-use skill::Skill; mod skill;
-
-use stylist::{YieldStyle, css, StyleSource};
+use types::{json, StyledComponent};
+use stylist::{css, Style};
 use yew::prelude::*;
-use types::json;
+use skill::Skill;
+
+mod skill;
 
 
 pub struct SkillCategory {
@@ -21,10 +22,10 @@ impl Component for SkillCategory {
     type Message = ();
 
     fn create(ctx: &Context<Self>) -> Self {
-        return Self {
+        Self {
             obj: json::files::get_skill_category(ctx.props().path.clone())
                 .expect("")
-        };
+        }
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
@@ -34,21 +35,21 @@ impl Component for SkillCategory {
             }).collect()
         };
 
-        return html! {
-            <div class={ self.style_class() }>
+        html! {
+            <div class={ self.style() }>
                 <h2>{ &self.obj.name }</h2>
                 <div class={ "skill-container" }>
                     { maybe_children() }
                 </div>
             </div>
-        };
+        }
     }
 }
 
 
-impl YieldStyle for SkillCategory {
-    fn style_from(&self) -> StyleSource<'static> {
-        return css!("
+impl StyledComponent for SkillCategory {
+    fn style(&self) -> Style {
+        let css = css!("
             .skill-container {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
@@ -57,5 +58,8 @@ impl YieldStyle for SkillCategory {
                 row-gap: 0.5rem;
             }
         ");
+
+        Style::create("skill-category", css)
+            .expect("Failed to create `Style`")
     }
 }

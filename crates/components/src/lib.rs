@@ -1,9 +1,14 @@
-use skill_category::SkillCategory; mod skill_category;
-use navigation_bar::NavigationBar; mod navigation_bar;
-use category::Category; mod category;
+use skill_category::SkillCategory;
+use navigation_bar::NavigationBar;
+use category::Category;
 
-use stylist::{StyleSource, YieldStyle, css};
+use types::StyledComponent;
+use stylist::{css, Style};
 use yew::prelude::*;
+
+mod navigation_bar;
+mod skill_category;
+mod category;
 
 
 pub struct App {  }
@@ -14,12 +19,12 @@ impl Component for App {
     type Message = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        return Self {  };
+        Self {  }
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
-        return html! {
-            <div class={ self.style_class() }>
+        html! {
+            <div class={ self.style() }>
                 <NavigationBar />
                 <Category title={ "Skills" }>
                     <SkillCategory path="Languages" />
@@ -32,10 +37,10 @@ impl Component for App {
 }
 
 
-impl YieldStyle for App {
-    fn style_from(&self) -> StyleSource<'static> {
-        return css!("
-            padding: 2.5rem 0;
-        ");
+impl StyledComponent for App {
+    fn style(&self) -> Style {
+        let css = css!("padding: 2.5rem 0;");
+        Style::create("app", css)
+            .expect("Failed to create `Style`")
     }
 }

@@ -1,4 +1,5 @@
 [package]
+authors = [ "c1m50c <https://github.com/c1m50c>" ]
 name = "components"
 version = "0.1.0"
 edition = "2021"
@@ -6,11 +7,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+serde = { version = "1.0.147", features = [ "derive" ] }
+stylist = { version = "0.11.0", features = [ "yew" ] }
 types = { version = "0.1.0", path = "../types" }
-serde = { version = "1.0.147", features = ["derive"] }
-serde_json = "1.0.87"
-stylist = "0.10.1"
 wasm-bindgen-futures = "0.4.33"
 wasm-bindgen = "0.2.83"
-yew = "0.19.3"
+serde_json = "1.0.87"
 web-sys = "0.3.60"
+yew = "0.20.0"
