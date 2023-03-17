@@ -7,13 +7,4 @@ license = "MIT"
 
 
 [dependencies]
-components = { version = "0.1.0", path="crates/components" }
-types = { version = "0.1.0", path="crates/types" }
 yew = { version = "0.20.0", features = [ "csr" ] }
-
-
-[workspace]
-members = [
-    "crates/components",
-    "crates/types"
-]
