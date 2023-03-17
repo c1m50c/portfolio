@@ -3,6 +3,7 @@ authors = [ "c1m50c <https://github.com/c1m50c>" ]
 name = "portfolio"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
 
 
 [dependencies]

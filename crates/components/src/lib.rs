@@ -28,6 +28,8 @@ impl Component for App {
                 <NavigationBar />
                 <Category title={ "Skills" }>
                     <SkillCategory path="Languages" />
+                    <SkillCategory path="Libraries" />
+                    <SkillCategory path="Miscellaneous" />
                 </Category>
                 <Category title={ "Projects" } />
                 <Category title={ "Contact" } />

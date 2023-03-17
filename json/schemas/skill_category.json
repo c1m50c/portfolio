@@ -18,13 +18,15 @@
         },
         "skills": {
             "description": "List of Skill objects describing an entry in the Skill Category.",
+            "required": [ "name", "description" ],
             "examples": [  ],
             "type": "array",
+            "default": [  ],
             "items": {
                 "description": "Skill object describing an entry in the Skill Category.",
+                "default": { "name": "", "description": "" },
                 "examples": [  ],
                 "type": "object",
-                "default": {  },
                 "properties": {
                     "name": {
                         "description": "Name of the skill.",
@@ -37,10 +39,15 @@
                         "examples": [ "Quite the crabby language." ],
                         "type": "string",
                         "default": ""
+                    },
+                    "tags": {
+                        "description": "Tags to relate themes across skills.",
+                        "examples": [ [ "functional", "imperative", "data-oriented" ] ],
+                        "type": "array",
+                        "default": [  ]
                     }
                 }
-            },
-            "default": [  ]
+            }
         }
     }
 }

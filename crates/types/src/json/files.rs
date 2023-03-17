@@ -9,10 +9,16 @@ static mut SKILL_CATEGORIES: Lazy<HashMap<String, SkillCategory>> = Lazy::new(||
     let languages = include_str!("../../../../json/skills/languages.json").to_string();
     map.insert("Languages".into(), string_to_object(languages));
 
-    return map;
+    let libraries = include_str!("../../../../json/skills/libraries.json").to_string();
+    map.insert("Libraries".into(), string_to_object(libraries));
+
+    let miscellaneous = include_str!("../../../../json/skills/miscellaneous.json").to_string();
+    map.insert("Miscellaneous".into(), string_to_object(miscellaneous));
+
+    map
 });
 
 
 pub fn get_skill_category(key: String) -> Option<&'static SkillCategory> {
-    return unsafe { SKILL_CATEGORIES.get(&key) };
+    unsafe { SKILL_CATEGORIES.get(&key) }
 }

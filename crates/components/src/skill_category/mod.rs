@@ -24,15 +24,15 @@ impl Component for SkillCategory {
     fn create(ctx: &Context<Self>) -> Self {
         Self {
             obj: json::files::get_skill_category(ctx.props().path.clone())
-                .expect("")
+                .expect("Failed to retrieve skill category")
         }
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         let maybe_children = move || -> Html {
-            self.obj.skills.iter().map(|skill| {
-                html! { <Skill obj={ &*skill } /> }
-            }).collect()
+            self.obj.skills.iter()
+                .map(|skill| html! { <Skill obj={ &*skill } /> } )
+                .collect()
         };
 
         html! {
@@ -52,7 +52,7 @@ impl StyledComponent for SkillCategory {
         let css = css!("
             .skill-container {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
                 justify-content: center;
                 column-gap: 1rem;
                 row-gap: 0.5rem;

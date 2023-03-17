@@ -1,50 +1,58 @@
 {
     "$schema": "../schemas/skill_category.json",
-    "name": "Languages",
+    "name": "Libraries",
     "description": "",
     "skills": [
         {
-            "name": "Rust",
+            "name": "Yew",
             "description": ""
         },
         {
-            "name": "Python",
+            "name": "Svelte",
             "description": ""
         },
         {
-            "name": "Go",
+            "name": "React",
             "description": ""
         },
         {
-            "name": "Java",
+            "name": "Vue",
             "description": ""
         },
         {
-            "name": "JavaScript",
+            "name": "Tailwind",
             "description": ""
         },
         {
-            "name": "TypeScript",
+            "name": "Tokio",
             "description": ""
         },
         {
-            "name": "Lua",
+            "name": "Echo",
             "description": ""
         },
         {
-            "name": "C",
+            "name": "Flask",
             "description": ""
         },
         {
-            "name": "C++",
+            "name": "Matplotlib",
             "description": ""
         },
         {
-            "name": "C#",
+            "name": "Plotly",
             "description": ""
         },
         {
-            "name": "GDScript",
+            "name": "Pandas",
+            "description": ""
+        },
+        {
+            "name": "OpenCV",
+            "description": ""
+        },
+        {
+            "name": "NumPy",
             "description": ""
         }
     ]
