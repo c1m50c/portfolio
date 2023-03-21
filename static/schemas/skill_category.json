@@ -45,6 +45,12 @@
                         "examples": [ [ "functional", "imperative", "data-oriented" ] ],
                         "type": "array",
                         "default": [  ]
+                    },
+                    "proficency": {
+                        "description": "Level of coziness for the given skill.",
+                        "examples": [ "High", "Medium", "Low" ],
+                        "type": "string",
+                        "enum": [ "High", "Medium", "Low" ]
                     }
                 }
             }

@@ -7,4 +7,10 @@ license = "MIT"
 
 
 [dependencies]
+include_dir = "0.7.3"
+itertools = "0.10.5"
+once_cell = "1.17.1"
+serde = { version = "1.0.156", features = ["derive"] }
+serde_yaml = "0.9.19"
+stylist = { version = "0.12.0", features = ["yew", "yew_use_style"] }
 yew = { version = "0.20.0", features = [ "csr" ] }
