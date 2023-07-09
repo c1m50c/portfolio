@@ -7,7 +7,7 @@
 <ProjectCard
     title="Rust OS"
     description='Repository loosely following the "Writing an Operating System in Rust" blog by Philipp Oppermann. '
-    background_url="./projects/fixed-vectors.png"
+    background_url="./projects/rust-os.png"
 >
     <div slot="status-badge">
         <img src="https://img.shields.io/github/actions/workflow/status/c1m50c/rust-os/.github%2Fworkflows%2Fverify.yaml?style=for-the-badge&label=verify" alt="Verify" />
