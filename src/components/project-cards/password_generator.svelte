@@ -11,7 +11,7 @@
 >
     <div slot="status-badge">
         <img src="https://img.shields.io/github/license/c1m50c/password-generator?color=blue&style=for-the-badge" alt="License" />
-        <img src="https://img.shields.io/tokei/lines/github/c1m50c/password-generator?style=for-the-badge" alt="Lines of Code" />
+        <!-- <img src="https://img.shields.io/tokei/lines/github/c1m50c/password-generator?style=for-the-badge" alt="Lines of Code" /> -->
     </div>
     <div slot="logo-link-container">
         <LogoLink link="https://github.com/c1m50c/password-generator" icon={Icons.Github} />

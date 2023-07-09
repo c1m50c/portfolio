@@ -10,9 +10,9 @@
     background_url="./projects/sorting-algorithm-visualizer.gif"
 >
     <div slot="status-badge">
-        <img src="https://img.shields.io/github/workflow/status/c1m50c/sorting-algorithm-visualizer/Tests?style=for-the-badge" alt="Tests" />
+        <img src="https://img.shields.io/github/actions/workflow/status/c1m50c/sorting-algorithm-visualizer/.github%2Fworkflows%2Ftests.yml?style=for-the-badge&label=tests" alt="Tests" />
         <img src="https://img.shields.io/github/license/c1m50c/sorting-algorithm-visualizer?color=blue&style=for-the-badge" alt="License" />
-        <img src="https://img.shields.io/tokei/lines/github/c1m50c/sorting-algorithm-visualizer?style=for-the-badge" alt="Lines of Code" />
+        <!-- <img src="https://img.shields.io/tokei/lines/github/c1m50c/sorting-algorithm-visualizer?style=for-the-badge" alt="Lines of Code" /> -->
     </div>
     <div slot="logo-link-container">
         <LogoLink link="https://github.com/c1m50c/sorting-algorithm-visualizer" icon={Icons.Github} />
