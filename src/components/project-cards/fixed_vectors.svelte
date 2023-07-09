@@ -11,7 +11,8 @@
 >
     <div slot="status-badge">
         <img src="https://img.shields.io/github/actions/workflow/status/c1m50c/fixed-vectors/.github%2Fworkflows%2Fpublish.yml?style=for-the-badge" alt="Build" />
-        <img src="https://img.shields.io/crates/v/fixed-vectors?color=orange&style=for-the-badge" alt="CratesIO" />
+        <img src="https://img.shields.io/crates/v/fixed-vectors?color=orange&style=for-the-badge" alt="CratesIO Version" />
+        <img src="https://img.shields.io/crates/d/fixed-vectors?style=for-the-badge&color=orange" alt="CratesIO Downloads" />
         <img src="https://img.shields.io/crates/l/fixed-vectors?style=for-the-badge" alt="License" />
         <!-- <img src="https://img.shields.io/tokei/lines/github/c1m50c/fixed-vectors?style=for-the-badge" alt="Lines of Code" /> -->
         <img src="https://img.shields.io/github/stars/c1m50c/fixed-vectors?style=for-the-badge" alt="Github Stars" />
