@@ -13,9 +13,14 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: npm
       
       - name: Build `portfolio`
-        run: npm run build
+        run: |
+          npm install
+          npm run build
 
       - name: Push to `gh-pages`
         uses: peaceiris/actions-gh-pages@v3
