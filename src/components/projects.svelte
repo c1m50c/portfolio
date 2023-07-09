@@ -4,6 +4,7 @@
     import CellularAutomata from "./project-cards/cellular_automata.svelte";
     import FixedVectors from "./project-cards/fixed_vectors.svelte";
     import PortfolioPc from "./project-cards/portfolio.svelte";
+    import RustOs from "./project-cards/rust_os.svelte";
 </script>
 
 
@@ -21,6 +22,7 @@
     <div class="project-card-container">
         <PortfolioPc />
         <FixedVectors />
+        <RustOs />
         <PasswordGenerator />
         <SortingAlgorithmVisualizer />
         <CellularAutomata />
