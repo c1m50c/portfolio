@@ -4,6 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .hover-growing-underline {
+        position: relative;
+    }
+
+    .hover-growing-underline::after {
+        @apply bg-cat-subtext0/80;
+        @apply transition-all;
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 1px;
+        transform: scale(0);
+    }
+
+    .hover-growing-underline:hover::after {
+        @apply bg-cat-subtext1;
+        transform: scale(1);
+    }
+}
+
 html {
     font-family: "JetBrains Mono", monospace;
     scroll-behavior: smooth;
