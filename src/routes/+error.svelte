@@ -1,6 +1,8 @@
 <script lang="ts">
-    import NavigationLink from "$lib/components/navigation_link.svelte";
     import { page } from "$app/stores";
+
+    const MOZILLA_STATUS_CODE_SUPPORT =
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/";
 </script>
 
 <main class="flex flex-col w-full h-full justify-center items-center">
@@ -9,15 +11,13 @@
 
     <div class="flex flex-col items-center">
         {#if $page.status === 404}
-            <NavigationLink href="/">
+            <a class="navigation-link" href="/">
                 <span class="text-xs select-none">Return To Safety</span>
-            </NavigationLink>
+            </a>
         {/if}
 
-        <NavigationLink
-            href={`https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/${$page.status}`}
-        >
-            <span class="text-xs select-none"> Learn More </span>
-        </NavigationLink>
+        <a class="navigation-link" href={MOZILLA_STATUS_CODE_SUPPORT + $page.status}>
+            <span class="text-xs select-none">Learn More</span>
+        </a>
     </div>
 </main>

@@ -4,24 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-    .hover-growing-underline {
-        position: relative;
+@layer components {
+    .navigation-link {
+        @apply relative transition-colors text-cat-text/50 hover:text-cat-subtext1;
     }
 
-    .hover-growing-underline::after {
-        @apply bg-cat-subtext0/80;
-        @apply transition-all;
-        position: absolute;
-        display: block;
-        content: "";
-        width: 100%;
-        height: 1px;
+    .navigation-link::after {
+        @apply absolute block transition-all bg-cat-text/50 w-full;
         transform: scale(0);
+        content: "";
+        height: 1px;
     }
 
-    .hover-growing-underline:hover::after {
-        @apply bg-cat-subtext1;
+    .navigation-link:hover {
+        @apply text-cat-text;
+    }
+
+    .navigation-link:hover::after {
+        @apply bg-cat-text;
         transform: scale(1);
     }
 }
