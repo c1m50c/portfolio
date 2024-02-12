@@ -4,7 +4,7 @@ export type Toast = {
     message: string;
     issued: Date;
     id: string;
-}
+};
 
 const initializeToastsStore = () => {
     const { subscribe, update } = writable<Toast[]>([]);
@@ -20,7 +20,7 @@ const initializeToastsStore = () => {
     };
 
     const pop = (id: string) => {
-        update((x) => x.filter(x => x.id != id));
+        update((x) => x.filter((x) => x.id != id));
     };
 
     return { subscribe, push, pop };

@@ -22,7 +22,8 @@ const compareNames = (a: { name: string }, b: { name: string }) => {
 
 export const LANGUAGE_SKILLS: SkillEntry[] = [
     {
-        description: "A multi-paradigm, general-purpose programming language that emphasizes performance, type safety, and concurrency.",
+        description:
+            "A multi-paradigm, general-purpose programming language that emphasizes performance, type safety, and concurrency.",
         relative_comfort_level: 9,
         tags: ["functional", "imperative", "memory-safety-focused"],
         name: "Rust",
