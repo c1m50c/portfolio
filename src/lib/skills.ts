@@ -127,9 +127,6 @@ export const LIBRARY_AND_FRAMEWORK_SKILLS: SkillEntry[] = [
         name: "Numpy",
     },
     {
-        name: "Axum",
-    },
-    {
         name: "Clap",
     },
     {
