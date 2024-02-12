@@ -27,7 +27,9 @@
                 <ul class="flex gap-x-2">
                     {#each selectedSkill.tags as tag}
                         <li>
-                            <p class="text-cat-crust bg-cat-green px-2 rounded-md">{tag}</p>
+                            <p class="text-cat-crust bg-cat-green px-2 rounded-md">
+                                {tag}
+                            </p>
                         </li>
                     {/each}
                 </ul>
@@ -48,13 +50,13 @@
 </Modal>
 
 <section id={`skills/${sectionId}`}>
-    <h3 class="text-lg">{name}</h3>
+    <h3 class="text-lg text-center">{name}</h3>
 
     {#if description}
-        <p class="text-xs text-cat-subtext0/80 mb-1">{description}</p>
+        <p class="text-xs text-center text-cat-subtext0/80 mb-1">{description}</p>
     {/if}
 
-    <ul class="w-full flex flex-wrap items-center justify-stretch gap-x-2 gap-y-1">
+    <ul class="w-full flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
         {#each skills as skill}
             <li id={`skills/${sectionId}/${skill.name.toLowerCase().replaceAll(" ", "-")}`}>
                 <button
