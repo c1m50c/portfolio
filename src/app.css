@@ -7,6 +7,7 @@
 @layer components {
     .navigation-link {
         @apply relative transition-colors text-cat-text/50 hover:text-cat-subtext1;
+        user-select: none;
     }
 
     .navigation-link::after {
@@ -32,4 +33,13 @@ html {
     position: relative;
     height: 100%;
     width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
 }
