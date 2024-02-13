@@ -70,6 +70,18 @@ export const LANGUAGE_SKILLS: SkillEntry[] = [
     {
         name: "HCL",
     },
+    {
+        name: "Markdown",
+    },
+    {
+        name: "HTML",
+    },
+    {
+        name: "CSS",
+    },
+    {
+        name: "Ruby",
+    },
 ].toSorted(compareNames) as SkillEntry[];
 
 export const LIBRARY_AND_FRAMEWORK_SKILLS: SkillEntry[] = [
@@ -93,6 +105,9 @@ export const LIBRARY_AND_FRAMEWORK_SKILLS: SkillEntry[] = [
     },
     {
         name: "Actix",
+    },
+    {
+        name: "Actix Web",
     },
     {
         name: "Tailwind",
@@ -159,6 +174,21 @@ export const LIBRARY_AND_FRAMEWORK_SKILLS: SkillEntry[] = [
     },
     {
         name: "HTMX",
+    },
+    {
+        name: "SciPy",
+    },
+    {
+        name: "jQuery",
+    },
+    {
+        name: "Diesel",
+    },
+    {
+        name: "Prisma",
+    },
+    {
+        name: "Jinja",
     },
 ].toSorted(compareNames) as SkillEntry[];
 
@@ -237,5 +267,47 @@ export const TECHNOLOGY_TOOLS_AND_SERVICE_SKILLS: SkillEntry[] = [
     },
     {
         name: "Unity",
+    },
+    {
+        name: "Arduino",
+    },
+    {
+        name: "Raspberry Pi",
+    },
+    {
+        name: "Tauri",
+    },
+    {
+        name: "Obsidian",
+    },
+    {
+        name: "Notion",
+    },
+    {
+        name: "SCons",
+    },
+    {
+        name: "Eslint",
+    },
+    {
+        name: "Prettier",
+    },
+    {
+        name: "Biome",
+    },
+    {
+        name: "Redis",
+    },
+    {
+        name: "Memcached",
+    },
+    {
+        name: "Grafana",
+    },
+    {
+        name: "Prometheus",
+    },
+    {
+        name: "Node.js",
     },
 ].toSorted(compareNames) as SkillEntry[];
