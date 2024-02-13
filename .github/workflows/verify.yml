@@ -1,0 +1,38 @@
+name: Verify
+
+on:
+  pull_request:
+
+jobs:
+  verify-portfolio:
+    name: Verify - `portfolio.peresonal.com`
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.13
+
+      - name: Install Dependencies
+        run: |
+          bun install -g @azure/static-web-apps-cli
+          bun install
+
+      - name: Verify - Check & Lint
+        run: |
+          bun run check
+          bun run lint
+
+      - name: Verify - Build - `portfolio.peresonal.com`
+        run: |
+          bun run build
+
+      # - name: Verify - Deploy - `portfolio.peresonal.com`
+      #   run: |
+      #     swa deploy --deployment-token ${{ secrets.APP_DEPLOYMENT_TOKEN }} --api-version 18.13 --dry-run
