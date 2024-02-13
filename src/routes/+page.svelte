@@ -13,11 +13,13 @@
 <section id="about" class="text-center">
     <h2 class="text-xl">About</h2>
 
-    <i>
-        <span class="text-cat-maroon font-bold">TODO: </span>
-        Needs to be filled out
-    </i>
+    <div class="p-2 border rounded-md border-cat-base">
+        <p class="text-lg">Hey, I'm Pere 👋</p>
+        <p class="text-cat-subtext0">I do software development</p>
+    </div>
 </section>
+
+<br />
 
 <section id="skills">
     <h2 class="text-xl text-center">Skills</h2>
@@ -47,47 +49,57 @@
     </div>
 </section>
 
+<br />
+
 <section id="projects" class="text-center">
     <h2 class="text-xl">Projects</h2>
 
-    <i>
-        <span class="text-cat-maroon font-bold">TODO: </span>
-        Needs to be filled out
-    </i>
+    <div class="p-2 border rounded-md border-cat-base">
+        <i>
+            <span class="text-cat-maroon font-bold">TODO: </span>
+            Needs to be filled out
+        </i>
+    </div>
 </section>
 
-<section id="contact" class="flex flex-col justify-center items-center">
+<br />
+
+<section id="contact">
     <h2 class="text-xl text-center">Contact</h2>
 
-    You can contact me at the links below:
-
-    <button
-        id="contact/personal-email-link"
-        class="flex gap-x-1 items-center text-cat-green"
-        on:click={() => {
-            navigator.clipboard.writeText("pereiswell@gmail.com");
-            toastsStore.push("Copied text to clipboard!");
-        }}
+    <div
+        class="p-2 border rounded-md border-cat-base flex flex-col justify-center items-center"
     >
-        <AtSign />
-        pereiswell@gmail.com
-    </button>
+        You can contact me at the links below:
 
-    <a
-        id="contact/personal-linkedin-link"
-        href="https://www.linkedin.com/in/pere-wells/"
-        class="flex gap-x-1 items-center text-cat-green"
-    >
-        <LinkedinIcon />
-        Pere Wells
-    </a>
+        <button
+            id="contact/personal-email-link"
+            class="flex gap-x-1 items-center text-cat-blue hover:text-cat-sky transition-colors"
+            on:click={() => {
+                navigator.clipboard.writeText("pereiswell@gmail.com");
+                toastsStore.push("Copied text to clipboard!");
+            }}
+        >
+            <AtSign />
+            pereiswell@gmail.com
+        </button>
 
-    <a
-        id="contact/personal-github-link"
-        href="https://github.com/c1m50c"
-        class="flex gap-x-1 items-center text-cat-green"
-    >
-        <GithubIcon />
-        @c1m50c
-    </a>
+        <a
+            id="contact/personal-linkedin-link"
+            href="https://www.linkedin.com/in/pere-wells/"
+            class="flex gap-x-1 items-center text-cat-blue hover:text-cat-sky transition-colors"
+        >
+            <LinkedinIcon />
+            Pere Wells
+        </a>
+
+        <a
+            id="contact/personal-github-link"
+            href="https://github.com/c1m50c"
+            class="flex gap-x-1 items-center text-cat-blue hover:text-cat-sky transition-colors"
+        >
+            <GithubIcon />
+            @c1m50c
+        </a>
+    </div>
 </section>
