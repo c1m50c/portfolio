@@ -10,8 +10,13 @@
     } from "$lib/skills";
 </script>
 
-<section id="about">
-    <h2 class="text-xl text-center">About</h2>
+<section id="about" class="text-center">
+    <h2 class="text-xl">About</h2>
+
+    <i>
+        <span class="text-cat-maroon font-bold">TODO: </span>
+        Needs to be filled out
+    </i>
 </section>
 
 <section id="skills">
@@ -42,8 +47,13 @@
     </div>
 </section>
 
-<section id="projects">
-    <h2 class="text-xl text-center">Projects</h2>
+<section id="projects" class="text-center">
+    <h2 class="text-xl">Projects</h2>
+
+    <i>
+        <span class="text-cat-maroon font-bold">TODO: </span>
+        Needs to be filled out
+    </i>
 </section>
 
 <section id="contact" class="flex flex-col justify-center items-center">
