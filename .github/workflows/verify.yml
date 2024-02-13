@@ -22,6 +22,10 @@ jobs:
           bun run check
           bun run lint
 
-      - name: Verify - Build
+      - name: Verify - Build - `portfolio.peresonal.com`
         run: |
           bun run build
+
+      - name: Verify - Deploy - `portfolio.peresonal.com`
+        run: |
+          swa deploy --deployment-token ${{ secrets.APP_DEPLOYMENT_TOKEN }} --env Production --api-version 18.13 --dry-run

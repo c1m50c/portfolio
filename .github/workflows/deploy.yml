@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy - `portfolio.peresonal.com`
         run: |
-          swa deploy --deployment-token ${{ secrets.APP_DEPLOYMENT_TOKEN }} --env Production
+          swa deploy --deployment-token ${{ secrets.APP_DEPLOYMENT_TOKEN }} --env Production --api-version 18.13
