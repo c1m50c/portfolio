@@ -15,7 +15,9 @@ jobs:
         uses: oven-sh/setup-bun@v1
 
       - name: Install Dependencies
-        run: bun install
+        run: |
+          bun install -g @azure/static-web-apps-cli
+          bun install
 
       - name: Verify - Check & Lint
         run: |
