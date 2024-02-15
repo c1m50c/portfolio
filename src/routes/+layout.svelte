@@ -1,6 +1,8 @@
 <script lang="ts">
     import Toaster from "$lib/components/toaster.svelte";
     import "../app.css";
+
+    export const trailingSlash = "always";
 </script>
 
 <!-- <header class="flex w-full justify-center items-center">
