@@ -37,7 +37,7 @@
         </header>
 
         {#if selectedSkill?.description}
-            <p>{selectedSkill?.description}</p>
+            <p class="text-left">{selectedSkill?.description}</p>
         {/if}
 
         {#if selectedSkill?.relative_comfort_level}
