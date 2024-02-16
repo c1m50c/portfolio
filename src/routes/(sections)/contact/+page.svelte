@@ -3,7 +3,7 @@
     import { toastsStore } from "$lib/stores";
 </script>
 
-<h2>Contact</h2>
+<h2 class="text-center text-2xl">Contact</h2>
 
 <div class="flex flex-col justify-center items-center">
     You can contact me at the links below:
