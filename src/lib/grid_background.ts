@@ -8,7 +8,7 @@ const GRID_DIVISION = 48;
 const GRID_LIMIT = 48;
 
 export const useGridBackground = (element: HTMLCanvasElement) => {
-    const renderer = new THREE.WebGLRenderer({ canvas: element });
+    const renderer = new THREE.WebGLRenderer({ canvas: element, antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
 
     const camera = new THREE.PerspectiveCamera(40, undefined, 1, 10000);
