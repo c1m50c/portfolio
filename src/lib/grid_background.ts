@@ -18,7 +18,12 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(CATPPUCCIN_CRUST);
 
-    const grid_helper = new THREE.GridHelper(GRID_LIMIT * 2, GRID_DIVISION, CATPPUCCIN_BASE, CATPPUCCIN_BASE);
+    const grid_helper = new THREE.GridHelper(
+        GRID_LIMIT * 2,
+        GRID_DIVISION,
+        CATPPUCCIN_BASE,
+        CATPPUCCIN_BASE,
+    );
 
     const onWindowResize = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -36,7 +41,7 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
                 limits: { value: new THREE.Vector2(-GRID_LIMIT, GRID_LIMIT) },
                 speed: { value: 2 },
                 time: { value: 0 },
-            }
+            },
         });
     };
 
@@ -44,14 +49,16 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
 
     const moveable = [];
 
-    for (let i = 0; i <= GRID_DIVISION; i++)
-        moveable.push(1, 1, 0, 0);
+    for (let i = 0; i <= GRID_DIVISION; i++) moveable.push(1, 1, 0, 0);
 
-    grid_helper.geometry.setAttribute("moveable", new THREE.BufferAttribute(new Uint8Array(moveable), 1));
+    grid_helper.geometry.setAttribute(
+        "moveable",
+        new THREE.BufferAttribute(new Uint8Array(moveable), 1),
+    );
 
     const addListeners = () => {
         window.addEventListener("resize", onWindowResize);
-    }
+    };
 
     const removeListeners = () => {
         window.removeEventListener("resize", onWindowResize);
@@ -77,4 +84,4 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
         removeListeners,
         addListeners,
     };
-}
+};
