@@ -1,6 +1,10 @@
 <script lang="ts">
     import Toaster from "$lib/components/toaster.svelte";
+    import { fade } from "svelte/transition";
+    import { quintOut } from "svelte/easing";
     import "../app.css";
+
+    export let data: { pathname: string };
 </script>
 
 <svelte:head>
@@ -15,4 +19,9 @@
 </svelte:head>
 
 <Toaster />
-<slot />
+
+{#key data.pathname}
+    <div transition:fade={{ easing: quintOut }}>
+        <slot />
+    </div>
+{/key}

@@ -9,12 +9,12 @@
     onDestroy(on_destroy);
 
     onMount(() => {
-        const { beginRendering, removeListeners, addListeners } =
+        const { beginRendering, removeLingerers, addLingerers } =
             useGridBackground(canvas_element);
 
-        on_destroy = removeListeners;
+        on_destroy = removeLingerers;
         beginRendering();
-        addListeners();
+        addLingerers();
     });
 </script>
 

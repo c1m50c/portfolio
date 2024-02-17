@@ -7,6 +7,12 @@ const CATPPUCCIN_BASE = 0x24273a;
 const GRID_DIVISION = 48;
 const GRID_LIMIT = 48;
 
+const MOVEABLE: number[] = [];
+
+for (let i = 0; i <= GRID_DIVISION; i++) {
+    MOVEABLE.push(1, 1, 0, 0);
+}
+
 export const useGridBackground = (element: HTMLCanvasElement) => {
     const renderer = new THREE.WebGLRenderer({ canvas: element, antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -47,25 +53,23 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
 
     onWindowResize();
 
-    const moveable = [];
-
-    for (let i = 0; i <= GRID_DIVISION; i++) moveable.push(1, 1, 0, 0);
-
     grid_helper.geometry.setAttribute(
         "moveable",
-        new THREE.BufferAttribute(new Uint8Array(moveable), 1),
+        new THREE.BufferAttribute(new Uint8Array(MOVEABLE), 1),
     );
-
-    const addListeners = () => {
-        window.addEventListener("resize", onWindowResize);
-    };
-
-    const removeListeners = () => {
-        window.removeEventListener("resize", onWindowResize);
-    };
 
     const clock = new THREE.Clock();
     let time = 0;
+
+    const addLingerers = () => {
+        window.addEventListener("resize", onWindowResize);
+    };
+
+    const removeLingerers = () => {
+        window.removeEventListener("resize", onWindowResize);
+        grid_helper.dispose();
+        renderer.dispose();
+    };
 
     const render = () => {
         requestAnimationFrame(render);
@@ -81,7 +85,7 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
 
     return {
         beginRendering: render,
-        removeListeners,
-        addListeners,
+        removeLingerers,
+        addLingerers,
     };
 };
