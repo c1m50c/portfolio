@@ -19,3 +19,9 @@
 <main class="text-sm mt-14">
     <slot />
 </main>
+
+<style>
+    :global(body) {
+        @apply bg-cat-crust;
+    }
+</style>
