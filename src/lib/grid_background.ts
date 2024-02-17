@@ -24,7 +24,7 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(CATPPUCCIN_CRUST);
 
-    const grid_helper = new THREE.GridHelper(
+    const gridHelper = new THREE.GridHelper(
         GRID_LIMIT * 2,
         GRID_DIVISION,
         CATPPUCCIN_BASE,
@@ -38,7 +38,7 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
         renderer.setSize(window.innerWidth, window.innerHeight);
 
         // @ts-expect-error | SAFETY: Completely valid material, TypeScript just can't validate that it is.
-        grid_helper.material = new THREE.ShaderMaterial({
+        gridHelper.material = new THREE.ShaderMaterial({
             fragmentShader: GRID_BACKGROUND_FRAGMENT_SHADER,
             vertexShader: GRID_BACKGROUND_VERTEX_SHADER,
 
@@ -51,9 +51,10 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
         });
     };
 
+    window.addEventListener("resize", onWindowResize);
     onWindowResize();
 
-    grid_helper.geometry.setAttribute(
+    gridHelper.geometry.setAttribute(
         "moveable",
         new THREE.BufferAttribute(new Uint8Array(MOVEABLE), 1),
     );
@@ -61,13 +62,9 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
     const clock = new THREE.Clock();
     let time = 0;
 
-    const addLingerers = () => {
-        window.addEventListener("resize", onWindowResize);
-    };
-
-    const removeLingerers = () => {
+    const dispose = () => {
         window.removeEventListener("resize", onWindowResize);
-        grid_helper.dispose();
+        gridHelper.dispose();
         renderer.dispose();
     };
 
@@ -76,16 +73,15 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
         time += clock.getDelta();
 
         // @ts-expect-error | SAFETY: Completely valid field, TypeScript just can't validate that it is.
-        grid_helper.material.uniforms.time.value = time;
+        gridHelper.material.uniforms.time.value = time;
 
         renderer.render(scene, camera);
     };
 
-    scene.add(grid_helper);
+    scene.add(gridHelper);
 
     return {
-        beginRendering: render,
-        removeLingerers,
-        addLingerers,
+        dispose,
+        render,
     };
 };

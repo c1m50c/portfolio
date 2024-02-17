@@ -3,25 +3,23 @@
     import Peresonal from "$lib/components/peresonal.svelte";
     import { onDestroy, onMount } from "svelte";
 
-    let canvas_element: HTMLCanvasElement;
-    let on_destroy = () => {};
+    let canvasElement: HTMLCanvasElement;
+    let onDestroyDisposeFn = () => {};
 
-    onDestroy(on_destroy);
+    onDestroy(onDestroyDisposeFn);
 
     onMount(() => {
-        const { beginRendering, removeLingerers, addLingerers } =
-            useGridBackground(canvas_element);
+        const { render, dispose } = useGridBackground(canvasElement);
 
-        on_destroy = removeLingerers;
-        beginRendering();
-        addLingerers();
+        onDestroyDisposeFn = dispose;
+        render();
     });
 </script>
 
 <canvas
     id="infinite-grid-renderer"
     class="absolute top-0 left-0 w-full h-full overflow-hidden"
-    bind:this={canvas_element}
+    bind:this={canvasElement}
 />
 
 <section
