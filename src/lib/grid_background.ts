@@ -2,12 +2,16 @@ import GRID_BACKGROUND_FRAGMENT_SHADER from "$lib/shaders/grid_background.frag.g
 import GRID_BACKGROUND_VERTEX_SHADER from "$lib/shaders/grid_background.vert.glsl?raw";
 import * as THREE from "three";
 
-const CATPPUCCIN_CRUST = 0x181926;
-const CATPPUCCIN_BASE = 0x24273a;
+const CATPPUCCIN_CRUST_MACCHIATO = 0x181926;
+const CATPPUCCIN_BASE_MACCHIATO = 0x24273a;
+const CATPPUCCIN_CRUST_LATTE = 0xdce0e8;
+const CATPPUCCIN_BASE_LATTE = 0x4c4f69;
+
 const GRID_DIVISION = 48;
 const GRID_LIMIT = 48;
 
 const MOVEABLE: number[] = [];
+const LIGHT = false;
 
 for (let i = 0; i <= GRID_DIVISION; i++) {
     MOVEABLE.push(1, 1, 0, 0);
@@ -22,13 +26,13 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
     camera.lookAt(0, 2, 0);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(CATPPUCCIN_CRUST);
+    scene.background = new THREE.Color(LIGHT ? CATPPUCCIN_CRUST_LATTE : CATPPUCCIN_CRUST_MACCHIATO);
 
     const gridHelper = new THREE.GridHelper(
         GRID_LIMIT * 2,
         GRID_DIVISION,
-        CATPPUCCIN_BASE,
-        CATPPUCCIN_BASE,
+        LIGHT ? CATPPUCCIN_BASE_LATTE : CATPPUCCIN_BASE_MACCHIATO,
+        LIGHT ? CATPPUCCIN_BASE_LATTE : CATPPUCCIN_BASE_MACCHIATO,
     );
 
     const onWindowResize = () => {
@@ -45,6 +49,7 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
             uniforms: {
                 resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
                 limits: { value: new THREE.Vector2(-GRID_LIMIT, GRID_LIMIT) },
+                light: { value: LIGHT },
                 speed: { value: 2 },
                 time: { value: 0 },
             },
