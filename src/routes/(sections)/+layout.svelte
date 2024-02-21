@@ -1,3 +1,5 @@
+<div class="absolute top-0 left-0 w-screen h-screen overflow-hidden bg-cat-crust -z-10" />
+
 <header class="fixed top-0 left-0 w-screen py-2 px-4 flex justify-between items-center">
     <nav class="flex items-center gap-x-2">
         <a
@@ -19,9 +21,3 @@
 <main class="absolute top-0 left-0 w-full text-sm mt-14">
     <slot />
 </main>
-
-<style>
-    :global(body) {
-        @apply bg-cat-crust;
-    }
-</style>

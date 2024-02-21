@@ -6,5 +6,6 @@ export default {
     theme: {
         extend: {},
     },
+    safelist: ["latte", "macchiato"],
     plugins: [catppuccin({ prefix: "cat", defaultFlavour: "macchiato" })],
 };

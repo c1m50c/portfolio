@@ -1,10 +1,23 @@
 <script lang="ts">
     import Toaster from "$lib/components/toaster.svelte";
+    import { browser } from "$app/environment";
     import { fade } from "svelte/transition";
     import { quintOut } from "svelte/easing";
     import "../app.css";
 
     export let data: { pathname: string };
+
+    if (browser) {
+        window.prefersLightMode = window.matchMedia
+            ? !window.matchMedia("(prefers-color-scheme: dark)").matches
+            : true;
+
+        if (window.matchMedia) {
+            window
+                .matchMedia("(prefers-color-scheme: dark)")
+                .addEventListener("change", (x) => (window.prefersLightMode = !x.matches));
+        }
+    }
 </script>
 
 <svelte:head>
@@ -21,7 +34,10 @@
 <Toaster />
 
 {#key data.pathname}
-    <div transition:fade={{ easing: quintOut }}>
+    <div
+        class={`${window.prefersLightMode ? "cat-latte" : "cat-macchiato"}`}
+        transition:fade={{ easing: quintOut }}
+    >
         <slot />
     </div>
 {/key}

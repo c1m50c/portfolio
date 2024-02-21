@@ -16,15 +16,6 @@ for (let i = 0; i <= GRID_DIVISION; i++) {
     MOVEABLE.push(1, 1, 0, 0);
 }
 
-let lightMode = window.matchMedia
-    ? !window.matchMedia("(prefers-color-scheme: dark)").matches
-    : true;
-
-if (window.matchMedia) {
-    window.matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => lightMode = !event.matches);
-}
-
 export const useGridBackground = (element: HTMLCanvasElement) => {
     const renderer = new THREE.WebGLRenderer({ canvas: element, antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -34,13 +25,13 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
     camera.lookAt(0, 2, 0);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(lightMode ? CATPPUCCIN_CRUST_LATTE : CATPPUCCIN_CRUST_MACCHIATO);
+    scene.background = new THREE.Color(window.prefersLightMode ? CATPPUCCIN_CRUST_LATTE : CATPPUCCIN_CRUST_MACCHIATO);
 
     const gridHelper = new THREE.GridHelper(
         GRID_LIMIT * 2,
         GRID_DIVISION,
-        lightMode ? CATPPUCCIN_BASE_LATTE : CATPPUCCIN_BASE_MACCHIATO,
-        lightMode ? CATPPUCCIN_BASE_LATTE : CATPPUCCIN_BASE_MACCHIATO,
+        window.prefersLightMode ? CATPPUCCIN_BASE_LATTE : CATPPUCCIN_BASE_MACCHIATO,
+        window.prefersLightMode ? CATPPUCCIN_BASE_LATTE : CATPPUCCIN_BASE_MACCHIATO,
     );
 
     const onWindowResize = () => {
@@ -57,7 +48,7 @@ export const useGridBackground = (element: HTMLCanvasElement) => {
             uniforms: {
                 resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
                 limits: { value: new THREE.Vector2(-GRID_LIMIT, GRID_LIMIT) },
-                light: { value: lightMode },
+                light: { value: window.prefersLightMode },
                 speed: { value: 2 },
                 time: { value: 0 },
             },
