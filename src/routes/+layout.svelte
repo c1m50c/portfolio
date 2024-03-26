@@ -36,7 +36,6 @@
 {#key data.pathname}
     <div
         class={`${window.prefersLightMode ? "cat-latte" : "cat-macchiato"}`}
-        transition:fade={{ easing: quintOut }}
     >
         <slot />
     </div>
