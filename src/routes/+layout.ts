@@ -5,4 +5,4 @@ export const ssr = false;
 
 export const load = ({ url }: LoadEvent) => {
     return { pathname: url.pathname };
-}
+};

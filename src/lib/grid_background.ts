@@ -25,7 +25,9 @@ export const renderGridBackground = (element: HTMLCanvasElement) => {
     camera.lookAt(0, 2, 0);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(window.prefersLightMode ? CATPPUCCIN_CRUST_LATTE : CATPPUCCIN_CRUST_MACCHIATO);
+    scene.background = new THREE.Color(
+        window.prefersLightMode ? CATPPUCCIN_CRUST_LATTE : CATPPUCCIN_CRUST_MACCHIATO,
+    );
 
     const gridHelper = new THREE.GridHelper(
         GRID_LIMIT * 2,
