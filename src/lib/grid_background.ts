@@ -16,7 +16,7 @@ for (let i = 0; i <= GRID_DIVISION; i++) {
     MOVEABLE.push(1, 1, 0, 0);
 }
 
-export const useGridBackground = (element: HTMLCanvasElement) => {
+export const renderGridBackground = (element: HTMLCanvasElement) => {
     const renderer = new THREE.WebGLRenderer({ canvas: element, antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
 

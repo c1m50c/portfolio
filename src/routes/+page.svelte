@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { useGridBackground } from "$lib/grid_background";
+    import { renderGridBackground } from "$lib/grid_background";
     import Peresonal from "$lib/components/peresonal.svelte";
     import { onDestroy, onMount } from "svelte";
 
@@ -9,8 +9,7 @@
     onDestroy(onDestroyDisposeFn);
 
     onMount(() => {
-        const { render, dispose } = useGridBackground(canvasElement);
-
+        const { render, dispose } = renderGridBackground(canvasElement);
         onDestroyDisposeFn = dispose;
         render();
     });
