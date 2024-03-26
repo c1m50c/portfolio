@@ -1,8 +1,6 @@
 <script lang="ts">
     import Toaster from "$lib/components/toaster.svelte";
     import { browser } from "$app/environment";
-    import { fade } from "svelte/transition";
-    import { quintOut } from "svelte/easing";
     import "../app.css";
 
     export let data: { pathname: string };
