@@ -1,6 +1,7 @@
 <script lang="ts">
     import Modal from "$lib/components/modal.svelte";
     import type { SkillEntry } from "$lib/skills";
+    import { Link } from "lucide-svelte";
 
     export let description: string = "";
     export let name: string;
@@ -49,18 +50,24 @@
     </div>
 </Modal>
 
-<section id={`skills/${sectionId}`}>
-    <h3 class="text-lg text-center">{name}</h3>
+<section id={`skills:${sectionId}`} class="border-cat-base border rounded-lg my-2 relative">
+    <h3 class="text-lg text-center flex justify-center items-center gap-x-1 group">
+        <a class="cursor-pointer" href={`#skills:${sectionId}`}>
+            <Link class="size-4 invisible group-hover:visible" />
+        </a>
+
+        {name}
+    </h3>
 
     {#if description}
         <p class="text-xs text-center text-cat-subtext0/80 mb-1">{description}</p>
     {/if}
 
-    <ul class="w-full flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+    <ul class="w-full flex flex-wrap items-center justify-center gap-x-2 gap-y-1 mb-3">
         {#each skills as skill}
-            <li id={`skills/${sectionId}/${skill.name.toLowerCase().replaceAll(" ", "-")}`}>
+            <li id={`skills:${sectionId}:${skill.name.toLowerCase().replaceAll(" ", "-")}`}>
                 <button
-                    class="text-cat-crust bg-cat-pink hover:bg-cat-peach select-none cursor-pointer transition-colors px-2 rounded-sm"
+                    class="text-sm text-cat-crust bg-cat-pink hover:bg-cat-peach select-none cursor-pointer transition-colors px-2 rounded-md"
                     on:click={() => {
                         selectedSkill = skill;
                         showSkillModal = true;

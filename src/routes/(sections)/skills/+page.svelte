@@ -17,15 +17,11 @@
         skills={LANGUAGE_SKILLS}
     />
 
-    <hr class="mt-4 mb-2 mx-16 border-cat-base" />
-
     <SkillSection
         name="Libraries & Frameworks"
         description="Collection of libraries and frameworks that I have experience using."
         skills={LIBRARY_AND_FRAMEWORK_SKILLS}
     />
-
-    <hr class="mt-4 mb-2 mx-16 border-cat-base" />
 
     <SkillSection
         name="Technologies, Tools & Services"

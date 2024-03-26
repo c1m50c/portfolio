@@ -34,9 +34,7 @@
 <Toaster />
 
 {#key data.pathname}
-    <div
-        class={`${window.prefersLightMode ? "cat-latte" : "cat-macchiato"}`}
-    >
+    <div class={`${window.prefersLightMode ? "cat-latte" : "cat-macchiato"}`}>
         <slot />
     </div>
 {/key}
