@@ -19,9 +19,6 @@ for (let i = 0; i <= GRID_DIVISION; i++) {
 /**
  * Provides a `render` method to _render_ an infinite grid background on a canvas.
  * Upon dismounting the given canvas `element`, ensure you call the provided `dispose` method to free lingering things.
- * 
- * @param element {HTMLCanvasElement}
- * @returns {Object}
  */
 export const renderGridBackground = (element: HTMLCanvasElement) => {
     const renderer = new THREE.WebGLRenderer({ canvas: element, antialias: true });
