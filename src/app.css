@@ -6,23 +6,16 @@
 
 @layer components {
     .navigation-link {
-        @apply relative transition-colors text-cat-text/50 hover:text-cat-subtext1;
-        user-select: none;
+        @apply relative transition-colors text-cat-text/50 select-none hover:text-cat-text after:absolute after:block after:transition-all after:bg-cat-text/50 after:w-full hover:after:bg-cat-text;
     }
 
     .navigation-link::after {
-        @apply absolute block transition-all bg-cat-text/50 w-full;
         transform: scale(0);
         content: "";
         height: 1px;
     }
 
-    .navigation-link:hover {
-        @apply text-cat-text;
-    }
-
     .navigation-link:hover::after {
-        @apply bg-cat-text;
         transform: scale(1);
     }
 }

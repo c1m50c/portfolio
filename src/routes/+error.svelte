@@ -5,7 +5,7 @@
         "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/";
 </script>
 
-<main class="flex flex-col w-full h-full justify-center items-center">
+<div class="fixed flex flex-col w-screen h-screen justify-center items-center">
     <h1 class="text-5xl text-cat-maroon">{$page.status}</h1>
     <p class="text-2xl text-cat-red">{$page.error?.message}</p>
 
@@ -20,4 +20,4 @@
             <span class="text-xs select-none">Learn More</span>
         </a>
     </div>
-</main>
+</div>
