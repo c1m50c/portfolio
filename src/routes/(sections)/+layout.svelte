@@ -12,15 +12,7 @@
 
     <nav class="flex gap-x-4">
         <a class="navigation-link" href="/skills">Skills</a>
-
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <!-- TODO: Implement `/projects` page, see #9 -->
-        <a
-            class="navigation-link opacity-50 line-through cursor-not-allowed after:opacity-0 hover:text-cat-text/50"
-            aria-disabled="true"
-        >
-            Projects
-        </a>
+        <a class="navigation-link" href="/projects">Projects</a>
 
         <!-- svelte-ignore a11y-missing-attribute -->
         <!-- TODO: Implement `/statistics` page, see #8 -->
