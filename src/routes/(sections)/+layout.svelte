@@ -19,7 +19,7 @@
 
 <canvas
     id="infinite-grid-renderer"
-    class="absolute top-0 left-0 w-full h-full overflow-hidden"
+    class="absolute top-0 left-0 w-full h-full overflow-hidden -z-20"
     bind:this={canvasElement}
 />
 
@@ -58,6 +58,6 @@
     </nav>
 </header>
 
-<main class="absolute top-0 left-0 w-full h-full text-sm">
+<main class="absolute top-0 left-0 w-full h-full text-sm -z-10">
     <slot />
 </main>
