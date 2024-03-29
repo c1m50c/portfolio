@@ -58,6 +58,6 @@
     </nav>
 </header>
 
-<main class="absolute top-0 left-0 w-full text-sm mt-14">
+<main class="absolute top-0 left-0 w-full h-full text-sm">
     <slot />
 </main>
