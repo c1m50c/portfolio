@@ -19,11 +19,11 @@
 
 <canvas
     id="infinite-grid-renderer"
-    class="absolute top-0 left-0 w-full h-full overflow-hidden -z-20"
+    class="absolute top-0 left-0 w-full h-full overflow-hidden"
     bind:this={canvasElement}
 />
 
-<header class="fixed top-0 left-0 w-screen py-2 px-4 flex justify-between items-center">
+<header class="fixed top-0 left-0 w-screen py-2 px-4 flex justify-between items-center z-10">
     <nav class="flex items-center gap-x-2">
         <a
             class="navigation-link font-bold text-cat-mauve after:bg-cat-mauve hover:text-cat-peach hover:after:bg-cat-peach"
@@ -58,6 +58,6 @@
     </nav>
 </header>
 
-<main class="absolute top-0 left-0 w-full h-full text-sm -z-10">
+<main class="absolute top-0 left-0 w-full h-full text-sm">
     <slot />
 </main>
