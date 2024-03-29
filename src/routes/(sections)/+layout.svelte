@@ -1,4 +1,27 @@
-<div class="absolute top-0 left-0 w-screen h-screen overflow-hidden bg-cat-crust -z-10" />
+<script lang="ts">
+    import { renderGridBackground } from "$lib/grid_background";
+    import { onDestroy, onMount } from "svelte";
+    import { browser } from "$app/environment";
+
+    let canvasElement: HTMLCanvasElement;
+    let onDestroyDisposeFn = () => {};
+
+    if (browser) {
+        onDestroy(onDestroyDisposeFn);
+
+        onMount(() => {
+            const { render, dispose } = renderGridBackground(canvasElement);
+            onDestroyDisposeFn = dispose;
+            render();
+        });
+    }
+</script>
+
+<canvas
+    id="infinite-grid-renderer"
+    class="absolute top-0 left-0 w-full h-full overflow-hidden"
+    bind:this={canvasElement}
+/>
 
 <header class="fixed top-0 left-0 w-screen py-2 px-4 flex justify-between items-center">
     <nav class="flex items-center gap-x-2">
