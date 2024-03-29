@@ -19,7 +19,7 @@
 
 <canvas
     id="infinite-grid-renderer"
-    class="absolute top-0 left-0 w-full h-full overflow-hidden"
+    class="fixed top-0 left-0 w-full h-full overflow-hidden"
     bind:this={canvasElement}
 />
 
