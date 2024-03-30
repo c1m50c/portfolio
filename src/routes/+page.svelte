@@ -2,22 +2,25 @@
     import { renderGridBackground } from "$lib/grid_background";
     import Peresonal from "$lib/components/peresonal.svelte";
     import { onDestroy, onMount } from "svelte";
+    import { browser } from "$app/environment";
 
     let canvasElement: HTMLCanvasElement;
     let onDestroyDisposeFn = () => {};
 
-    onDestroy(onDestroyDisposeFn);
+    if (browser) {
+        onDestroy(onDestroyDisposeFn);
 
-    onMount(() => {
-        const { render, dispose } = renderGridBackground(canvasElement);
-        onDestroyDisposeFn = dispose;
-        render();
-    });
+        onMount(() => {
+            const { render, dispose } = renderGridBackground(canvasElement);
+            onDestroyDisposeFn = dispose;
+            render();
+        });
+    }
 </script>
 
 <canvas
     id="infinite-grid-renderer"
-    class="absolute top-0 left-0 w-full h-full overflow-hidden"
+    class="fixed top-0 left-0 w-full h-full overflow-hidden"
     bind:this={canvasElement}
 />
 
