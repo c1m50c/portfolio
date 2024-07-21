@@ -1,0 +1,12 @@
+[workspace]
+members = ["server"]
+resolver = "2"
+
+[workspace.package]
+authors = [
+    "c1m50c <58411864+c1m50c@users.noreply.github.com>"
+]
+edition = "2021"
+license = "MIT"
+publish = false
+readme = "README.md"
