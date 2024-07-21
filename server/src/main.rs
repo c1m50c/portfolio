@@ -9,5 +9,11 @@ async fn main() -> Result<(), io::Error> {
     tracing_subscriber::fmt().compact().init();
 
     let listener = TcpListener::bind(&args.address).await?;
+
+    tracing::info!(
+        "Server hosted, listening for requests at `http://{}/`...",
+        &args.address
+    );
+
     axum::serve(listener, portfolio::routes::router()).await
 }
