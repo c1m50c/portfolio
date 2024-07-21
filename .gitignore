@@ -1,5 +1,8 @@
 # IDEs - VSCode
 .vscode/
 
+# JavaScript - Packages
+node_modules/
+
 # Rust - Build Targets
 target/
